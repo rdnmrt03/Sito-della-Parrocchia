@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <!-- =====================================================
+         IMPOSTAZIONI GENERALI
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Festa della Madonna - Notizie della Parrocchia Maria SS. del Rosario di Pompei."
+    >
+
+    <title>
+        Festa della Madonna | Parrocchia Maria SS. del Rosario di Pompei
+    </title>
+
+
+    <!-- =====================================================
+         CSS
+
+         ../ significa:
+         torna indietro dalla cartella articoli
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="navbar">
+
+
+    <!-- =====================================================
+         LOGO + TITOLO + HAMBURGER
+    ====================================================== -->
+
+    <div class="header-superiore">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="../index.html"
+            class="logo-immagine-link"
+            aria-label="Torna alla Home"
+        >
+
+            <img
+                src="../immagini/logo.png"
+                alt="Logo Parrocchia Maria SS. del Rosario di Pompei"
+                class="logo-immagine"
+            >
+
+        </a>
+
+
+
+        <!-- NOME PARROCCHIA -->
+
+        <div class="logo">
+
+            <a href="../index.html">
+
+                Parrocchia Maria SS. del Rosario di Pompei
+
+            </a>
+
+        </div>
+
+
+
+        <!-- HAMBURGER MOBILE -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Apri il menu"
+            aria-controls="mainMenu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MENU PRINCIPALE
+    ====================================================== -->
+
+    <nav
+        class="menu"
+        id="mainMenu"
+        aria-label="Navigazione principale"
+    >
+
+
+        <!-- HOME -->
+
+        <a href="../index.html">
+
+            Home
+
+        </a>
+
+
+
+        <!-- =================================================
+             LA PARROCCHIA
+        ================================================== -->
+
+        <div class="dropdown">
+
+
+            <a
+                href="../parrocchia.html"
+                class="dropbtn"
+            >
+
+                La parrocchia
+
+                <span>⌄</span>
+
+            </a>
+
+
+            <div class="dropdown-content">
+
+
+                <a href="../parrocchia.html#storia">
+
+                    La nostra storia
+
+                </a>
+
+
+                <a href="../parrocchia.html#chiesa">
+
+                    La chiesa
+
+                </a>
+
+
+                <a href="../parrocchia.html#parroco">
+
+                    Il parroco
+
+                </a>
+
+
+                <a href="../parrocchia.html#messe">
+
+                    Orari Messe
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             NOTIZIE
+        ================================================== -->
+
+        <a href="../notizie.html">
+
+            Notizie
+
+        </a>
+
+
+
+        <!-- =================================================
+             GRUPPI PARROCCHIALI
+        ================================================== -->
+
+        <div class="dropdown">
+
+
+            <a
+                href="../gruppi.html"
+                class="dropbtn"
+            >
+
+                Gruppi Parrocchiali
+
+                <span>⌄</span>
+
+            </a>
+
+
+            <div class="dropdown-content">
+
+
+                <a href="../gruppi.html#giovani">
+
+                    Gruppo Giovani
+
+                </a>
+
+
+                <a href="../gruppi.html#ac">
+
+                    Azione Cattolica
+
+                </a>
+
+
+                <a href="../gruppi.html#catechismo">
+
+                    Catechismo
+
+                </a>
+
+
+                <a href="../gruppi.html#coro">
+
+                    Coro Parrocchiale
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             COMUNITÀ RELIGIOSE
+        ================================================== -->
+
+        <div class="dropdown">
+
+
+            <a
+                href="../comunita.html"
+                class="dropbtn"
+            >
+
+                Comunità religiose
+
+                <span>⌄</span>
+
+            </a>
+
+
+            <div class="dropdown-content">
+
+
+                <a href="../comunita.html#comunita1">
+
+                    Comunità 1
+
+                </a>
+
+
+                <a href="../comunita.html#comunita2">
+
+                    Comunità 2
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CONTATTI -->
+
+        <a href="../contatti.html">
+
+            Contatti
+
+        </a>
+
+
+
+        <!-- PRIVACY -->
+
+        <a href="../privacy.html">
+
+            Privacy Policy
+
+        </a>
+
+
+
+        <!-- RICERCA -->
+
+        <button
+            class="search-button"
+            id="searchButton"
+            type="button"
+            aria-label="Cerca nella pagina"
+        >
+
+            🔍
+
+        </button>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================================================
+     TESTATA ARTICOLO
+========================================================= -->
+
+<section class="pagina-hero">
+
+
+    <div>
+
+
+        <p class="pagina-etichetta chiaro">
+
+            EVENTI · 20 SETTEMBRE 2026
+
+        </p>
+
+
+        <h1>
+
+            Festa della Madonna
+
+        </h1>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     ARTICOLO
+========================================================= -->
+
+<main class="contenitore">
+
+
+    <article class="articolo">
+
+
+        <!-- =================================================
+             DATA E CATEGORIA
+        ================================================== -->
+
+        <div class="info-articolo">
+
+            20 SETTEMBRE 2026
+
+            <span>•</span>
+
+            EVENTI
+
+        </div>
+
+
+
+        <!-- =================================================
+             TITOLO
+        ================================================== -->
+
+        <h2>
+
+            La nostra comunità
+            si prepara alla Festa della Madonna
+
+        </h2>
+
+
+
+        <!-- =================================================
+             INTRODUZIONE
+        ================================================== -->
+
+        <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a dui volutpat, posuere justo ac, suscipit ante. Vivamus nunc arcu, aliquet pharetra pellentesque sit amet, blandit eget magna. Mauris et eros ac nisl tempus vestibulum sed ut lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue eros leo, id pretium purus aliquam vel. Curabitur sagittis, ex pellentesque lacinia sodales, eros massa iaculis nunc, luctus commodo magna nisi a mi. Praesent placerat ex molestie ex pharetra, ut semper justo imperdiet. Aliquam erat volutpat. Integer fermentum, felis at egestas convallis, massa quam rutrum dui, ac porta eros lacus a ex.<br><br>
+
+Integer nisi magna, blandit sed aliquam eu, molestie vitae lacus. Phasellus pellentesque pretium arcu id luctus. Curabitur tempor bibendum feugiat. Duis porttitor tellus eget vehicula pretium. Pellentesque a ipsum sed purus dignissim pharetra vitae vel quam. In molestie leo metus, molestie accumsan velit finibus eu. Maecenas dapibus, erat ac tempus auctor, magna lectus tincidunt nisi, ut finibus diam nisi ut ligula. Aliquam porta, ante at semper mattis, eros sem pulvinar nisi, id pellentesque erat tortor quis metus. Vestibulum ornare neque ac nibh congue viverra. Curabitur fermentum mauris quis velit cursus, non elementum purus euismod. Curabitur pretium ligula faucibus eros tempor, sed feugiat diam pretium. Nulla facilisi.
+
+        </p>
+
+
+        <br>
+
+
+
+        <!-- =================================================
+             IMMAGINE ARTICOLO
+
+             Se non hai ancora la foto,
+             puoi lasciare questa parte commentata
+             oppure aggiungere successivamente
+             festa-madonna.jpg nella cartella immagini.
+        ================================================== -->
+
+        <img
+            src="../immagini/festa-madonna.jpg"
+            alt="Festa della Madonna"
+            style="
+                width: 100%;
+                max-height: 600px;
+                object-fit: cover;
+                margin: 20px 0 45px;
+            "
+        >
+
+
+
+        <!-- =================================================
+             TESTO
+        ================================================== -->
+
+        <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a dui volutpat, posuere justo ac, suscipit ante. Vivamus nunc arcu, aliquet pharetra pellentesque sit amet, blandit eget magna. Mauris et eros ac nisl tempus vestibulum sed ut lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue eros leo, id pretium purus aliquam vel. Curabitur sagittis, ex pellentesque lacinia sodales, eros massa iaculis nunc, luctus commodo magna nisi a mi. Praesent placerat ex molestie ex pharetra, ut semper justo imperdiet. Aliquam erat volutpat. Integer fermentum, felis at egestas convallis, massa quam rutrum dui, ac porta eros lacus a ex.<br><br>
+
+Integer nisi magna, blandit sed aliquam eu, molestie vitae lacus. Phasellus pellentesque pretium arcu id luctus. Curabitur tempor bibendum feugiat. Duis porttitor tellus eget vehicula pretium. Pellentesque a ipsum sed purus dignissim pharetra vitae vel quam. In molestie leo metus, molestie accumsan velit finibus eu. Maecenas dapibus, erat ac tempus auctor, magna lectus tincidunt nisi, ut finibus diam nisi ut ligula. Aliquam porta, ante at semper mattis, eros sem pulvinar nisi, id pellentesque erat tortor quis metus. Vestibulum ornare neque ac nibh congue viverra. Curabitur fermentum mauris quis velit cursus, non elementum purus euismod. Curabitur pretium ligula faucibus eros tempor, sed feugiat diam pretium. Nulla facilisi.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Tutti i parrocchiani,
+            le famiglie,
+            i giovani,
+            i bambini
+            e quanti desiderano partecipare
+            sono invitati a prendere parte
+            alle celebrazioni.
+
+        </p>
+
+
+        <br><br>
+
+
+
+        <!-- =================================================
+             PROGRAMMA
+        ================================================== -->
+
+        <p class="pagina-etichetta">
+
+            PROGRAMMA
+
+        </p>
+
+
+        <h2>
+
+            Gli appuntamenti
+
+        </h2>
+
+
+        <p>
+
+            <strong>
+                Ore 17:30
+            </strong>
+
+            <br>
+
+            Ritrovo della comunità
+            e preparazione alla celebrazione.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <strong>
+                Ore 18:00
+            </strong>
+
+            <br>
+
+            Celebrazione della Santa Messa.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <strong>
+                Ore 19:00
+            </strong>
+
+            <br>
+
+            Processione per le vie
+            della comunità.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <strong>
+                Ore 20:30
+            </strong>
+
+            <br>
+
+            Momento comunitario
+            e conclusione della giornata.
+
+        </p>
+
+
+        <br><br>
+
+
+
+        <!-- =================================================
+             AVVISO
+        ================================================== -->
+
+        <p class="pagina-etichetta">
+
+            PARTECIPA
+
+        </p>
+
+
+        <h2>
+
+            Una festa per tutta la comunità
+
+        </h2>
+
+
+        <p>
+
+            Invitiamo tutti a partecipare
+            e a condividere questo momento
+            di fede e fraternità.
+
+            Ulteriori informazioni
+            e aggiornamenti sul programma
+            saranno comunicati
+            attraverso i canali
+            della parrocchia.
+
+        </p>
+
+
+        <br><br>
+
+
+
+        <!-- =================================================
+             TORNA ALLE NOTIZIE
+        ================================================== -->
+
+        <a
+            href="../notizie.html"
+            class="leggi"
+        >
+
+            ← Torna a tutte le notizie
+
+        </a>
+
+
+    </article>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     CONTATTI
+========================================================= -->
+
+<section class="home-contatti">
+
+
+    <div class="home-contatti-contenuto">
+
+
+        <div>
+
+
+            <p class="pagina-etichetta chiaro">
+
+                HAI BISOGNO DI INFORMAZIONI?
+
+            </p>
+
+
+            <h2>
+
+                Contatta la Parrocchia
+
+            </h2>
+
+
+        </div>
+
+
+
+        <a
+            href="../contatti.html"
+            class="pulsante-chiaro"
+        >
+
+            Contattaci →
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer-principale">
+
+    <div class="footer-container">
+
+
+        <!-- =================================================
+             IDENTITÀ PARROCCHIA
+        ================================================== -->
+
+        <div class="footer-colonna footer-identita">
+
+            <a
+                href="../index.html"
+                class="footer-logo"
+            >
+
+                <img
+                    src="../immagini/logo.png"
+                    alt="Logo Parrocchia Maria SS. del Rosario di Pompei"
+                >
+
+                <span>
+                    Parrocchia<br>
+                    Maria SS. <br>
+                    del Rosario<br>
+                    di Pompei
+                </span>
+
+            </a>
+
+            <p class="footer-descrizione">
+                Una comunità che cammina insieme,
+                nella fede, nella fraternità
+                e nel servizio.
+            </p>
+
+            <div class="footer-social">
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                    title="Instagram"
+                >
+                    IG
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                    title="Facebook"
+                >
+                    FB
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ESPLORA
+        ================================================== -->
+
+        <div class="footer-colonna">
+
+            <p class="footer-titolo">
+                ESPLORA
+            </p>
+
+            <nav
+                class="footer-link"
+                aria-label="Navigazione footer"
+            >
+
+                <a href="../parrocchia.html">
+                    La parrocchia
+                </a>
+
+                <a href="../notizie.html">
+                    Notizie
+                </a>
+
+                <a href="../eventi.html">
+                    Eventi
+                </a>
+
+                <a href="../gruppi.html">
+                    Gruppi parrocchiali
+                </a>
+
+            </nav>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORARI MESSE
+        ================================================== -->
+
+        <div class="footer-colonna">
+
+            <p class="footer-titolo">
+                ORARI MESSE
+            </p>
+
+            <div class="footer-orari">
+
+                <div>
+
+                    <span>
+                        Feriali
+                    </span>
+
+                    <strong>
+                        19:00
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Sabato
+                    </span>
+
+                    <strong>
+                        08:00<br>
+                        19:00
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Domenica
+                    </span>
+
+                    <strong>
+                        08:00<br>
+                        11:00<br>
+                        19:00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <a
+                href="../parrocchia.html#messe"
+                class="footer-link-speciale"
+            >
+                Tutti gli orari →
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONTATTI
+        ================================================== -->
+
+        <div class="footer-colonna">
+
+            <p class="footer-titolo">
+                CONTATTI
+            </p>
+
+            <div class="footer-contatti">
+
+
+                <!-- INDIRIZZO -->
+
+                <div>
+
+                    <span class="footer-contatto-label">
+                        INDIRIZZO
+                    </span>
+
+                    <p>
+                        Inserisci qui l'indirizzo<br>
+                        Vibo Marina (VV)
+                    </p>
+
+                </div>
+
+
+
+                <!-- TELEFONO -->
+
+                <div>
+
+                    <span class="footer-contatto-label">
+                        TELEFONO
+                    </span>
+
+                    <p>
+                        +39 000 000 0000
+                    </p>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div>
+
+                    <span class="footer-contatto-label">
+                        EMAIL
+                    </span>
+
+                    <p>
+                        parrocchia@example.it
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <a
+                href="../contatti.html"
+                class="footer-link-speciale"
+            >
+                Contattaci →
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PARTE INFERIORE FOOTER
+    ====================================================== -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-container">
+
+            <p>
+                © 2026 Parrocchia Maria SS. del Rosario di Pompei
+            </p>
+
+            <div class="footer-bottom-link">
+
+                <a href="../privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="../contatti.html">
+                    Contatti
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+
+     Anche qui ../ perché siamo
+     dentro la cartella articoli
+========================================================= -->
+
+<script src="../script.js"></script>
+
+
+</body>
+
+</html>
