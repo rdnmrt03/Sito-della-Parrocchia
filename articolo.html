@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Notizia della Parrocchia Maria SS. del Rosario di Pompei."
+    >
+
+    <title>
+        Notizia | Parrocchia Maria SS. del Rosario di Pompei
+    </title>
+
+
+    <!-- CSS PRINCIPALE -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- =====================================================
+         STILE PAGINA ARTICOLO
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .articolo-hero {
+            position: relative;
+            min-height: 490px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 90px 20px;
+            overflow: hidden;
+            background-color: #001536;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+
+        .articolo-hero.con-immagine {
+            background-color: #001536;
+        }
+
+
+        .articolo-hero-container {
+            position: relative;
+            z-index: 1;
+            width: min(1000px, 100%);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+
+        .articolo-categoria {
+            display: inline-block;
+
+            margin-bottom: 22px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #d7c7a1;
+        }
+
+
+        .articolo-hero h1 {
+            max-width: 950px;
+
+            margin: 0 auto 25px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(
+                42px,
+                6vw,
+                72px
+            );
+
+            font-weight: normal;
+
+            line-height: 1.05;
+
+            color: white;
+        }
+
+
+        .articolo-data {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 14px;
+
+            color: rgba(
+                255,
+                255,
+                255,
+                0.7
+            );
+        }
+
+
+
+        /* =====================================================
+           CORPO ARTICOLO
+        ====================================================== */
+
+        .articolo-corpo {
+            padding: 80px 20px 100px;
+
+            background: white;
+        }
+
+
+        .articolo-container {
+            width: min(800px, 100%);
+
+            margin: 0 auto;
+        }
+
+
+
+        /* =====================================================
+           IMMAGINE PRINCIPALE DELL'ARTICOLO
+        ====================================================== */
+
+        .articolo-foto {
+            width: 100%;
+            margin: 0 0 45px;
+            overflow: hidden;
+        }
+
+        .articolo-foto img {
+            width: 100%;
+            max-height: 560px;
+            display: block;
+            object-fit: cover;
+        }
+
+
+
+        /* =====================================================
+           DESCRIZIONE
+        ====================================================== */
+
+        .articolo-descrizione {
+            margin: 0 0 45px;
+
+            padding-bottom: 35px;
+
+            border-bottom: 1px solid #dfe2e6;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 23px;
+
+            line-height: 1.6;
+
+            color: #334052;
+        }
+
+
+
+        /* =====================================================
+           TESTO
+        ====================================================== */
+
+        .articolo-testo {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: #333c48;
+
+            white-space: pre-line;
+        }
+
+
+
+        /* =====================================================
+           TORNA ALLE NOTIZIE
+        ====================================================== */
+
+        .articolo-indietro {
+            margin-top: 60px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid #dfe2e6;
+        }
+
+
+        .articolo-indietro a {
+            display: inline-block;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 0.7px;
+
+            text-decoration: none;
+
+            color: #001536;
+
+            transition:
+                opacity 0.2s ease;
+        }
+
+
+        .articolo-indietro a:hover {
+            opacity: 0.65;
+        }
+
+
+
+        /* =====================================================
+           CARICAMENTO
+        ====================================================== */
+
+        .articolo-caricamento {
+            padding: 120px 20px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #6e7680;
+        }
+
+
+
+        /* =====================================================
+           ERRORE
+        ====================================================== */
+
+        .articolo-errore {
+            width: min(
+                700px,
+                calc(100% - 40px)
+            );
+
+            margin: 80px auto;
+
+            padding: 40px;
+
+            background: #fff5f5;
+
+            border-left: 4px solid #9e2929;
+        }
+
+
+        .articolo-errore h1 {
+            margin-top: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: #001536;
+        }
+
+
+        .articolo-errore p {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            line-height: 1.7;
+
+            color: #4c5560;
+        }
+
+
+        .articolo-errore a {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            color: #001536;
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (
+            max-width: 700px
+        ) {
+
+            .articolo-hero {
+                min-height: 400px;
+                padding:
+                    65px
+                    20px
+                    60px;
+            }
+
+
+            .articolo-corpo {
+                padding:
+                    55px
+                    20px
+                    70px;
+            }
+
+
+            .articolo-descrizione {
+                font-size: 20px;
+            }
+
+
+            .articolo-testo {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- =====================================================
+         HEADER AUTOMATICO
+    ====================================================== -->
+
+    <div id="header"></div>
+
+
+
+    <!-- =====================================================
+         AREA ARTICOLO
+    ====================================================== -->
+
+    <main id="contenutoArticolo">
+
+
+        <!-- CARICAMENTO -->
+
+        <div class="articolo-caricamento">
+
+            Caricamento della notizia...
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER AUTOMATICO
+    ====================================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =====================================================
+         HEADER + FOOTER
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =====================================================
+         FIREBASE
+    ====================================================== -->
+
+    <script type="module">
+
+
+        /* =====================================================
+           IMPORT FIREBASE
+        ====================================================== */
+
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+        import {
+            getFirestore,
+            doc,
+            getDoc
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+
+        /* =====================================================
+           CONFIGURAZIONE FIREBASE
+        ====================================================== */
+
+        const firebaseConfig = {
+
+            apiKey:
+                "AIzaSyCBP7PNuG822H7puA50sriMa80G0vluKPo",
+
+            authDomain:
+                "parrocchia-vm.firebaseapp.com",
+
+            projectId:
+                "parrocchia-vm",
+
+            storageBucket:
+                "parrocchia-vm.firebasestorage.app",
+
+            messagingSenderId:
+                "25102143490",
+
+            appId:
+                "1:25102143490:web:713f02e631b4ae2311171b"
+
+        };
+
+
+
+        /* =====================================================
+           AVVIO FIREBASE
+        ====================================================== */
+
+        const app =
+            initializeApp(
+                firebaseConfig
+            );
+
+
+        const db =
+            getFirestore(
+                app
+            );
+
+
+
+        /* =====================================================
+           ELEMENTO PAGINA
+        ====================================================== */
+
+        const contenitore =
+            document.getElementById(
+                "contenutoArticolo"
+            );
+
+
+
+        /* =====================================================
+           RECUPERA ID DALL'INDIRIZZO
+        ====================================================== */
+
+        const parametri =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const articoloId =
+            parametri.get(
+                "id"
+            );
+
+
+
+        /* =====================================================
+           CARICA ARTICOLO
+        ====================================================== */
+
+        async function caricaArticolo() {
+
+
+            /* -------------------------------------------------
+               NESSUN ID
+            -------------------------------------------------- */
+
+            if (!articoloId) {
+
+                mostraErrore(
+                    "La notizia richiesta non è stata trovata."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+
+                /* ---------------------------------------------
+                   RIFERIMENTO AL DOCUMENTO
+                ---------------------------------------------- */
+
+                const riferimento =
+                    doc(
+                        db,
+                        "articoli",
+                        articoloId
+                    );
+
+
+
+                /* ---------------------------------------------
+                   LEGGI DOCUMENTO
+                ---------------------------------------------- */
+
+                const risultato =
+                    await getDoc(
+                        riferimento
+                    );
+
+
+
+                /* ---------------------------------------------
+                   DOCUMENTO NON ESISTENTE
+                ---------------------------------------------- */
+
+                if (
+                    !risultato.exists()
+                ) {
+
+                    mostraErrore(
+                        "La notizia richiesta non esiste oppure è stata rimossa."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* ---------------------------------------------
+                   DATI ARTICOLO
+                ---------------------------------------------- */
+
+                const articolo =
+                    risultato.data();
+
+
+
+                /* ---------------------------------------------
+                   ARTICOLO NON PUBBLICATO
+                ---------------------------------------------- */
+
+                if (
+                    articolo.pubblicato === false
+                ) {
+
+                    mostraErrore(
+                        "Questa notizia non è disponibile."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* ---------------------------------------------
+                   MOSTRA ARTICOLO
+                ---------------------------------------------- */
+
+                mostraArticolo(
+                    articolo
+                );
+
+
+            } catch (
+                errore
+            ) {
+
+                console.error(
+                    "Errore caricamento articolo:",
+                    errore
+                );
+
+
+                mostraErrore(
+                    "Si è verificato un problema durante il caricamento della notizia."
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOSTRA ARTICOLO
+        ====================================================== */
+
+        function mostraArticolo(
+            articolo
+        ) {
+
+
+            /* -------------------------------------------------
+               PULISCI CONTENITORE
+            -------------------------------------------------- */
+
+            contenitore.innerHTML =
+                "";
+
+
+
+            /* =================================================
+               HERO
+            ================================================= */
+
+            const hero =
+                document.createElement(
+                    "section"
+                );
+
+
+            hero.className =
+                "articolo-hero";
+
+
+            if (
+                articolo.immagine
+            ) {
+
+                hero.classList.add(
+                    "con-immagine"
+                );
+
+
+                hero.style.backgroundImage =
+                    `linear-gradient(
+                        rgba(0, 21, 54, 0.76),
+                        rgba(0, 21, 54, 0.76)
+                    ),
+                    url("${articolo.immagine}")`;
+
+            }
+
+
+            const heroContainer =
+                document.createElement(
+                    "div"
+                );
+
+
+            heroContainer.className =
+                "articolo-hero-container";
+
+
+
+            /* CATEGORIA */
+
+            const categoria =
+                document.createElement(
+                    "span"
+                );
+
+
+            categoria.className =
+                "articolo-categoria";
+
+
+            categoria.textContent =
+                articolo.categoria
+                    ? articolo.categoria
+                    : "Vita parrocchiale";
+
+
+
+            /* TITOLO */
+
+            const titolo =
+                document.createElement(
+                    "h1"
+                );
+
+
+            titolo.textContent =
+                articolo.titolo
+                    ? articolo.titolo
+                    : "Notizia";
+
+
+
+            /* DATA */
+
+            const data =
+                document.createElement(
+                    "p"
+                );
+
+
+            data.className =
+                "articolo-data";
+
+
+            data.textContent =
+                formattaData(
+                    articolo.data
+                );
+
+
+
+            /* ASSEMBLA HERO */
+
+            heroContainer.appendChild(
+                categoria
+            );
+
+
+            heroContainer.appendChild(
+                titolo
+            );
+
+
+            heroContainer.appendChild(
+                data
+            );
+
+
+            hero.appendChild(
+                heroContainer
+            );
+
+
+
+            /* =================================================
+               CORPO ARTICOLO
+            ================================================= */
+
+            const corpo =
+                document.createElement(
+                    "section"
+                );
+
+
+            corpo.className =
+                "articolo-corpo";
+
+
+            const corpoContainer =
+                document.createElement(
+                    "div"
+                );
+
+
+            corpoContainer.className =
+                "articolo-container";
+
+
+
+            /* -------------------------------------------------
+               DESCRIZIONE
+            -------------------------------------------------- */
+
+            if (
+                articolo.descrizione
+            ) {
+
+                const descrizione =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                descrizione.className =
+                    "articolo-descrizione";
+
+
+                descrizione.textContent =
+                    articolo.descrizione;
+
+
+                corpoContainer.appendChild(
+                    descrizione
+                );
+
+            }
+
+
+
+            /* -------------------------------------------------
+               TESTO COMPLETO
+            -------------------------------------------------- */
+
+            const testo =
+                document.createElement(
+                    "div"
+                );
+
+
+            testo.className =
+                "articolo-testo";
+
+
+            testo.textContent =
+                articolo.contenuto
+                    ? articolo.contenuto
+                    : "";
+
+
+
+            corpoContainer.appendChild(
+                testo
+            );
+
+
+
+            /* -------------------------------------------------
+               TORNA ALLE NOTIZIE
+            -------------------------------------------------- */
+
+            const indietro =
+                document.createElement(
+                    "div"
+                );
+
+
+            indietro.className =
+                "articolo-indietro";
+
+
+            const linkIndietro =
+                document.createElement(
+                    "a"
+                );
+
+
+            linkIndietro.href =
+                "notizie.html";
+
+
+            linkIndietro.textContent =
+                "← Torna a tutte le notizie";
+
+
+            indietro.appendChild(
+                linkIndietro
+            );
+
+
+            corpoContainer.appendChild(
+                indietro
+            );
+
+
+
+            corpo.appendChild(
+                corpoContainer
+            );
+
+
+
+            /* =================================================
+               INSERISCI NELLA PAGINA
+            ================================================= */
+
+            contenitore.appendChild(
+                hero
+            );
+
+
+            contenitore.appendChild(
+                corpo
+            );
+
+
+
+            /* =================================================
+               CAMBIA TITOLO DELLA SCHEDA DEL BROWSER
+            ================================================= */
+
+            if (
+                articolo.titolo
+            ) {
+
+                document.title =
+                    articolo.titolo
+                    +
+                    " | Parrocchia Maria SS. del Rosario di Pompei";
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           FORMATTA DATA
+        ====================================================== */
+
+        function formattaData(
+            dataISO
+        ) {
+
+            if (!dataISO) {
+                return "";
+            }
+
+
+            const parti =
+                dataISO.split(
+                    "-"
+                );
+
+
+            if (
+                parti.length !== 3
+            ) {
+
+                return dataISO;
+
+            }
+
+
+            const data =
+                new Date(
+
+                    Number(
+                        parti[0]
+                    ),
+
+                    Number(
+                        parti[1]
+                    ) - 1,
+
+                    Number(
+                        parti[2]
+                    )
+
+                );
+
+
+            return data.toLocaleDateString(
+                "it-IT",
+                {
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           ERRORE
+        ====================================================== */
+
+        function mostraErrore(
+            messaggio
+        ) {
+
+            contenitore.innerHTML =
+                "";
+
+
+            const box =
+                document.createElement(
+                    "div"
+                );
+
+
+            box.className =
+                "articolo-errore";
+
+
+            const titolo =
+                document.createElement(
+                    "h1"
+                );
+
+
+            titolo.textContent =
+                "Notizia non disponibile";
+
+
+            const testo =
+                document.createElement(
+                    "p"
+                );
+
+
+            testo.textContent =
+                messaggio;
+
+
+            const link =
+                document.createElement(
+                    "a"
+                );
+
+
+            link.href =
+                "notizie.html";
+
+
+            link.textContent =
+                "← Torna alle notizie";
+
+
+            box.appendChild(
+                titolo
+            );
+
+
+            box.appendChild(
+                testo
+            );
+
+
+            box.appendChild(
+                link
+            );
+
+
+            contenitore.appendChild(
+                box
+            );
+
+        }
+
+
+
+        /* =====================================================
+           AVVIO
+        ====================================================== */
+
+        caricaArticolo();
+
+
+    </script>
+
+
+</body>
+
+</html>

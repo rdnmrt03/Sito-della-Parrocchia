@@ -24,6 +24,139 @@
         href="style.css"
     >
 
+
+<style>
+    .home-news-loading,
+    .home-news-empty {
+        grid-column: 1 / -1;
+        padding: 35px 20px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #737b85;
+    }
+
+    .home-news-small-image img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        display: block;
+        object-fit: cover;
+    }
+
+    .home-news-dynamic-placeholder {
+        width: 100%;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: #001536;
+        color: #ffffff;
+        text-align: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .home-news-dynamic-date {
+        display: block;
+        margin-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #8a9098;
+    }
+
+    .home-eventi-loading,
+    .home-eventi-empty {
+        padding: 28px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #737b85;
+    }
+
+
+    /* AVVISO PARROCCHIALE DINAMICO */
+    .home-avviso {
+        display: none;
+        background: #fff8e8;
+        border-top: 1px solid #ead8ad;
+        border-bottom: 1px solid #ead8ad;
+    }
+
+    .home-avviso.is-visible {
+        display: block;
+    }
+
+    .home-avviso-container {
+        width: 100%;
+        max-width: 1400px;
+        margin: auto;
+        padding: 24px 35px;
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .home-avviso-segno {
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        background: #001536;
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+    }
+
+    .home-avviso-contenuto {
+        min-width: 0;
+    }
+
+    .home-avviso-etichetta {
+        margin: 0 0 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        color: #9a7939;
+    }
+
+    .home-avviso-titolo {
+        margin: 0 0 6px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: #001536;
+    }
+
+    .home-avviso-testo {
+        margin: 0;
+        white-space: pre-line;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 1.65;
+        color: #505966;
+    }
+
+    @media (max-width: 700px) {
+        .home-avviso-container {
+            padding: 20px;
+        }
+
+        .home-avviso-segno {
+            width: 36px;
+            height: 36px;
+            font-size: 19px;
+        }
+
+        .home-avviso-titolo {
+            font-size: 20px;
+        }
+    }
+
+</style>
+
 </head>
 
 
@@ -45,9 +178,12 @@
 <section class="hero home-hero">
 
     <img
-        src="immagini/chiesa.jpg"
+        class="home-hero-slide is-active" src="immagini/chiesa.jpg"
         alt="Chiesa della Parrocchia Maria SS. del Rosario di Pompei"
     >
+
+    <img class="home-hero-slide" src="immagini/festa-madonna.jpg" alt="" aria-hidden="true">
+    <img class="home-hero-slide" src="immagini/gruppo-giovani.jpg" alt="" aria-hidden="true">
 
     <div class="hero-overlay home-hero-overlay">
 
@@ -106,6 +242,23 @@
 </section>
 
 
+
+
+<!-- =========================================================
+     AVVISO PARROCCHIALE - AUTOMATICO DA FIREBASE
+========================================================= -->
+
+<section class="home-avviso" id="homeAvviso" aria-live="polite">
+    <div class="home-avviso-container">
+        <div class="home-avviso-segno" aria-hidden="true">!</div>
+
+        <div class="home-avviso-contenuto">
+            <p class="home-avviso-etichetta">AVVISO PARROCCHIALE</p>
+            <h2 class="home-avviso-titolo" id="homeAvvisoTitolo"></h2>
+            <p class="home-avviso-testo" id="homeAvvisoTesto"></p>
+        </div>
+    </div>
+</section>
 
 <!-- =========================================================
      ACCESSI RAPIDI
@@ -322,164 +475,13 @@
 
 
 
-        <!-- NOTIZIA PRINCIPALE -->
+        <!-- ULTIME NOTIZIE AUTOMATICHE DA FIREBASE -->
 
-        <article class="home-news-featured">
+        <div class="home-news-grid" id="homeNewsGrid">
 
-            <a
-                href="articoli/festa-madonna.html"
-                class="home-news-featured-image"
-            >
-
-                <img
-                    src="immagini/festa-madonna.jpg"
-                    alt="Festa della Madonna"
-                >
-
-            </a>
-
-
-            <div class="home-news-featured-content">
-
-                <p class="pagina-etichetta">
-                    EVENTI · 20 SETTEMBRE 2026
-                </p>
-
-                <h3>
-
-                    <a href="articoli/festa-madonna.html">
-                        Festa della Madonna
-                    </a>
-
-                </h3>
-
-                <p>
-                    La nostra comunità si prepara
-                    a vivere insieme uno dei momenti
-                    più importanti dell'anno.
-
-                    Una giornata di fede,
-                    preghiera e fraternità.
-                </p>
-
-                <a
-                    href="articoli/festa-madonna.html"
-                    class="leggi-notizia"
-                >
-                    Leggi la notizia →
-                </a>
-
+            <div class="home-news-loading">
+                Caricamento delle ultime notizie...
             </div>
-
-        </article>
-
-
-
-        <!-- ALTRE NOTIZIE -->
-
-        <div class="home-news-grid">
-
-
-            <!-- GRUPPO GIOVANI -->
-
-            <article class="home-news-small">
-
-                <a
-                    href="notizie.html"
-                    class="home-news-small-image"
-                >
-
-                    <img
-                        src="immagini/gruppo-giovani.jpg"
-                        alt="Gruppo Giovani"
-                    >
-
-                </a>
-
-
-                <div class="home-news-small-content">
-
-                    <p class="pagina-etichetta">
-                        GRUPPO GIOVANI
-                    </p>
-
-                    <h3>
-
-                        <a href="notizie.html">
-                            Riprendono gli incontri
-                            del Gruppo Giovani
-                        </a>
-
-                    </h3>
-
-                    <p>
-                        Un nuovo anno di incontri,
-                        attività e momenti
-                        di condivisione.
-                    </p>
-
-                    <a
-                        href="notizie.html"
-                        class="leggi-notizia"
-                    >
-                        Scopri di più →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- CATECHISMO -->
-
-            <article class="home-news-small">
-
-                <a
-                    href="notizie.html"
-                    class="home-news-small-image"
-                >
-
-                    <img
-                        src="immagini/catechismo.jpg"
-                        alt="Catechismo"
-                    >
-
-                </a>
-
-
-                <div class="home-news-small-content">
-
-                    <p class="pagina-etichetta">
-                        CATECHISMO
-                    </p>
-
-                    <h3>
-
-                        <a href="notizie.html">
-                            Iscrizioni al nuovo
-                            anno catechistico
-                        </a>
-
-                    </h3>
-
-                    <p>
-                        Sono aperte le iscrizioni
-                        alle attività di catechismo
-                        della nostra Parrocchia.
-                    </p>
-
-                    <a
-                        href="notizie.html"
-                        class="leggi-notizia"
-                    >
-                        Scopri di più →
-                    </a>
-
-                </div>
-
-            </article>
-
 
         </div>
 
@@ -536,150 +538,13 @@
 
 
 
-        <!-- EVENTO 1 -->
+        <!-- PROSSIMI APPUNTAMENTI AUTOMATICI DA FIREBASE -->
 
-        <article class="home-evento">
-
-            <div class="home-evento-data">
-
-                <strong>27</strong>
-
-                <span>SET</span>
-
+        <div id="homeEventsList">
+            <div class="home-eventi-loading">
+                Caricamento dei prossimi appuntamenti...
             </div>
-
-            <div class="home-evento-contenuto">
-
-                <p class="home-evento-tipo">
-                    CELEBRAZIONE
-                </p>
-
-                <h3>
-                    Santa Messa della comunità
-                </h3>
-
-                <div class="home-evento-dettagli">
-
-                    <span>
-                        ◷ 11:00
-                    </span>
-
-                    <span>
-                        ⌖ Chiesa Parrocchiale
-                    </span>
-
-                </div>
-
-            </div>
-
-            <a
-                href="eventi.html"
-                class="home-evento-freccia"
-                aria-label="Scopri l'evento"
-            >
-                →
-            </a>
-
-        </article>
-
-
-
-        <!-- EVENTO 2 -->
-
-        <article class="home-evento">
-
-            <div class="home-evento-data">
-
-                <strong>03</strong>
-
-                <span>OTT</span>
-
-            </div>
-
-            <div class="home-evento-contenuto">
-
-                <p class="home-evento-tipo">
-                    GIOVANI
-                </p>
-
-                <h3>
-                    Rimpatriata Gruppo Giovani
-                </h3>
-
-                <div class="home-evento-dettagli">
-
-                    <span>
-                        ◷ 19:30
-                    </span>
-
-                    <span>
-                        ⌖ Locali parrocchiali
-                    </span>
-
-                </div>
-
-            </div>
-
-            <a
-                href="eventi.html"
-                class="home-evento-freccia"
-                aria-label="Scopri l'evento"
-            >
-                →
-            </a>
-
-        </article>
-
-
-
-        
-
-
-        <!-- EVENTO 4 -->
-
-        <article class="home-evento">
-
-            <div class="home-evento-data">
-
-                <strong>4</strong>
-
-                <span>OTT</span>
-
-            </div>
-
-            <div class="home-evento-contenuto">
-
-                <p class="home-evento-tipo">
-                    CELEBRAZIONE
-                </p>
-
-                <h3>
-                    Santa Messa della comunità
-                </h3>
-
-                <div class="home-evento-dettagli">
-
-                    <span>
-                        ◷ 11:00
-                    </span>
-
-                    <span>
-                        ⌖ Chiesa parrocchiale
-                    </span>
-
-                </div>
-
-            </div>
-
-            <a
-                href="eventi.html"
-                class="home-evento-freccia"
-                aria-label="Scopri l'evento"
-            >
-                →
-            </a>
-
-        </article>
+        </div>
 
 
         <div class="home-eventi-footer">
@@ -941,6 +806,506 @@
 
 <script src="script.js"></script>
 
+
+
+<!-- =========================================================
+     FIREBASE - ULTIME NOTIZIE HOME
+========================================================= -->
+
+<script type="module">
+
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+    import {
+        getFirestore,
+        collection,
+        doc,
+        getDoc,
+        getDocs,
+        query,
+        orderBy,
+        limit
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCBP7PNuG822H7puA50sriMa80G0vluKPo",
+        authDomain: "parrocchia-vm.firebaseapp.com",
+        projectId: "parrocchia-vm",
+        storageBucket: "parrocchia-vm.firebasestorage.app",
+        messagingSenderId: "25102143490",
+        appId: "1:25102143490:web:713f02e631b4ae2311171b"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const homeNewsGrid = document.getElementById("homeNewsGrid");
+
+
+    async function caricaUltimeNotizieHome() {
+
+        try {
+
+            const articoliQuery = query(
+                collection(db, "articoli"),
+                orderBy("data", "desc"),
+                limit(3)
+            );
+
+            const risultato = await getDocs(articoliQuery);
+
+            homeNewsGrid.innerHTML = "";
+
+            if (risultato.empty) {
+                homeNewsGrid.innerHTML = `
+                    <div class="home-news-empty">
+                        Al momento non ci sono notizie pubblicate.
+                    </div>
+                `;
+                return;
+            }
+
+            risultato.forEach((documento) => {
+
+                const articolo = documento.data();
+                const id = documento.id;
+
+                const card = document.createElement("article");
+                card.className = "home-news-small";
+
+                const linkImmagine = document.createElement("a");
+                linkImmagine.href = `articolo.html?id=${encodeURIComponent(id)}`;
+                linkImmagine.className = "home-news-small-image";
+
+                if (articolo.immagine) {
+
+                    const immagine = document.createElement("img");
+                    immagine.src = articolo.immagine;
+                    immagine.alt = articolo.titolo || "Immagine della notizia";
+                    immagine.loading = "lazy";
+
+                    linkImmagine.appendChild(immagine);
+
+                } else {
+
+                    const placeholder = document.createElement("div");
+                    placeholder.className = "home-news-dynamic-placeholder";
+                    placeholder.textContent =
+                        "Parrocchia Maria SS. del Rosario di Pompei";
+
+                    linkImmagine.appendChild(placeholder);
+
+                }
+
+                const contenuto = document.createElement("div");
+                contenuto.className = "home-news-small-content";
+
+                const categoria = document.createElement("p");
+                categoria.className = "pagina-etichetta";
+                categoria.textContent = articolo.categoria
+                    ? articolo.categoria.toUpperCase()
+                    : "VITA PARROCCHIALE";
+
+                const data = document.createElement("span");
+                data.className = "home-news-dynamic-date";
+                data.textContent = formattaData(articolo.data);
+
+                const titolo = document.createElement("h3");
+                const titoloLink = document.createElement("a");
+                titoloLink.href = `articolo.html?id=${encodeURIComponent(id)}`;
+                titoloLink.textContent = articolo.titolo || "Notizia";
+                titolo.appendChild(titoloLink);
+
+                const descrizione = document.createElement("p");
+                descrizione.textContent =
+                    articolo.descrizione || creaEstratto(articolo.contenuto);
+
+                const leggi = document.createElement("a");
+                leggi.href = `articolo.html?id=${encodeURIComponent(id)}`;
+                leggi.className = "leggi-notizia";
+                leggi.textContent = "Leggi la notizia →";
+
+                contenuto.appendChild(categoria);
+                contenuto.appendChild(data);
+                contenuto.appendChild(titolo);
+                contenuto.appendChild(descrizione);
+                contenuto.appendChild(leggi);
+
+                card.appendChild(linkImmagine);
+                card.appendChild(contenuto);
+
+                homeNewsGrid.appendChild(card);
+            });
+
+        } catch (errore) {
+
+            console.error(
+                "Errore caricamento notizie nella Home:",
+                errore
+            );
+
+            homeNewsGrid.innerHTML = `
+                <div class="home-news-empty">
+                    Non è stato possibile caricare le notizie in questo momento.
+                </div>
+            `;
+        }
+    }
+
+
+    function formattaData(dataISO) {
+
+        if (!dataISO) {
+            return "";
+        }
+
+        const parti = dataISO.split("-");
+
+        if (parti.length !== 3) {
+            return dataISO;
+        }
+
+        const data = new Date(
+            Number(parti[0]),
+            Number(parti[1]) - 1,
+            Number(parti[2])
+        );
+
+        return data.toLocaleDateString(
+            "it-IT",
+            {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
+    }
+
+
+    function creaEstratto(testo) {
+
+        if (!testo) {
+            return "Scopri tutte le informazioni nella notizia.";
+        }
+
+        const limite = 120;
+
+        if (testo.length <= limite) {
+            return testo;
+        }
+
+        return testo.substring(0, limite).trim() + "...";
+    }
+
+
+    async function caricaProssimiEventiHome() {
+
+        const contenitore = document.getElementById("homeEventsList");
+
+        if (!contenitore) {
+            return;
+        }
+
+        try {
+
+            const eventiQuery = query(
+                collection(db, "eventi"),
+                orderBy("data", "asc")
+            );
+
+            const risultato = await getDocs(eventiQuery);
+            const oggi = dataLocaleISO(new Date());
+            const eventiFuturi = [];
+
+            risultato.forEach((documento) => {
+                const evento = documento.data();
+
+                if (evento.pubblicato !== false && evento.data && evento.data >= oggi) {
+                    eventiFuturi.push({
+                        id: documento.id,
+                        ...evento
+                    });
+                }
+            });
+
+            eventiFuturi.sort((a, b) => {
+                const dataA = `${a.data || ""}T${a.ora || "00:00"}`;
+                const dataB = `${b.data || ""}T${b.ora || "00:00"}`;
+                return dataA.localeCompare(dataB);
+            });
+
+            const prossimi = eventiFuturi.slice(0, 3);
+            contenitore.innerHTML = "";
+
+            if (prossimi.length === 0) {
+                contenitore.innerHTML = `
+                    <div class="home-eventi-empty">
+                        Al momento non ci sono prossimi appuntamenti pubblicati.
+                    </div>
+                `;
+                return;
+            }
+
+            prossimi.forEach((evento) => {
+                contenitore.appendChild(creaEventoHome(evento));
+            });
+
+        } catch (errore) {
+
+            console.error(
+                "Errore caricamento eventi nella Home:",
+                errore
+            );
+
+            contenitore.innerHTML = `
+                <div class="home-eventi-empty">
+                    Non è stato possibile caricare gli appuntamenti in questo momento.
+                </div>
+            `;
+        }
+    }
+
+
+    function creaEventoHome(evento) {
+
+        const articolo = document.createElement("article");
+        articolo.className = "home-evento";
+
+        const dataBox = document.createElement("div");
+        dataBox.className = "home-evento-data";
+
+        const giorno = document.createElement("strong");
+        const mese = document.createElement("span");
+        const partiData = partiDataEvento(evento.data);
+
+        giorno.textContent = partiData.giorno;
+        mese.textContent = partiData.mese;
+
+        dataBox.appendChild(giorno);
+        dataBox.appendChild(mese);
+
+        const contenuto = document.createElement("div");
+        contenuto.className = "home-evento-contenuto";
+
+        const categoria = document.createElement("p");
+        categoria.className = "home-evento-tipo";
+        categoria.textContent = evento.categoria
+            ? evento.categoria.toUpperCase()
+            : "APPUNTAMENTO";
+
+        const titolo = document.createElement("h3");
+        titolo.textContent = evento.titolo || "Appuntamento parrocchiale";
+
+        const dettagli = document.createElement("div");
+        dettagli.className = "home-evento-dettagli";
+
+        if (evento.ora) {
+            const ora = document.createElement("span");
+            ora.textContent = `◷ ${evento.ora}`;
+            dettagli.appendChild(ora);
+        }
+
+        if (evento.luogo) {
+            const luogo = document.createElement("span");
+            luogo.textContent = `⌖ ${evento.luogo}`;
+            dettagli.appendChild(luogo);
+        }
+
+        contenuto.appendChild(categoria);
+        contenuto.appendChild(titolo);
+        contenuto.appendChild(dettagli);
+
+        const freccia = document.createElement("a");
+        freccia.href = "eventi.html";
+        freccia.className = "home-evento-freccia";
+        freccia.setAttribute("aria-label", "Scopri l'evento");
+        freccia.textContent = "→";
+
+        articolo.appendChild(dataBox);
+        articolo.appendChild(contenuto);
+        articolo.appendChild(freccia);
+
+        return articolo;
+    }
+
+
+    function partiDataEvento(dataISO) {
+
+        if (!dataISO) {
+            return {
+                giorno: "--",
+                mese: "---"
+            };
+        }
+
+        const parti = dataISO.split("-");
+        const data = new Date(
+            Number(parti[0]),
+            Number(parti[1]) - 1,
+            Number(parti[2])
+        );
+
+        return {
+            giorno: String(data.getDate()).padStart(2, "0"),
+            mese: data.toLocaleDateString("it-IT", { month: "short" })
+                .replace(".", "")
+                .toUpperCase()
+        };
+    }
+
+
+    function dataLocaleISO(data) {
+        const anno = data.getFullYear();
+        const mese = String(data.getMonth() + 1).padStart(2, "0");
+        const giorno = String(data.getDate()).padStart(2, "0");
+        return `${anno}-${mese}-${giorno}`;
+    }
+
+
+    async function caricaOrariMesseHome() {
+
+        try {
+            const snapshot = await getDoc(
+                doc(db, "impostazioni", "orariMesse")
+            );
+
+            if (!snapshot.exists()) {
+                return;
+            }
+
+            const dati = snapshot.data();
+            const cards = document.querySelectorAll(".griglia-messe .card-messa");
+
+            if (cards.length < 3) {
+                return;
+            }
+
+            aggiornaCardMessa(cards[0], dati.feriali, dati.ferialiNota);
+            aggiornaCardMessa(cards[1], dati.sabato, dati.sabatoNota);
+            aggiornaCardMessa(cards[2], dati.domenica, dati.domenicaNota);
+
+        } catch (errore) {
+            console.error("Errore caricamento orari Messe nella Home:", errore);
+            // In caso di errore restano visibili gli orari già presenti nell'HTML.
+        }
+    }
+
+
+    function aggiornaCardMessa(card, orari, nota) {
+
+        if (!card) {
+            return;
+        }
+
+        const elementoOrari = card.querySelector("strong");
+        const elementoNota = card.querySelector("p");
+
+        if (elementoOrari && typeof orari === "string" && orari.trim()) {
+            elementoOrari.innerHTML = "";
+
+            const righe = orari
+                .split(/\r?\n/)
+                .map(riga => riga.trim())
+                .filter(Boolean);
+
+            righe.forEach((riga, indice) => {
+                if (indice > 0) {
+                    elementoOrari.appendChild(document.createElement("br"));
+                }
+                elementoOrari.appendChild(document.createTextNode(riga));
+            });
+        }
+
+        if (elementoNota && typeof nota === "string") {
+            elementoNota.innerHTML = "";
+
+            const righeNota = nota.split(/\r?\n/);
+
+            righeNota.forEach((riga, indice) => {
+                if (indice > 0) {
+                    elementoNota.appendChild(document.createElement("br"));
+                }
+                elementoNota.appendChild(document.createTextNode(riga));
+            });
+        }
+    }
+
+
+
+    async function caricaAvvisoHome() {
+
+        const sezione = document.getElementById("homeAvviso");
+        const titolo = document.getElementById("homeAvvisoTitolo");
+        const testo = document.getElementById("homeAvvisoTesto");
+
+        if (!sezione || !titolo || !testo) {
+            return;
+        }
+
+        try {
+            const snapshot = await getDoc(
+                doc(db, "impostazioni", "avviso")
+            );
+
+            if (!snapshot.exists()) {
+                sezione.classList.remove("is-visible");
+                return;
+            }
+
+            const dati = snapshot.data();
+
+            const visibile =
+                dati.visibile === true ||
+                dati.attivo === true ||
+                dati.pubblicato === true;
+
+            const titoloAvviso =
+                typeof dati.titolo === "string"
+                    ? dati.titolo.trim()
+                    : "";
+
+            const testoAvviso =
+                typeof dati.testo === "string"
+                    ? dati.testo.trim()
+                    : (
+                        typeof dati.messaggio === "string"
+                            ? dati.messaggio.trim()
+                            : ""
+                    );
+
+            if (!visibile || (!titoloAvviso && !testoAvviso)) {
+                sezione.classList.remove("is-visible");
+                return;
+            }
+
+            titolo.textContent =
+                titoloAvviso || "Avviso parrocchiale";
+
+            testo.textContent = testoAvviso;
+
+            sezione.classList.add("is-visible");
+
+        } catch (errore) {
+            console.error(
+                "Errore caricamento avviso nella Home:",
+                errore
+            );
+
+            sezione.classList.remove("is-visible");
+        }
+    }
+
+
+    caricaUltimeNotizieHome();
+    caricaProssimiEventiHome();
+    caricaOrariMesseHome();
+    caricaAvvisoHome();
+
+</script>
 
 </body>
 

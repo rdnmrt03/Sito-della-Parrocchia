@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 
 <head>
@@ -15,18 +16,146 @@
         content="Notizie e aggiornamenti dalla Parrocchia Maria SS. del Rosario di Pompei."
     >
 
-    <title>Notizie | Parrocchia Maria SS. del Rosario di Pompei</title>
+    <title>
+        Notizie | Parrocchia Maria SS. del Rosario di Pompei
+    </title>
+
 
     <!-- CSS PRINCIPALE -->
+
     <link
         rel="stylesheet"
         href="style.css"
     >
 
+
+    <!-- =====================================================
+         STILE ARTICOLI DINAMICI
+    ====================================================== -->
+
+    <style>
+
+        /* Messaggio caricamento */
+
+        .notizie-caricamento {
+            grid-column: 1 / -1;
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 14px;
+
+            color: #737b85;
+        }
+
+
+        /* Messaggio errore */
+
+        .notizie-errore {
+            grid-column: 1 / -1;
+
+            padding: 30px;
+
+            background: #fff4f4;
+
+            border-left: 3px solid #a52a2a;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            color: #7a1d1d;
+        }
+
+
+        /* Data articolo */
+
+        .notizia-data-dinamica {
+            display: block;
+
+            margin-bottom: 13px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+
+            color: #8a9098;
+        }
+
+
+        /* Immagine reale degli articoli */
+
+        .notizia-card-immagine img {
+            width: 100%;
+            height: 100%;
+            min-height: 240px;
+            display: block;
+            object-fit: cover;
+        }
+
+
+        /* Immagine provvisoria per articoli senza foto */
+
+        .notizia-card-placeholder {
+            width: 100%;
+            height: 100%;
+
+            min-height: 240px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background: #001536;
+
+            text-align: center;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 26px;
+            line-height: 1.2;
+
+            color: white;
+        }
+
+
+        /* Pulsante articolo */
+
+        .notizia-link-dinamico {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            cursor: pointer;
+        }
+
+    </style>
+
 </head>
 
 
+
 <body>
+
 
 
     <!-- =====================================================
@@ -65,65 +194,6 @@
 
 
     <!-- =====================================================
-         NOTIZIA PRINCIPALE
-    ====================================================== -->
-
-    <section class="notizie-evidenza">
-
-        <div class="notizie-evidenza-container">
-
-
-            <!-- IMMAGINE -->
-
-            <div class="notizie-evidenza-immagine">
-
-                <img
-                    src="immagini/festa-madonna.jpg"
-                    alt="Festa della Madonna"
-                >
-
-            </div>
-
-
-            <!-- TESTO -->
-
-            <div class="notizie-evidenza-testo">
-
-                <p class="pagina-etichetta">
-                    IN EVIDENZA
-                </p>
-
-                <h2>
-                    Festa della Madonna
-                </h2>
-
-                <p class="data-notizia">
-                    Vita parrocchiale
-                </p>
-
-                <p>
-                    Un momento di fede, preghiera e
-                    condivisione per tutta la comunità.
-                    Scopri il programma e tutte le
-                    informazioni dedicate alla celebrazione.
-                </p>
-
-                <a
-                    href="articoli/festa-madonna.html"
-                    class="pulsante"
-                >
-                    Leggi la notizia →
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
          ULTIME NOTIZIE
     ====================================================== -->
 
@@ -153,190 +223,20 @@
 
 
             <!-- =================================================
-                 GRIGLIA NOTIZIE
+                 GRIGLIA AUTOMATICA FIRESTORE
             ================================================== -->
 
-            <div class="notizie-grid">
-
-
-
-                <!-- =============================================
-                     NOTIZIA 1
-                ============================================== -->
-
-                <article class="notizia-card">
-
-
-                    <div class="notizia-card-immagine">
-
-                        <img
-                            src="immagini/gruppo-giovani.jpg"
-                            alt="Gruppo Giovani"
-                        >
-
-                    </div>
-
-
-                    <div class="notizia-card-contenuto">
-
-                        <span class="notizia-categoria">
-                            GRUPPO GIOVANI
-                        </span>
-
-                        <h3>
-                            Ripartono gli incontri
-                            del Gruppo Giovani
-                        </h3>
-
-                        <p>
-                            Un nuovo percorso di amicizia,
-                            formazione e servizio per
-                            i giovani della nostra comunità.
-                        </p>
-
-                        <a href="gruppi.html#giovani">
-                            Scopri di più →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =============================================
-                     NOTIZIA 2
-                ============================================== -->
-
-                <article class="notizia-card">
-
-
-                    <div class="notizia-card-immagine">
-
-                        <img
-                            src="immagini/azione-cattolica.jpg"
-                            alt="Azione Cattolica"
-                        >
-
-                    </div>
-
-
-                    <div class="notizia-card-contenuto">
-
-                        <span class="notizia-categoria">
-                            AZIONE CATTOLICA
-                        </span>
-
-                        <h3>
-                            Un nuovo anno associativo
-                        </h3>
-
-                        <p>
-                            Occasioni di incontro,
-                            formazione, partecipazione
-                            e servizio nella vita
-                            della nostra comunità.
-                        </p>
-
-                        <a href="gruppi.html#ac">
-                            Scopri di più →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =============================================
-                     NOTIZIA 3
-                ============================================== -->
-
-                <article class="notizia-card">
-
-
-                    <div class="notizia-card-immagine">
-
-                        <img
-                            src="immagini/catechismo.jpg"
-                            alt="Catechismo"
-                        >
-
-                    </div>
-
-
-                    <div class="notizia-card-contenuto">
-
-                        <span class="notizia-categoria">
-                            CATECHISMO
-                        </span>
-
-                        <h3>
-                            Il cammino dei più piccoli
-                        </h3>
-
-                        <p>
-                            La comunità accompagna
-                            bambini e famiglie nel
-                            percorso di crescita
-                            nella fede.
-                        </p>
-
-                        <a href="gruppi.html#catechismo">
-                            Scopri di più →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =============================================
-                     NOTIZIA 4
-                ============================================== -->
-
-                <article class="notizia-card">
-
-
-                    <div class="notizia-card-immagine">
-
-                        <img
-                            src="immagini/coro.jpg"
-                            alt="Coro Parrocchiale"
-                        >
-
-                    </div>
-
-
-                    <div class="notizia-card-contenuto">
-
-                        <span class="notizia-categoria">
-                            CORO PARROCCHIALE
-                        </span>
-
-                        <h3>
-                            La musica al servizio
-                            della liturgia
-                        </h3>
-
-                        <p>
-                            Il coro accompagna
-                            le celebrazioni e i momenti
-                            più importanti della vita
-                            della comunità.
-                        </p>
-
-                        <a href="gruppi.html#coro">
-                            Scopri di più →
-                        </a>
-
-                    </div>
-
-                </article>
-
+            <div
+                class="notizie-grid"
+                id="notizieGrid"
+            >
+
+                <div class="notizie-caricamento">
+                    Caricamento delle notizie...
+                </div>
 
             </div>
+
 
         </div>
 
@@ -388,10 +288,577 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT
+         JAVASCRIPT PRINCIPALE
     ====================================================== -->
 
     <script src="script.js"></script>
+
+
+
+    <!-- =====================================================
+         FIREBASE - LETTURA NOTIZIE
+    ====================================================== -->
+
+    <script type="module">
+
+
+        /* =====================================================
+           IMPORT FIREBASE
+        ====================================================== */
+
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+        import {
+            getFirestore,
+            collection,
+            getDocs,
+            query,
+            orderBy
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+
+        /* =====================================================
+           CONFIGURAZIONE FIREBASE
+        ====================================================== */
+
+        const firebaseConfig = {
+
+            apiKey:
+                "AIzaSyCBP7PNuG822H7puA50sriMa80G0vluKPo",
+
+            authDomain:
+                "parrocchia-vm.firebaseapp.com",
+
+            projectId:
+                "parrocchia-vm",
+
+            storageBucket:
+                "parrocchia-vm.firebasestorage.app",
+
+            messagingSenderId:
+                "25102143490",
+
+            appId:
+                "1:25102143490:web:713f02e631b4ae2311171b"
+
+        };
+
+
+
+        /* =====================================================
+           AVVIO FIREBASE
+        ====================================================== */
+
+        const app =
+            initializeApp(
+                firebaseConfig
+            );
+
+
+        const db =
+            getFirestore(
+                app
+            );
+
+
+
+        /* =====================================================
+           ELEMENTO GRIGLIA
+        ====================================================== */
+
+        const notizieGrid =
+            document.getElementById(
+                "notizieGrid"
+            );
+
+
+
+        /* =====================================================
+           CARICA ARTICOLI
+        ====================================================== */
+
+        async function caricaArticoli() {
+
+            try {
+
+
+                /* ---------------------------------------------
+                   QUERY FIRESTORE
+
+                   Gli articoli vengono ordinati
+                   dal più recente al più vecchio.
+                ---------------------------------------------- */
+
+                const articoliQuery =
+                    query(
+
+                        collection(
+                            db,
+                            "articoli"
+                        ),
+
+                        orderBy(
+                            "data",
+                            "desc"
+                        )
+
+                    );
+
+
+                const risultato =
+                    await getDocs(
+                        articoliQuery
+                    );
+
+
+
+                /* ---------------------------------------------
+                   PULISCI IL MESSAGGIO "CARICAMENTO"
+                ---------------------------------------------- */
+
+                notizieGrid.innerHTML =
+                    "";
+
+
+
+                /* ---------------------------------------------
+                   NESSUN ARTICOLO
+                ---------------------------------------------- */
+
+                if (
+                    risultato.empty
+                ) {
+
+                    notizieGrid.innerHTML =
+                        `
+                        <div class="notizie-caricamento">
+                            Al momento non ci sono notizie pubblicate.
+                        </div>
+                        `;
+
+                    return;
+
+                }
+
+
+
+                /* ---------------------------------------------
+                   CREA LE CARD
+                ---------------------------------------------- */
+
+                risultato.forEach(
+                    function (
+                        documento
+                    ) {
+
+                        const articolo =
+                            documento.data();
+
+
+                        const id =
+                            documento.id;
+
+
+                        creaCardArticolo(
+                            articolo,
+                            id
+                        );
+
+                    }
+                );
+
+
+            } catch (
+                errore
+            ) {
+
+                console.error(
+                    "Errore caricamento articoli:",
+                    errore
+                );
+
+
+                notizieGrid.innerHTML =
+                    `
+                    <div class="notizie-errore">
+                        Non è stato possibile caricare
+                        le notizie in questo momento.
+                    </div>
+                    `;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CREA CARD ARTICOLO
+        ====================================================== */
+
+        function creaCardArticolo(
+            articolo,
+            id
+        ) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "notizia-card";
+
+
+
+            /* -------------------------------------------------
+               IMMAGINE CLOUDINARY
+            -------------------------------------------------- */
+
+            const contenitoreImmagine =
+                document.createElement(
+                    "div"
+                );
+
+
+            contenitoreImmagine.className =
+                "notizia-card-immagine";
+
+
+            if (
+                articolo.immagine
+            ) {
+
+                const immagine =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                immagine.src =
+                    articolo.immagine;
+
+
+                immagine.alt =
+                    articolo.titolo
+                        ? articolo.titolo
+                        : "Immagine della notizia";
+
+
+                immagine.loading =
+                    "lazy";
+
+
+                contenitoreImmagine.appendChild(
+                    immagine
+                );
+
+            } else {
+
+                const placeholder =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                placeholder.className =
+                    "notizia-card-placeholder";
+
+
+                placeholder.textContent =
+                    "Parrocchia Maria SS. del Rosario di Pompei";
+
+
+                contenitoreImmagine.appendChild(
+                    placeholder
+                );
+
+            }
+
+
+
+            /* -------------------------------------------------
+               CONTENUTO
+            -------------------------------------------------- */
+
+            const contenuto =
+                document.createElement(
+                    "div"
+                );
+
+
+            contenuto.className =
+                "notizia-card-contenuto";
+
+
+
+            /* CATEGORIA */
+
+            const categoria =
+                document.createElement(
+                    "span"
+                );
+
+
+            categoria.className =
+                "notizia-categoria";
+
+
+            categoria.textContent =
+                articolo.categoria
+                    ? articolo.categoria.toUpperCase()
+                    : "VITA PARROCCHIALE";
+
+
+
+            /* DATA */
+
+            const data =
+                document.createElement(
+                    "span"
+                );
+
+
+            data.className =
+                "notizia-data-dinamica";
+
+
+            data.textContent =
+                formattaData(
+                    articolo.data
+                );
+
+
+
+            /* TITOLO */
+
+            const titolo =
+                document.createElement(
+                    "h3"
+                );
+
+
+            titolo.textContent =
+                articolo.titolo
+                    ? articolo.titolo
+                    : "Notizia";
+
+
+
+            /* DESCRIZIONE */
+
+            const descrizione =
+                document.createElement(
+                    "p"
+                );
+
+
+            if (
+                articolo.descrizione
+            ) {
+
+                descrizione.textContent =
+                    articolo.descrizione;
+
+            } else {
+
+                descrizione.textContent =
+                    creaEstratto(
+                        articolo.contenuto
+                    );
+
+            }
+
+
+
+            /* LINK */
+
+            const link =
+                document.createElement(
+                    "a"
+                );
+
+
+            link.href =
+                `articolo.html?id=${encodeURIComponent(id)}`;
+
+
+            link.className =
+                "notizia-link-dinamico";
+
+
+            link.textContent =
+                "Leggi la notizia →";
+
+
+
+            /* -------------------------------------------------
+               ASSEMBLAGGIO
+            -------------------------------------------------- */
+
+            contenuto.appendChild(
+                categoria
+            );
+
+
+            contenuto.appendChild(
+                data
+            );
+
+
+            contenuto.appendChild(
+                titolo
+            );
+
+
+            contenuto.appendChild(
+                descrizione
+            );
+
+
+            contenuto.appendChild(
+                link
+            );
+
+
+            card.appendChild(
+                contenitoreImmagine
+            );
+
+
+            card.appendChild(
+                contenuto
+            );
+
+
+            notizieGrid.appendChild(
+                card
+            );
+
+        }
+
+
+
+        /* =====================================================
+           FORMATTA DATA
+        ====================================================== */
+
+        function formattaData(
+            dataISO
+        ) {
+
+            if (!dataISO) {
+                return "";
+            }
+
+
+            const parti =
+                dataISO.split(
+                    "-"
+                );
+
+
+            if (
+                parti.length !== 3
+            ) {
+
+                return dataISO;
+
+            }
+
+
+            const data =
+                new Date(
+
+                    Number(
+                        parti[0]
+                    ),
+
+                    Number(
+                        parti[1]
+                    ) - 1,
+
+                    Number(
+                        parti[2]
+                    )
+
+                );
+
+
+            return data.toLocaleDateString(
+                "it-IT",
+                {
+
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           CREA ESTRATTO AUTOMATICO
+        ====================================================== */
+
+        function creaEstratto(
+            testo
+        ) {
+
+            if (!testo) {
+
+                return "Scopri tutte le informazioni nella notizia.";
+
+            }
+
+
+            const limite =
+                150;
+
+
+            if (
+                testo.length <= limite
+            ) {
+
+                return testo;
+
+            }
+
+
+            return (
+                testo.substring(
+                    0,
+                    limite
+                ).trim()
+                +
+                "..."
+            );
+
+        }
+
+
+
+        /* =====================================================
+           AVVIO
+        ====================================================== */
+
+        caricaArticoli();
+
+
+    </script>
 
 
 </body>

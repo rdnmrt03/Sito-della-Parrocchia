@@ -16,7 +16,7 @@
     >
 
     <title>
-        Amministrazione | Parrocchia Maria SS. del Rosario di Pompei
+        Gestione articoli | Parrocchia Maria SS. del Rosario di Pompei
     </title>
 
     <link
@@ -24,835 +24,2843 @@
         href="style.css"
     >
 
+
+    <style>
+
+        /* =====================================================
+           GENERALE
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f6f8;
+        }
+
+
+        /* =====================================================
+           LOGIN
+        ====================================================== */
+
+        .login-screen {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #001536 0%,
+                    #08254d 100%
+                );
+        }
+
+
+        .login-card {
+            width: 100%;
+            max-width: 460px;
+
+            padding: 50px 45px;
+
+            background: white;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.25);
+        }
+
+
+        .login-logo {
+            width: 75px;
+            height: 75px;
+
+            display: block;
+
+            margin: 0 auto 25px;
+
+            object-fit: contain;
+        }
+
+
+        .login-eyebrow {
+            margin: 0 0 12px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2.5px;
+
+            color: #b99a5b;
+        }
+
+
+        .login-card h1 {
+            margin: 0;
+
+            text-align: center;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 38px;
+            font-weight: 400;
+
+            color: #001536;
+        }
+
+
+        .login-description {
+            margin: 17px 0 35px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            color: #69717d;
+        }
+
+
+        .login-field {
+            margin-bottom: 20px;
+        }
+
+
+        .login-field label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: .7px;
+
+            color: #001536;
+        }
+
+
+        .login-field input {
+            width: 100%;
+
+            padding: 15px;
+
+            border: 1px solid #d9dde2;
+
+            outline: none;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 15px;
+
+            color: #27303b;
+
+            transition:
+                border .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .login-field input:focus {
+            border-color: #001536;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(0,21,54,.06);
+        }
+
+
+        .login-button {
+            width: 100%;
+            min-height: 54px;
+
+            margin-top: 10px;
+
+            border: 0;
+
+            background: #001536;
+            color: white;
+
+            cursor: pointer;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transition:
+                background .2s ease,
+                transform .2s ease;
+        }
+
+
+        .login-button:hover {
+            background: #173c6b;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .login-button:disabled {
+            opacity: .55;
+            cursor: wait;
+            transform: none;
+        }
+
+
+        .login-error {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 13px 15px;
+
+            background: #fff3f3;
+
+            border-left:
+                3px solid #a52a2a;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 12px;
+            line-height: 1.6;
+
+            color: #7a1d1d;
+        }
+
+
+        .login-back {
+            display: block;
+
+            margin-top: 27px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            color: #001536;
+
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           AREA ADMIN
+        ====================================================== */
+
+        .admin-area {
+            display: none;
+        }
+
+
+        /* =====================================================
+           BARRA SUPERIORE
+        ====================================================== */
+
+        .admin-header {
+            background: #001536;
+            color: white;
+
+            padding: 22px 35px;
+        }
+
+
+        .admin-header-container {
+            width: 100%;
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .admin-brand {
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+        }
+
+
+        .admin-brand img {
+            width: 55px;
+            height: 55px;
+
+            object-fit: contain;
+        }
+
+
+        .admin-brand-text small {
+            display: block;
+
+            margin-bottom: 4px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 9px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #d8c49b;
+        }
+
+
+        .admin-brand-text strong {
+            display: block;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+
+        .admin-header-actions {
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        .admin-torna {
+            color: white;
+
+            text-decoration: none;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            padding-bottom: 5px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.5);
+        }
+
+
+        .logout-button {
+            padding: 11px 16px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.35);
+
+            background: transparent;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        .logout-button:hover {
+            background: white;
+            color: #001536;
+        }
+
+
+        /* =====================================================
+           CONTENITORE
+        ====================================================== */
+
+        .admin-main {
+            width: 100%;
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding:
+                70px 35px
+                100px;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ====================================================== */
+
+        .admin-intro {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            gap: 40px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .admin-eyebrow {
+            margin:
+                0 0 13px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing:
+                2.5px;
+
+            color: #b99a5b;
+        }
+
+
+        .admin-intro h1 {
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    42px,
+                    5vw,
+                    65px
+                );
+
+            font-weight: 400;
+
+            letter-spacing:
+                -2px;
+
+            color: #001536;
+        }
+
+
+        .admin-intro-descrizione {
+            max-width: 420px;
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 15px;
+            line-height: 1.7;
+
+            color: #69717d;
+        }
+
+
+        /* =====================================================
+           LAYOUT
+        ====================================================== */
+
+        .admin-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                340px;
+
+            gap: 30px;
+
+            align-items:
+                start;
+        }
+
+
+        /* =====================================================
+           PANNELLO
+        ====================================================== */
+
+        .admin-panel {
+            background: white;
+
+            border:
+                1px solid
+                #e4e7eb;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,21,54,.05);
+        }
+
+
+        .admin-panel-header {
+            padding: 25px 30px;
+
+            border-bottom:
+                1px solid
+                #e4e7eb;
+        }
+
+
+        .admin-panel-header span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 9px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #b99a5b;
+        }
+
+
+        .admin-panel-header h2 {
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 27px;
+            font-weight: 400;
+
+            color: #001536;
+        }
+
+
+        /* =====================================================
+           FORM
+        ====================================================== */
+
+        .admin-form {
+            padding: 30px;
+        }
+
+
+        .admin-field {
+            margin-bottom: 25px;
+        }
+
+
+        .admin-field label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: .6px;
+
+            color: #001536;
+        }
+
+
+        .admin-field input,
+        .admin-field select,
+        .admin-field textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border:
+                1px solid
+                #d9dde2;
+
+            background: white;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 15px;
+
+            color: #27303b;
+
+            outline: none;
+        }
+
+
+        .admin-field input:focus,
+        .admin-field select:focus,
+        .admin-field textarea:focus {
+            border-color:
+                #001536;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(0,21,54,.06);
+        }
+
+
+        .admin-field textarea {
+            min-height: 330px;
+
+            resize: vertical;
+
+            line-height: 1.7;
+        }
+
+
+        .admin-field-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        /* =====================================================
+           FOTO
+        ====================================================== */
+
+        .admin-file-box {
+            border:
+                1px dashed
+                #b9c0c9;
+
+            background:
+                #fafafa;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .admin-file-box input {
+            border: 0;
+            padding: 0;
+
+            background:
+                transparent;
+        }
+
+
+        .admin-file-box p {
+            margin:
+                15px 0 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 12px;
+
+            color: #7b838d;
+        }
+
+
+        .admin-image-preview {
+            display: none;
+
+            width: 100%;
+            max-height: 320px;
+
+            margin-top: 20px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           PULSANTI
+        ====================================================== */
+
+        .admin-actions {
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                flex-end;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid
+                #e4e7eb;
+        }
+
+
+        .admin-button {
+            min-height: 50px;
+
+            padding:
+                0 23px;
+
+            border: 0;
+
+            cursor: pointer;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: .6px;
+        }
+
+
+        .admin-button-secondary {
+            background: #eef0f3;
+            color: #001536;
+        }
+
+
+        .admin-button-primary {
+            background: #001536;
+            color: white;
+        }
+
+
+        .admin-button-primary:hover {
+            background: #173c6b;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        .admin-sidebar {
+            display: grid;
+
+            gap: 25px;
+        }
+
+
+        .admin-sidebar-box {
+            padding: 27px;
+
+            background: white;
+
+            border:
+                1px solid
+                #e4e7eb;
+        }
+
+
+        .admin-sidebar-box h3 {
+            margin:
+                0 0 15px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 22px;
+            font-weight: 400;
+
+            color: #001536;
+        }
+
+
+        .admin-sidebar-box p {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 13px;
+            line-height: 1.7;
+
+            color: #6a727d;
+        }
+
+
+        .admin-status {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .admin-status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #b99a5b;
+        }
+
+
+        .admin-status strong {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 12px;
+
+            color: #001536;
+        }
+
+
+        /* =====================================================
+           CONTATORE
+        ====================================================== */
+
+        .admin-counter {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-top: 15px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                #e7e9ec;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+
+            color: #858c95;
+        }
+
+
+        /* =====================================================
+           MESSAGGIO
+        ====================================================== */
+
+        .admin-message {
+            display: none;
+
+            margin-top: 20px;
+
+            padding:
+                15px 18px;
+
+            background:
+                #f5f2e9;
+
+            border-left:
+                3px solid
+                #b99a5b;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            color: #001536;
+        }
+
+
+        /* =====================================================
+           ANTEPRIMA
+        ====================================================== */
+
+        .admin-preview {
+            display: none;
+
+            margin-top: 30px;
+
+            background: white;
+
+            border:
+                1px solid
+                #e4e7eb;
+        }
+
+
+        .admin-preview-image {
+            display: none;
+
+            width: 100%;
+            height: 380px;
+
+            object-fit: cover;
+        }
+
+
+        .admin-preview-content {
+            max-width: 800px;
+
+            margin: auto;
+
+            padding:
+                55px 40px;
+        }
+
+
+        .admin-preview-category {
+            margin:
+                0 0 15px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #b99a5b;
+        }
+
+
+        .admin-preview h2 {
+            margin:
+                0 0 20px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    55px
+                );
+
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            color: #001536;
+        }
+
+
+        .admin-preview-date {
+            margin-bottom: 30px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 12px;
+
+            color: #89909a;
+        }
+
+
+        .admin-preview-text {
+            white-space:
+                pre-line;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 17px;
+            line-height: 1.9;
+
+            color: #4f5864;
+        }
+
+
+
+        /* =====================================================
+           DASHBOARD E NAVIGAZIONE ADMIN
+        ====================================================== */
+
+        .admin-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e4e7eb;
+        }
+
+        .admin-nav-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 35px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+
+        .admin-nav-button {
+            padding: 18px 15px 15px;
+            border: 0;
+            border-bottom: 3px solid transparent;
+            background: transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            color: #69717d;
+        }
+
+        .admin-nav-button:hover,
+        .admin-nav-button.active {
+            color: #001536;
+            border-bottom-color: #b99a5b;
+        }
+
+        .admin-view {
+            display: none;
+        }
+
+        .admin-view.active {
+            display: block;
+        }
+
+        .dashboard-main {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 70px 35px 100px;
+        }
+
+        .dashboard-intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        .dashboard-intro h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 65px);
+            font-weight: 400;
+            letter-spacing: -2px;
+            color: #001536;
+        }
+
+        .dashboard-description {
+            max-width: 460px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #69717d;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .dashboard-card {
+            min-height: 285px;
+            padding: 38px;
+            background: #ffffff;
+            border: 1px solid #e4e7eb;
+            box-shadow: 0 15px 50px rgba(0,21,54,.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dashboard-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            background: #001536;
+            color: #ffffff;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+        }
+
+        .dashboard-card h2 {
+            margin: 28px 0 12px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 31px;
+            font-weight: 400;
+            color: #001536;
+        }
+
+        .dashboard-card p {
+            margin: 0 0 28px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            line-height: 1.75;
+            color: #69717d;
+        }
+
+        .dashboard-action {
+            align-self: flex-start;
+            padding: 0 0 5px;
+            border: 0;
+            border-bottom: 1px solid #001536;
+            background: transparent;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .7px;
+            color: #001536;
+        }
+
+        /* DASHBOARD RINNOVATA */
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .dashboard-stat {
+            padding: 25px;
+            background: #ffffff;
+            border: 1px solid #e4e7eb;
+            box-shadow: 0 12px 35px rgba(0,21,54,.04);
+        }
+
+        .dashboard-stat-label {
+            display: block;
+            margin-bottom: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.15px;
+            white-space: nowrap;
+            color: #8a9098;
+        }
+
+        .dashboard-stat strong {
+            display: block;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(20px, 2vw, 30px);
+            line-height: 1.08;
+            font-weight: 400;
+            color: #001536;
+        }
+
+        #dashboardNoticeStatus,
+        #dashboardMassStatus {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(15px, 1.35vw, 20px);
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .dashboard-stat small {
+            display: block;
+            margin-top: 7px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #8a9098;
+        }
+
+        .dashboard-section-title {
+            margin: 38px 0 18px;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .dashboard-section-title h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #001536;
+        }
+
+        .dashboard-section-title span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #b99a5b;
+        }
+
+        .dashboard-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .dashboard-card {
+            min-height: 250px;
+            padding: 28px;
+        }
+
+        .dashboard-card h2 {
+            margin-top: 22px;
+            font-size: 25px;
+        }
+
+        .dashboard-card p {
+            margin-bottom: 22px;
+        }
+
+        .dashboard-icon {
+            width: 48px;
+            height: 48px;
+            font-size: 25px;
+        }
+
+        .dashboard-footer-card {
+            margin-top: 28px;
+            padding: 24px 28px;
+            background: #001536;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .dashboard-footer-card strong {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+        .dashboard-footer-card span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,.7);
+        }
+
+        #manageView .admin-main {
+            padding-top: 55px;
+        }
+
+        #manageMount .gestione-articoli {
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 700px) {
+            .admin-nav-container {
+                padding: 0 12px;
+            }
+
+            .dashboard-main {
+                padding: 50px 20px 80px;
+            }
+
+            .dashboard-intro {
+                display: block;
+            }
+
+            .dashboard-description {
+                margin-top: 20px;
+            }
+
+            .dashboard-stats,
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-footer-card {
+                display: block;
+            }
+
+            .dashboard-footer-card span {
+                display: block;
+                margin-top: 8px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 950px) {
+
+            .admin-layout {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .admin-sidebar {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .login-card {
+                padding:
+                    40px 25px;
+            }
+
+            .admin-header {
+                padding:
+                    18px 20px;
+            }
+
+            .admin-header-container {
+                align-items:
+                    flex-start;
+            }
+
+            .admin-brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .admin-brand-text strong {
+                font-size: 14px;
+            }
+
+            .admin-header-actions {
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-end;
+
+                gap: 10px;
+            }
+
+            .admin-main {
+                padding:
+                    50px 20px
+                    80px;
+            }
+
+            .admin-intro {
+                display: block;
+            }
+
+            .admin-intro-descrizione {
+                margin-top: 20px;
+            }
+
+            .admin-field-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .admin-sidebar {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .admin-form {
+                padding: 22px;
+            }
+
+            .admin-actions {
+                flex-direction:
+                    column;
+            }
+
+            .admin-button {
+                width: 100%;
+            }
+
+            .admin-preview-content {
+                padding:
+                    35px 22px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
-<body class="admin-body">
+<body>
 
 
 <!-- =========================================================
-     HEADER ADMIN
+     LOGIN
 ========================================================= -->
 
-<header class="admin-header">
+<section
+    class="login-screen"
+    id="loginScreen"
+>
 
-    <div class="admin-header-container">
+    <div class="login-card">
+
+        <img
+            src="immagini/logo.png"
+            alt="Logo Parrocchia"
+            class="login-logo"
+        >
+
+        <p class="login-eyebrow">
+            AREA RISERVATA
+        </p>
+
+        <h1>
+            Accedi
+        </h1>
+
+        <p class="login-description">
+            Accedi con le credenziali
+            dell'amministratore per gestire
+            e pubblicare gli articoli
+            della Parrocchia.
+        </p>
+
+
+        <form id="loginForm">
+
+
+            <div class="login-field">
+
+                <label for="loginEmail">
+                    EMAIL
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="login-field">
+
+                <label for="loginPassword">
+                    PASSWORD
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+                ACCEDI
+            </button>
+
+
+            <div
+                class="login-error"
+                id="loginError"
+            ></div>
+
+
+        </form>
 
 
         <a
             href="index.html"
-            class="admin-brand"
+            class="login-back"
         >
-
-            <img
-                src="immagini/logo.png"
-                alt="Logo Parrocchia Maria SS. del Rosario di Pompei"
-            >
-
-
-            <div>
-
-                <span>
-                    Parrocchia Maria SS. del Rosario di Pompei
-                </span>
-
-                <strong>
-                    Amministrazione
-                </strong>
-
-            </div>
-
+            ← Torna al sito
         </a>
-
-
-        <div class="admin-header-destra">
-
-            <a
-                href="index.html"
-                class="admin-vedi-sito"
-            >
-                Vedi il sito →
-            </a>
-
-
-            <div class="admin-utente">
-
-                <span class="admin-avatar">
-                    A
-                </span>
-
-                <div>
-
-                    <small>
-                        ACCESSO COME
-                    </small>
-
-                    <strong>
-                        Amministratore
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 
-</header>
+</section>
 
 
 
 <!-- =========================================================
-     LAYOUT ADMIN
+     AREA AMMINISTRAZIONE
 ========================================================= -->
 
-<div class="admin-layout">
+<div
+    class="admin-area"
+    id="adminArea"
+>
 
 
     <!-- =====================================================
-         SIDEBAR
+         HEADER
     ====================================================== -->
 
-    <aside class="admin-sidebar">
+    <header class="admin-header">
+
+        <div class="admin-header-container">
 
 
-        <nav class="admin-nav">
+            <div class="admin-brand">
+
+                <img
+                    src="immagini/logo.png"
+                    alt="Logo Parrocchia"
+                >
+
+                <div class="admin-brand-text">
+
+                    <small>
+                        AREA RISERVATA
+                    </small>
+
+                    <strong>
+                        Parrocchia Maria SS.
+                        del Rosario di Pompei
+                    </strong>
+
+                </div>
+
+            </div>
 
 
-            <button
-                class="admin-nav-link attivo"
-                type="button"
-                data-admin-section="dashboard"
-            >
+            <div class="admin-header-actions">
 
-                <span>
-                    ▦
-                </span>
+                <a
+                    href="index.html"
+                    class="admin-torna"
+                >
+                    ← Torna al sito
+                </a>
 
-                Dashboard
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    ESCI
+                </button>
 
-            </button>
+            </div>
 
-
-
-            <button
-                class="admin-nav-link"
-                type="button"
-                data-admin-section="articoli"
-            >
-
-                <span>
-                    ✎
-                </span>
-
-                Articoli
-
-            </button>
-
-
-
-            <button
-                class="admin-nav-link"
-                type="button"
-                id="nuovoArticoloSidebar"
-            >
-
-                <span>
-                    ＋
-                </span>
-
-                Nuovo articolo
-
-            </button>
-
-
-
-            <div class="admin-nav-separatore"></div>
-
-
-            <a
-                href="notizie.html"
-                class="admin-nav-link"
-            >
-
-                <span>
-                    ◉
-                </span>
-
-                Visualizza notizie
-
-            </a>
-
-
-            <a
-                href="index.html"
-                class="admin-nav-link"
-            >
-
-                <span>
-                    ↗
-                </span>
-
-                Torna al sito
-
-            </a>
-
-
-        </nav>
-
-
-        <div class="admin-sidebar-footer">
-
-            <p>
-                AREA RISERVATA
-            </p>
-
-            <small>
-
-                In seguito collegheremo
-                questa area a un sistema
-                di autenticazione sicuro.
-
-            </small>
 
         </div>
 
-    </aside>
+    </header>
 
+    <nav class="admin-nav">
+        <div class="admin-nav-container">
+            <button type="button" class="admin-nav-button active" data-view="dashboard">
+                DASHBOARD
+            </button>
+            <button type="button" class="admin-nav-button" data-view="editor">
+                NUOVO ARTICOLO
+            </button>
+            <button type="button" class="admin-nav-button" data-view="manage">
+                GESTISCI ARTICOLI
+            </button>
+
+            <button type="button" class="admin-nav-button" data-view="eventEditor">
+                NUOVO EVENTO
+            </button>
+
+            <button type="button" class="admin-nav-button" data-view="eventManage">
+                GESTISCI EVENTI
+            </button>
+
+            <button type="button" class="admin-nav-button" data-view="massTimes">
+                ORARI MESSE
+            </button>
+
+            <button type="button" class="admin-nav-button" data-view="notice">
+                AVVISI
+            </button>
+        </div>
+    </nav>
 
 
     <!-- =====================================================
-         CONTENUTO
+         MAIN
     ====================================================== -->
+
+    <section class="admin-view active" id="dashboardView">
+        <main class="dashboard-main">
+
+            <div class="dashboard-intro">
+                <div>
+                    <p class="admin-eyebrow">AREA AMMINISTRATIVA</p>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <p class="dashboard-description">
+                    Tutto ciò che serve per aggiornare il sito della Parrocchia
+                    da un unico spazio: notizie, appuntamenti, celebrazioni e comunicazioni.
+                </p>
+            </div>
+
+            <div class="dashboard-stats">
+                <article class="dashboard-stat">
+                    <span class="dashboard-stat-label">ARTICOLI</span>
+                    <strong id="dashboardArticlesCount">—</strong>
+                    <small>Contenuti pubblicati sul sito</small>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-stat-label">PROSSIMI EVENTI</span>
+                    <strong id="dashboardEventsCount">—</strong>
+                    <small>Appuntamenti futuri pubblicati</small>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-stat-label">AVVISO HOME</span>
+                    <strong id="dashboardNoticeStatus">—</strong>
+                    <small>Stato dell'avviso parrocchiale</small>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-stat-label">ORARI MESSE</span>
+                    <strong id="dashboardMassStatus">—</strong>
+                    <small>Configurazione delle celebrazioni</small>
+                </article>
+            </div>
+
+            <div class="dashboard-section-title">
+                <div>
+                    <span>ACCESSI RAPIDI</span>
+                    <h2>Cosa vuoi fare?</h2>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <article class="dashboard-card">
+                    <div>
+                        <h2>Nuovo articolo</h2>
+                        <p>Scrivi e pubblica una nuova notizia della Parrocchia.</p>
+                    </div>
+                    <button type="button" class="dashboard-action" data-open-view="editor">
+                        CREA ARTICOLO →
+                    </button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div>
+                        <h2>Nuovo evento</h2>
+                        <p>Aggiungi un nuovo appuntamento al calendario parrocchiale.</p>
+                    </div>
+                    <button type="button" class="dashboard-action" data-open-view="eventEditor">
+                        CREA EVENTO →
+                    </button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div>
+                        <h2>Orari Messe</h2>
+                        <p>Aggiorna gli orari delle celebrazioni mostrati nella Home.</p>
+                    </div>
+                    <button type="button" class="dashboard-action" data-open-view="massTimes">
+                        MODIFICA ORARI →
+                    </button>
+                </article>
+
+                <article class="dashboard-card">
+                    <div>
+                        <h2>Avviso</h2>
+                        <p>Scrivi, modifica, mostra o nascondi l'avviso in evidenza.</p>
+                    </div>
+                    <button type="button" class="dashboard-action" data-open-view="notice">
+                        GESTISCI AVVISO →
+                    </button>
+                </article>
+
+            </div>
+
+            <div class="dashboard-footer-card">
+                <strong>Parrocchia Maria SS. del Rosario di Pompei</strong>
+                <span>Area riservata · gestione dei contenuti del sito</span>
+            </div>
+
+        </main>
+    </section>
+
+
+    <section class="admin-view" id="editorView">
 
     <main class="admin-main">
 
 
-        <!-- =================================================
-             DASHBOARD
-        ================================================== -->
+        <!-- INTRO -->
 
-        <section
-            class="admin-section admin-section-attiva"
-            id="adminDashboard"
-        >
+        <div class="admin-intro">
 
+            <div>
 
-            <div class="admin-titolo-pagina">
+                <p class="admin-eyebrow">
+                    GESTIONE CONTENUTI
+                </p>
 
-
-                <div>
-
-                    <p class="pagina-etichetta">
-                        AREA RISERVATA
-                    </p>
-
-                    <h1>
-                        Bentornato
-                    </h1>
-
-                    <p>
-
-                        Da qui potrai gestire
-                        le notizie pubblicate
-                        sul sito della Parrocchia.
-
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="admin-btn-primary"
-                    type="button"
-                    id="nuovoArticoloDashboard"
-                >
-
-                    + Nuovo articolo
-
-                </button>
-
+                <h1>
+                    Nuovo articolo
+                </h1>
 
             </div>
 
 
+            <p class="admin-intro-descrizione">
+                Crea una nuova notizia per il sito
+                della Parrocchia. Inserisci le informazioni,
+                controlla l'anteprima e pubblica l'articolo.
+            </p>
 
-            <!-- =============================================
-                 STATISTICHE
-            ============================================== -->
-
-            <div class="admin-statistiche">
-
-
-                <div class="admin-stat-card">
-
-                    <span>
-                        ARTICOLI
-                    </span>
-
-                    <strong id="numeroArticoli">
-                        3
-                    </strong>
-
-                    <p>
-                        Totale articoli
-                    </p>
-
-                </div>
-
-
-                <div class="admin-stat-card">
-
-                    <span>
-                        PUBBLICATI
-                    </span>
-
-                    <strong id="numeroPubblicati">
-                        3
-                    </strong>
-
-                    <p>
-                        Visibili sul sito
-                    </p>
-
-                </div>
-
-
-                <div class="admin-stat-card">
-
-                    <span>
-                        BOZZE
-                    </span>
-
-                    <strong id="numeroBozze">
-                        0
-                    </strong>
-
-                    <p>
-                        Da completare
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =============================================
-                 ARTICOLI RECENTI
-            ============================================== -->
-
-            <div class="admin-pannello">
-
-
-                <div class="admin-pannello-header">
-
-                    <div>
-
-                        <p class="pagina-etichetta">
-                            CONTENUTI
-                        </p>
-
-                        <h2>
-                            Articoli recenti
-                        </h2>
-
-                    </div>
-
-
-                    <button
-                        class="admin-link-button"
-                        type="button"
-                        id="vediTuttiArticoli"
-                    >
-                        Vedi tutti →
-                    </button>
-
-                </div>
-
-
-
-                <div
-                    class="admin-lista-articoli"
-                    id="listaArticoliDashboard"
-                >
-
-                    <!--
-                        Gli articoli verranno inseriti
-                        automaticamente da admin.js
-                    -->
-
-                </div>
-
-
-            </div>
-
-
-        </section>
+        </div>
 
 
 
         <!-- =================================================
-             TUTTI GLI ARTICOLI
+             LAYOUT
         ================================================== -->
 
-        <section
-            class="admin-section"
-            id="adminArticoli"
-        >
-
-
-            <div class="admin-titolo-pagina">
-
-
-                <div>
-
-                    <p class="pagina-etichetta">
-                        CONTENUTI
-                    </p>
-
-                    <h1>
-                        Articoli
-                    </h1>
-
-                    <p>
-
-                        Gestisci le notizie
-                        pubblicate e le bozze.
-
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="admin-btn-primary"
-                    type="button"
-                    id="nuovoArticoloArticoli"
-                >
-
-                    + Nuovo articolo
-
-                </button>
-
-
-            </div>
-
-
-
-            <!-- RICERCA -->
-
-            <div class="admin-toolbar">
-
-
-                <input
-                    type="search"
-                    id="ricercaArticoli"
-                    placeholder="Cerca un articolo..."
-                >
-
-
-                <select id="filtroStato">
-
-                    <option value="tutti">
-                        Tutti gli articoli
-                    </option>
-
-                    <option value="pubblicato">
-                        Pubblicati
-                    </option>
-
-                    <option value="bozza">
-                        Bozze
-                    </option>
-
-                </select>
-
-
-            </div>
-
-
-
-            <div
-                class="admin-lista-articoli"
-                id="listaArticoliCompleta"
-            >
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             EDITOR ARTICOLO
-        ================================================== -->
-
-        <section
-            class="admin-section"
-            id="adminEditor"
-        >
-
-
-            <div class="admin-editor-header">
-
-
-                <button
-                    class="admin-indietro"
-                    type="button"
-                    id="tornaArticoli"
-                >
-                    ← Torna agli articoli
-                </button>
-
-
-                <div>
-
-                    <p class="pagina-etichetta">
-                        EDITOR
-                    </p>
-
-                    <h1 id="titoloEditor">
-                        Nuovo articolo
-                    </h1>
-
-                </div>
-
-
-            </div>
-
+        <div class="admin-layout">
 
 
             <!-- =============================================
-                 FORM ARTICOLO
+                 FORM
             ============================================== -->
 
-            <form
-                class="admin-editor-form"
-                id="formArticolo"
-            >
+            <section class="admin-panel">
 
+                <div class="admin-panel-header">
 
-                <input
-                    type="hidden"
-                    id="articoloId"
-                >
+                    <span>
+                        NUOVO CONTENUTO
+                    </span>
 
-
-
-                <!-- TITOLO -->
-
-                <div class="admin-campo">
-
-                    <label for="titoloArticolo">
-                        Titolo dell'articolo
-                    </label>
-
-                    <input
-                        type="text"
-                        id="titoloArticolo"
-                        placeholder="Es. Festa della Madonna"
-                        required
-                    >
+                    <h2>
+                        Scrivi l'articolo
+                    </h2>
 
                 </div>
 
 
-
-                <!-- RIGA META -->
-
-                <div class="admin-form-grid">
-
-
-                    <div class="admin-campo">
-
-                        <label for="categoriaArticolo">
-                            Categoria
-                        </label>
-
-                        <select
-                            id="categoriaArticolo"
-                            required
-                        >
-
-                            <option value="Eventi">
-                                Eventi
-                            </option>
-
-                            <option value="Avvisi">
-                                Avvisi
-                            </option>
-
-                            <option value="Gruppo Giovani">
-                                Gruppo Giovani
-                            </option>
-
-                            <option value="Catechismo">
-                                Catechismo
-                            </option>
-
-                            <option value="Azione Cattolica">
-                                Azione Cattolica
-                            </option>
-
-                            <option value="Comunità">
-                                Comunità
-                            </option>
-
-                        </select>
-
-                    </div>
+                <form
+                    class="admin-form"
+                    id="articleForm"
+                >
 
 
+                    <!-- TITOLO -->
 
-                    <div class="admin-campo">
+                    <div class="admin-field">
 
-                        <label for="dataArticolo">
-                            Data
+                        <label for="articleTitle">
+                            TITOLO DELL'ARTICOLO
                         </label>
 
                         <input
-                            type="date"
-                            id="dataArticolo"
+                            type="text"
+                            id="articleTitle"
+                            name="title"
+                            placeholder="Es. Festa della Madonna"
                             required
                         >
 
                     </div>
 
 
-                </div>
+
+                    <!-- CATEGORIA + DATA -->
+
+                    <div class="admin-field-grid">
+
+
+                        <div class="admin-field">
+
+                            <label for="articleCategory">
+                                CATEGORIA
+                            </label>
+
+                            <select
+                                id="articleCategory"
+                                name="category"
+                                required
+                            >
+
+                                <option value="">
+                                    Seleziona una categoria
+                                </option>
+
+                                <option value="Vita parrocchiale">
+                                    Vita parrocchiale
+                                </option>
+
+                                <option value="Celebrazioni">
+                                    Celebrazioni
+                                </option>
+
+                                <option value="Eventi">
+                                    Eventi
+                                </option>
+
+                                <option value="Gruppo Giovani">
+                                    Gruppo Giovani
+                                </option>
+
+                                <option value="Azione Cattolica">
+                                    Azione Cattolica
+                                </option>
+
+                                <option value="Catechismo">
+                                    Catechismo
+                                </option>
+
+                                <option value="Avvisi">
+                                    Avvisi
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="admin-field">
+
+                            <label for="articleDate">
+                                DATA
+                            </label>
+
+                            <input
+                                type="date"
+                                id="articleDate"
+                                name="date"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
 
 
 
-                <!-- IMMAGINE -->
+                    <!-- DESCRIZIONE -->
 
-                <div class="admin-campo">
+                    <div class="admin-field">
 
-                    <label for="immagineArticolo">
-                        Immagine di copertina
-                    </label>
+                        <label for="articleExcerpt">
+                            BREVE DESCRIZIONE
+                        </label>
 
-                    <input
-                        type="file"
-                        id="immagineArticolo"
-                        accept="image/*"
-                    >
+                        <input
+                            type="text"
+                            id="articleExcerpt"
+                            name="excerpt"
+                            maxlength="180"
+                            placeholder="Una breve introduzione che comparirà nell'elenco delle notizie"
+                        >
 
-                    <small>
-
-                        In questa prima versione
-                        l'immagine viene mostrata
-                        solamente in anteprima.
-
-                    </small>
-
-                </div>
+                    </div>
 
 
 
-                <div
-                    class="admin-preview-immagine"
-                    id="previewImmagine"
-                >
+                    <!-- IMMAGINE -->
 
-                    <span>
-                        Nessuna immagine selezionata
-                    </span>
+                    <div class="admin-field">
 
-                </div>
+                        <label for="articleImage">
+                            IMMAGINE PRINCIPALE
+                        </label>
 
+                        <div class="admin-file-box">
 
+                            <input
+                                type="file"
+                                id="articleImage"
+                                name="image"
+                                accept="image/*"
+                            >
 
-                <!-- RIASSUNTO -->
+                            <p>
+                                Seleziona una fotografia
+                                dal tuo computer.
+                            </p>
 
-                <div class="admin-campo">
+                            <img
+                                id="imagePreview"
+                                class="admin-image-preview"
+                                alt="Anteprima immagine"
+                            >
 
-                    <label for="riassuntoArticolo">
-                        Riassunto
-                    </label>
+                        </div>
 
-                    <textarea
-                        id="riassuntoArticolo"
-                        rows="4"
-                        placeholder="Scrivi una breve introduzione che comparirà nella pagina Notizie..."
-                        required
-                    ></textarea>
-
-                </div>
-
-
-
-                <!-- CONTENUTO -->
-
-                <div class="admin-campo">
-
-                    <label for="contenutoArticolo">
-                        Contenuto dell'articolo
-                    </label>
+                    </div>
 
 
-                    <div class="admin-editor-toolbar">
+
+                    <!-- TESTO -->
+
+                    <div class="admin-field">
+
+                        <label for="articleContent">
+                            TESTO DELL'ARTICOLO
+                        </label>
+
+                        <textarea
+                            id="articleContent"
+                            name="content"
+                            placeholder="Scrivi qui il testo dell'articolo..."
+                            required
+                        ></textarea>
+
+
+                        <div class="admin-counter">
+
+                            <span>
+                                Testo articolo
+                            </span>
+
+                            <span id="characterCounter">
+                                0 caratteri
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PULSANTI -->
+
+                    <div class="admin-actions">
 
                         <button
                             type="button"
-                            data-format="bold"
-                            title="Grassetto"
+                            class="admin-button admin-button-secondary"
+                            id="previewButton"
                         >
-                            <strong>B</strong>
+                            Anteprima
                         </button>
 
-                        <button
-                            type="button"
-                            data-format="italic"
-                            title="Corsivo"
-                        >
-                            <em>I</em>
-                        </button>
 
                         <button
-                            type="button"
-                            data-format="h2"
-                            title="Titolo"
+                            type="submit"
+                            class="admin-button admin-button-primary"
                         >
-                            H2
-                        </button>
-
-                        <button
-                            type="button"
-                            data-format="ul"
-                            title="Elenco"
-                        >
-                            • Lista
+                            Pubblica articolo
                         </button>
 
                     </div>
 
 
-                    <textarea
-                        id="contenutoArticolo"
-                        rows="14"
-                        placeholder="Scrivi qui il testo completo dell'articolo..."
-                        required
-                    ></textarea>
+                    <div
+                        class="admin-message"
+                        id="adminMessage"
+                    ></div>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 SIDEBAR
+            ============================================== -->
+
+            <aside class="admin-sidebar">
+
+
+                <div class="admin-sidebar-box">
+
+                    <h3>
+                        Stato
+                    </h3>
+
+                    <div class="admin-status">
+
+                        <span class="admin-status-dot"></span>
+
+                        <strong>
+                            Nuovo articolo
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        L'articolo non è ancora pubblicato.
+                        Controlla titolo, data, categoria
+                        e contenuto prima di procedere.
+                    </p>
 
                 </div>
 
 
 
-                <!-- =========================================
-                     AZIONI
-                ========================================== -->
+                <div class="admin-sidebar-box">
 
-                <div class="admin-editor-actions">
+                    <h3>
+                        Prima di pubblicare
+                    </h3>
 
-
-                    <button
-                        type="button"
-                        class="admin-btn-secondary"
-                        id="salvaBozza"
-                    >
-                        Salva bozza
-                    </button>
-
-
-                    <button
-                        type="submit"
-                        class="admin-btn-primary"
-                    >
-                        Pubblica articolo
-                    </button>
-
+                    <p>
+                        Utilizza un titolo chiaro,
+                        scegli una fotografia di buona qualità
+                        e inserisci una breve descrizione
+                        che aiuti il visitatore a capire
+                        immediatamente il contenuto
+                        della notizia.
+                    </p>
 
                 </div>
 
 
-            </form>
 
+                <div class="admin-sidebar-box">
+
+                    <h3>
+                        Accesso protetto
+                    </h3>
+
+                    <p>
+                        Questa area utilizza Firebase
+                        Authentication. È necessario
+                        effettuare l'accesso prima
+                        di poter utilizzare il pannello.
+                    </p>
+
+                </div>
+
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ANTEPRIMA
+        ================================================== -->
+
+        <section
+            class="admin-preview"
+            id="articlePreview"
+        >
+
+            <img
+                id="previewImage"
+                class="admin-preview-image"
+                alt="Immagine articolo"
+            >
+
+
+            <div class="admin-preview-content">
+
+                <p
+                    class="admin-preview-category"
+                    id="previewCategory"
+                >
+                    CATEGORIA
+                </p>
+
+
+                <h2 id="previewTitle">
+                    Titolo dell'articolo
+                </h2>
+
+
+                <p
+                    class="admin-preview-date"
+                    id="previewDate"
+                ></p>
+
+
+                <div
+                    class="admin-preview-text"
+                    id="previewContent"
+                ></div>
+
+            </div>
 
         </section>
 
 
     </main>
 
+    </section>
+
+
+    <section class="admin-view" id="manageView">
+        <main class="admin-main">
+
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">GESTIONE CONTENUTI</p>
+                    <h1>Gestisci articoli</h1>
+                </div>
+
+                <p class="admin-intro-descrizione">
+                    Consulta gli articoli già pubblicati.
+                    Da qui puoi modificarli oppure eliminarli.
+                </p>
+            </div>
+
+            <div id="manageMount"></div>
+
+        </main>
+    </section>
+
+
+    <section class="admin-view" id="eventEditorView">
+        <main class="admin-main">
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">PROSSIMI APPUNTAMENTI</p>
+                    <h1 id="eventEditorTitle">Nuovo evento</h1>
+                </div>
+                <p class="admin-intro-descrizione">
+                    Inserisci data, ora, luogo e descrizione del nuovo appuntamento.
+                </p>
+            </div>
+
+            <div class="admin-layout">
+                <section class="admin-panel">
+                    <div class="admin-panel-header">
+                        <span>NUOVO APPUNTAMENTO</span>
+                        <h2>Dettagli dell'evento</h2>
+                    </div>
+
+                    <form class="admin-form" id="eventForm">
+                        <div class="admin-field">
+                            <label for="eventTitle">TITOLO DELL'EVENTO</label>
+                            <input type="text" id="eventTitle"
+                                   placeholder="Es. Adorazione eucaristica" required>
+                        </div>
+
+                        <div class="admin-field-grid">
+                            <div class="admin-field">
+                                <label for="eventCategory">CATEGORIA</label>
+                                <select id="eventCategory" required>
+                                    <option value="">Seleziona una categoria</option>
+                                    <option value="Celebrazione">Celebrazione</option>
+                                    <option value="Parrocchia">Parrocchia</option>
+                                    <option value="Gruppo Giovani">Gruppo Giovani</option>
+                                    <option value="Azione Cattolica">Azione Cattolica</option>
+                                    <option value="Catechismo">Catechismo</option>
+                                    <option value="Incontro">Incontro</option>
+                                    <option value="Altro">Altro</option>
+                                </select>
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="eventDate">DATA</label>
+                                <input type="date" id="eventDate" required>
+                            </div>
+                        </div>
+
+                        <div class="admin-field-grid">
+                            <div class="admin-field">
+                                <label for="eventTime">ORA</label>
+                                <input type="time" id="eventTime">
+                            </div>
+
+                            <div class="admin-field">
+                                <label for="eventPlace">LUOGO</label>
+                                <input type="text" id="eventPlace"
+                                       placeholder="Es. Chiesa parrocchiale">
+                            </div>
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="eventDescription">DESCRIZIONE</label>
+                            <textarea id="eventDescription"
+                                      style="min-height:180px"
+                                      placeholder="Scrivi una breve descrizione dell'appuntamento..."></textarea>
+                        </div>
+
+                        <div class="admin-actions">
+                            <button type="button"
+                                    class="admin-button admin-button-secondary"
+                                    id="cancelEventEdit"
+                                    style="display:none">
+                                Annulla modifica
+                            </button>
+
+                            <button type="submit"
+                                    class="admin-button admin-button-primary"
+                                    id="eventSubmitButton">
+                                Pubblica evento
+                            </button>
+                        </div>
+
+                        <div class="admin-message" id="eventMessage"></div>
+                    </form>
+                </section>
+
+                <aside class="admin-sidebar">
+                    <div class="admin-sidebar-box">
+                        <h3>Prossimi appuntamenti</h3>
+                        <p>
+                            Gli eventi vengono salvati in Firebase e possono essere
+                            modificati o eliminati in qualsiasi momento.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </section>
+
+    <section class="admin-view" id="eventManageView">
+        <main class="admin-main">
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">PROSSIMI APPUNTAMENTI</p>
+                    <h1>Gestisci eventi</h1>
+                </div>
+                <p class="admin-intro-descrizione">
+                    Visualizza, modifica oppure elimina gli appuntamenti salvati.
+                </p>
+            </div>
+
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <span>CALENDARIO</span>
+                    <h2>I tuoi eventi</h2>
+                </div>
+
+                <div class="lista-articoli" id="eventList">
+                    <div class="lista-articoli-stato">Caricamento eventi...</div>
+                </div>
+            </section>
+        </main>
+    </section>
+
+
+    <section class="admin-view" id="massTimesView">
+        <main class="admin-main">
+
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">CELEBRAZIONI</p>
+                    <h1>Orari Sante Messe</h1>
+                </div>
+
+                <p class="admin-intro-descrizione">
+                    Gestisci gli orari delle celebrazioni che compariranno sul sito della Parrocchia.
+                </p>
+            </div>
+
+            <div class="admin-layout">
+                <section class="admin-panel">
+                    <div class="admin-panel-header">
+                        <span>ORARI CELEBRAZIONI</span>
+                        <h2>Imposta gli orari</h2>
+                    </div>
+
+                    <form class="admin-form" id="massTimesForm">
+                        <div class="admin-field">
+                            <label for="massWeekdaysTimes">GIORNI FERIALI — ORARI</label>
+                            <input type="text" id="massWeekdaysTimes" value="19:00" placeholder="Es. 08:00, 19:00">
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="massWeekdaysNote">GIORNI FERIALI — NOTA</label>
+                            <textarea id="massWeekdaysNote" style="min-height:100px" placeholder="Es. Santa Messa">Santa Messa</textarea>
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="massSaturdayTimes">SABATO — ORARI</label>
+                            <input type="text" id="massSaturdayTimes" value="08:00, 19:00" placeholder="Es. 08:00, 19:00">
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="massSaturdayNote">SABATO — NOTA</label>
+                            <textarea id="massSaturdayNote" style="min-height:120px" placeholder="Inserisci una nota facoltativa">Santa Messa
+
+*La Santa Messa delle ore 08:00 sarà celebrata al Santuario</textarea>
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="massSundayTimes">DOMENICA — ORARI</label>
+                            <input type="text" id="massSundayTimes" value="08:00, 11:00, 19:00" placeholder="Es. 08:00, 11:00, 19:00">
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="massSundayNote">DOMENICA — NOTA</label>
+                            <textarea id="massSundayNote" style="min-height:100px" placeholder="Es. Santa Messa">Santa Messa</textarea>
+                        </div>
+
+                        <div class="admin-actions">
+                            <button type="submit" class="admin-button admin-button-primary" id="massTimesSubmitButton">
+                                Salva orari
+                            </button>
+                        </div>
+
+                        <div class="admin-message" id="massTimesMessage"></div>
+                    </form>
+                </section>
+
+                <aside class="admin-sidebar">
+                    <div class="admin-sidebar-box">
+                        <h3>Come funzionerà</h3>
+                        <p>
+                            Nel prossimo passaggio collegheremo questo pannello a Firebase.
+                            Gli orari salvati qui verranno poi mostrati automaticamente nella Home.
+                        </p>
+                    </div>
+
+                    <div class="admin-sidebar-box">
+                        <h3>Più orari</h3>
+                        <p>
+                            Se in uno stesso giorno ci sono più celebrazioni, separa gli orari con una virgola,
+                            per esempio: 08:00, 11:00, 19:00.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </section>
+
+
+    <section class="admin-view" id="noticeView">
+        <main class="admin-main">
+
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">COMUNICAZIONI</p>
+                    <h1>Avviso parrocchiale</h1>
+                </div>
+
+                <p class="admin-intro-descrizione">
+                    Prepara un avviso importante da mostrare nella Home del sito.
+                    Potrai attivarlo o nasconderlo senza eliminarne il testo.
+                </p>
+            </div>
+
+            <div class="admin-layout">
+                <section class="admin-panel">
+                    <div class="admin-panel-header">
+                        <span>AVVISO IN EVIDENZA</span>
+                        <h2>Gestisci l'avviso</h2>
+                    </div>
+
+                    <form class="admin-form" id="noticeForm">
+                        <div class="admin-field">
+                            <label for="noticeTitle">TITOLO DELL'AVVISO</label>
+                            <input type="text" id="noticeTitle"
+                                   placeholder="Es. Variazione orario Santa Messa">
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="noticeText">TESTO DELL'AVVISO</label>
+                            <textarea id="noticeText" style="min-height:180px"
+                                      placeholder="Scrivi qui la comunicazione da mostrare ai visitatori..."></textarea>
+                        </div>
+
+                        <div class="admin-field">
+                            <label for="noticeActive">VISIBILITÀ SUL SITO</label>
+                            <select id="noticeActive">
+                                <option value="true">Mostra l'avviso</option>
+                                <option value="false">Nascondi l'avviso</option>
+                            </select>
+                        </div>
+
+                        <div class="admin-actions">
+                            <button type="submit" class="admin-button admin-button-primary" id="noticeSubmitButton">
+                                Salva avviso
+                            </button>
+                        </div>
+
+                        <div class="admin-message" id="noticeMessage"></div>
+                    </form>
+                </section>
+
+                <aside class="admin-sidebar">
+                    <div class="admin-sidebar-box">
+                        <h3>Avvisi importanti</h3>
+                        <p>
+                            Usa questo spazio per variazioni di orario, celebrazioni straordinarie,
+                            chiusure o altre comunicazioni che devono essere subito visibili.
+                        </p>
+                    </div>
+
+                    <div class="admin-sidebar-box">
+                        <h3>Mostra o nascondi</h3>
+                        <p>
+                            Se scegli “Nascondi l'avviso”, il testo rimarrà salvato ma non verrà
+                            mostrato nella Home.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </section>
+
 </div>
 
 
 
 <!-- =========================================================
-     MODALE ELIMINA
+     FIREBASE + LOGIN
 ========================================================= -->
 
-<div
-    class="admin-modal"
-    id="modalElimina"
-    aria-hidden="true"
->
+<script type="module">
 
-    <div class="admin-modal-box">
+    /* =====================================================
+       IMPORT FIREBASE
+    ====================================================== */
 
-        <p class="pagina-etichetta">
-            ATTENZIONE
-        </p>
-
-        <h2>
-            Eliminare l'articolo?
-        </h2>
-
-        <p>
-
-            Questa operazione rimuoverà
-            l'articolo dall'elenco
-            di questa demo.
-
-        </p>
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 
-        <div class="admin-modal-actions">
-
-            <button
-                type="button"
-                class="admin-btn-secondary"
-                id="annullaElimina"
-            >
-                Annulla
-            </button>
+    import {
+        getAuth,
+        signInWithEmailAndPassword,
+        signOut,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-            <button
-                type="button"
-                class="admin-btn-danger"
-                id="confermaElimina"
-            >
-                Elimina
-            </button>
 
-        </div>
+    /* =====================================================
+       CONFIGURAZIONE FIREBASE
+    ====================================================== */
 
-    </div>
+    const firebaseConfig = {
 
-</div>
+        apiKey:
+            "AIzaSyCBP7PNuG822H7puA50sriMa80G0vluKPo",
+
+        authDomain:
+            "parrocchia-vm.firebaseapp.com",
+
+        projectId:
+            "parrocchia-vm",
+
+        storageBucket:
+            "parrocchia-vm.firebasestorage.app",
+
+        messagingSenderId:
+            "25102143490",
+
+        appId:
+            "1:25102143490:web:713f02e631b4ae2311171b"
+
+    };
+
+
+
+    /* =====================================================
+       AVVIO FIREBASE
+    ====================================================== */
+
+    const app =
+        initializeApp(
+            firebaseConfig
+        );
+
+
+    const auth =
+        getAuth(app);
+
+
+
+    /* =====================================================
+       ELEMENTI PAGINA
+    ====================================================== */
+
+    const loginScreen =
+        document.getElementById(
+            "loginScreen"
+        );
+
+
+    const adminArea =
+        document.getElementById(
+            "adminArea"
+        );
+
+
+    const loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+
+    const loginEmail =
+        document.getElementById(
+            "loginEmail"
+        );
+
+
+    const loginPassword =
+        document.getElementById(
+            "loginPassword"
+        );
+
+
+    const loginButton =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    const loginError =
+        document.getElementById(
+            "loginError"
+        );
+
+
+    const logoutButton =
+        document.getElementById(
+            "logoutButton"
+        );
+
+
+
+
+    /* =====================================================
+       NAVIGAZIONE DASHBOARD
+    ====================================================== */
+
+    function mostraVista(nomeVista) {
+
+        const viste = {
+            dashboard: document.getElementById("dashboardView"),
+            editor: document.getElementById("editorView"),
+            manage: document.getElementById("manageView"),
+            eventEditor: document.getElementById("eventEditorView"),
+            eventManage: document.getElementById("eventManageView"),
+            massTimes: document.getElementById("massTimesView"),
+            notice: document.getElementById("noticeView")
+        };
+
+        Object.values(viste).forEach(function (vista) {
+            if (vista) {
+                vista.classList.remove("active");
+            }
+        });
+
+        if (viste[nomeVista]) {
+            viste[nomeVista].classList.add("active");
+        }
+
+        document
+            .querySelectorAll(".admin-nav-button")
+            .forEach(function (button) {
+                button.classList.toggle(
+                    "active",
+                    button.dataset.view === nomeVista
+                );
+            });
+
+        if (nomeVista === "manage") {
+            spostaGestioneArticoli();
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    function spostaGestioneArticoli() {
+
+        const mount =
+            document.getElementById("manageMount");
+
+        const gestione =
+            document.getElementById("gestioneArticoli");
+
+        if (mount && gestione && gestione.parentElement !== mount) {
+            mount.appendChild(gestione);
+        }
+    }
+
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const navButton =
+                event.target.closest("[data-view]");
+
+            const dashboardButton =
+                event.target.closest("[data-open-view]");
+
+            if (navButton) {
+                mostraVista(navButton.dataset.view);
+            }
+
+            if (dashboardButton) {
+                mostraVista(
+                    dashboardButton.dataset.openView
+                );
+            }
+
+        }
+    );
+
+
+    /*
+       Quando si clicca MODIFICA nell'elenco,
+       mostriamo prima il form e poi lasciamo
+       ad admin.js il normale caricamento dei dati.
+    */
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target.closest(
+                    ".gestione-articolo-modifica"
+                )
+            ) {
+                mostraVista("editor");
+            }
+
+        },
+        true
+    );
+
+
+    /* =====================================================
+       CONTROLLO LOGIN
+    ====================================================== */
+
+    onAuthStateChanged(
+        auth,
+        function (user) {
+
+            if (user) {
+
+                loginScreen.style.display =
+                    "none";
+
+                adminArea.style.display =
+                    "block";
+
+                mostraVista("dashboard");
+
+                setTimeout(
+                    spostaGestioneArticoli,
+                    250
+                );
+
+            } else {
+
+                adminArea.style.display =
+                    "none";
+
+                loginScreen.style.display =
+                    "flex";
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       LOGIN
+    ====================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            loginError.style.display =
+                "none";
+
+
+            loginButton.disabled =
+                true;
+
+
+            loginButton.textContent =
+                "ACCESSO IN CORSO...";
+
+
+            try {
+
+                await signInWithEmailAndPassword(
+                    auth,
+                    loginEmail.value.trim(),
+                    loginPassword.value
+                );
+
+
+                loginForm.reset();
+
+
+            } catch (errore) {
+
+                console.error(
+                    "Errore login:",
+                    errore
+                );
+
+
+                loginError.textContent =
+                    "Email o password non corrette. Controlla i dati e riprova.";
+
+
+                loginError.style.display =
+                    "block";
+
+            } finally {
+
+                loginButton.disabled =
+                    false;
+
+
+                loginButton.textContent =
+                    "ACCEDI";
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       LOGOUT
+    ====================================================== */
+
+    logoutButton.addEventListener(
+        "click",
+        async function () {
+
+            try {
+
+                await signOut(auth);
+
+            } catch (errore) {
+
+                console.error(
+                    "Errore durante il logout:",
+                    errore
+                );
+
+            }
+
+        }
+    );
+
+</script>
 
 
 
 <!-- =========================================================
-     NOTIFICA
+     FUNZIONI ARTICOLI
 ========================================================= -->
 
-<div
-    class="admin-notifica"
-    id="adminNotifica"
->
-</div>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script src="admin.js"></script>
+<script type="module" src="admin.js"></script>
 
 
 </body>

@@ -5,6 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    inizializzaSlideshowHome();
     avviaSito();
 
 });
@@ -495,4 +496,35 @@ function inizializzaModuloContatti() {
         }
     );
 
+}
+/* Slideshow iniziale della home */
+function inizializzaSlideshowHome() {
+    const hero = document.querySelector(".home-hero");
+    if (!hero) return;
+    const slides = Array.from(hero.querySelectorAll(".home-hero-slide"));
+    if (slides.length < 2) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let current = 0;
+    let timer;
+
+    function showSlide() {
+        const next = (current + 1) % slides.length;
+        if (!slides[next].complete || !slides[next].naturalWidth) return;
+        slides[current].classList.remove("is-active");
+        slides[current].setAttribute("aria-hidden", "true");
+        current = next;
+        slides[current].classList.add("is-active");
+        slides[current].removeAttribute("aria-hidden");
+    }
+
+    function schedule() {
+        window.clearInterval(timer);
+        if (!motion.matches && !document.hidden) {
+            timer = window.setInterval(showSlide, 5000);
+        }
+    }
+
+    document.addEventListener("visibilitychange", schedule);
+    motion.addEventListener("change", schedule);
+    schedule();
 }

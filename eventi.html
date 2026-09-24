@@ -1,930 +1,434 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eventi e appuntamenti della Parrocchia Maria SS. del Rosario di Pompei.">
+    <title>Eventi e appuntamenti | Parrocchia Maria SS. del Rosario di Pompei</title>
+    <link rel="stylesheet" href="style.css">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <style>
+        .eventi-hero {
+            background: #001536;
+            color: #fff;
+            padding: 105px 30px 85px;
+        }
 
-    <meta
-        name="description"
-        content="Eventi e appuntamenti della Parrocchia Maria SS. del Rosario di Pompei."
-    >
+        .eventi-hero-inner,
+        .eventi-main-inner {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
 
-    <title>
-        Eventi | Parrocchia Maria SS. del Rosario di Pompei
-    </title>
+        .eventi-eyebrow {
+            margin: 0 0 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            color: #d8c49b;
+        }
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+        .eventi-hero h1 {
+            max-width: 800px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(46px, 7vw, 82px);
+            line-height: .98;
+            font-weight: 400;
+            letter-spacing: -2px;
+        }
 
+        .eventi-hero p:last-child {
+            max-width: 620px;
+            margin: 28px 0 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255,255,255,.78);
+        }
+
+        .eventi-main {
+            padding: 90px 0 110px;
+            background: #fff;
+        }
+
+        .eventi-intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 48px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e3e6ea;
+        }
+
+        .eventi-intro h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 400;
+            color: #001536;
+        }
+
+        .eventi-intro p {
+            max-width: 430px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #6f7781;
+        }
+
+        .eventi-lista {
+            display: grid;
+            gap: 0;
+        }
+
+        .evento-card {
+            display: grid;
+            grid-template-columns: 130px minmax(0, 1fr);
+            gap: 38px;
+            padding: 36px 0;
+            border-bottom: 1px solid #e3e6ea;
+        }
+
+        .evento-data {
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #001536;
+            color: #fff;
+        }
+
+        .evento-data strong {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            line-height: 1;
+            font-weight: 400;
+        }
+
+        .evento-data span {
+            margin-top: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #d8c49b;
+        }
+
+        .evento-contenuto {
+            align-self: center;
+        }
+
+        .evento-categoria {
+            margin: 0 0 9px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #b18c49;
+        }
+
+        .evento-contenuto h3 {
+            margin: 0 0 15px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.12;
+            font-weight: 400;
+            color: #001536;
+        }
+
+        .evento-dettagli {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            margin-bottom: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #5f6874;
+        }
+
+        .evento-descrizione {
+            max-width: 760px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #68717c;
+            white-space: pre-line;
+        }
+
+        .eventi-stato {
+            padding: 60px 25px;
+            text-align: center;
+            border: 1px solid #e3e6ea;
+            background: #f7f8fa;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #68717c;
+        }
+
+        @media (max-width: 720px) {
+            .eventi-hero {
+                padding: 80px 20px 65px;
+            }
+
+            .eventi-main {
+                padding: 65px 0 80px;
+            }
+
+            .eventi-intro {
+                display: block;
+            }
+
+            .eventi-intro p {
+                margin-top: 18px;
+            }
+
+            .evento-card {
+                grid-template-columns: 86px minmax(0, 1fr);
+                gap: 20px;
+                padding: 28px 0;
+            }
+
+            .evento-data {
+                min-height: 92px;
+            }
+
+            .evento-data strong {
+                font-size: 35px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     HEADER AUTOMATICO
-========================================================= -->
-
 <div id="header"></div>
 
-
-
-<!-- =========================================================
-     HERO EVENTI
-========================================================= -->
-
 <section class="eventi-hero">
-
-    <div class="eventi-hero-contenuto">
-
-        <p class="pagina-etichetta chiaro">
-            VITA DELLA COMUNITÀ
-        </p>
-
-        <h1>
-            Eventi e appuntamenti
-        </h1>
-
+    <div class="eventi-hero-inner">
+        <p class="eventi-eyebrow">VITA DELLA COMUNITÀ</p>
+        <h1>Eventi e<br>appuntamenti</h1>
         <p>
-            Celebrazioni, incontri,
-            attività e momenti comunitari.
-
-            Tutto quello che accade
-            nella nostra Parrocchia.
+            Celebrazioni, incontri e momenti di comunità:
+            scopri i prossimi appuntamenti della Parrocchia.
         </p>
-
     </div>
-
 </section>
 
+<main class="eventi-main">
+    <div class="eventi-main-inner">
 
-
-<!-- =========================================================
-     INTRODUZIONE
-========================================================= -->
-
-<section class="eventi-intro">
-
-    <div class="eventi-intro-contenuto">
-
-        <p class="pagina-etichetta">
-            AGENDA PARROCCHIALE
-        </p>
-
-        <h2>
-            Viviamo insieme la comunità
-        </h2>
-
-        <p>
-            Consulta i prossimi appuntamenti
-            e scopri le occasioni
-            per pregare, incontrarsi,
-            formarsi e condividere
-            la vita della nostra comunità.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     EVENTO IN EVIDENZA
-========================================================= -->
-
-<section class="evento-evidenza">
-
-    <div class="evento-evidenza-container">
-
-
-        <!-- DATA -->
-
-        <div class="evento-evidenza-data">
-
-            <span>
-                DOMENICA
-            </span>
-
-            <strong>
-                27
-            </strong>
-
-            <em>
-                SETTEMBRE
-            </em>
-
-        </div>
-
-
-
-        <!-- CONTENUTO -->
-
-        <div class="evento-evidenza-contenuto">
-
-            <p class="pagina-etichetta">
-                PROSSIMO APPUNTAMENTO
-            </p>
-
-            <h2>
-                Santa Messa della comunità
-            </h2>
+        <div class="eventi-intro">
+            <div>
+                <p class="eventi-eyebrow">AGENDA PARROCCHIALE</p>
+                <h2>Prossimi appuntamenti</h2>
+            </div>
 
             <p>
-                Un momento di preghiera
-                e comunione per ritrovarci
-                insieme come comunità parrocchiale.
+                Gli appuntamenti sono ordinati cronologicamente.
+                Gli eventi già trascorsi vengono rimossi automaticamente
+                da questa sezione.
             </p>
-
-
-            <div class="evento-evidenza-info">
-
-                <div>
-
-                    <span>
-                        ORARIO
-                    </span>
-
-                    <strong>
-                        18:00
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Chiesa Parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
         </div>
 
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     OTTOBRE 2026
-========================================================= -->
-
-<section class="eventi-agenda">
-
-    <div class="eventi-agenda-container">
-
-
-        <!-- TITOLO MESE -->
-
-        <div class="eventi-mese-header">
-
-            <div>
-
-                <p class="pagina-etichetta">
-                    PROSSIMI EVENTI
-                </p>
-
-                <h2>
-                    Ottobre 2026
-                </h2>
-
+        <div class="eventi-lista" id="eventiLista">
+            <div class="eventi-stato">
+                Caricamento degli appuntamenti...
             </div>
-
-
-            <span class="eventi-mese-numero">
-                10
-            </span>
-
         </div>
 
-
-
-        <!-- =================================================
-             03 OTTOBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    03
-                </strong>
-
-                <span>
-                    SAB
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    GRUPPO GIOVANI
-                </p>
-
-                <h3>
-                    Incontro del Gruppo Giovani
-                </h3>
-
-                <p>
-                    Un momento di incontro,
-                    formazione e condivisione
-                    dedicato ai giovani
-                    della nostra comunità.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        19:30
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Locali parrocchiali
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             05 OTTOBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    05
-                </strong>
-
-                <span>
-                    LUN
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    CATECHISMO
-                </p>
-
-                <h3>
-                    Inizio del nuovo anno catechistico
-                </h3>
-
-                <p>
-                    Riprendono gli incontri
-                    di catechismo
-                    e il cammino di formazione
-                    dei bambini e dei ragazzi.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        16:00
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Parrocchia
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             11 OTTOBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    11
-                </strong>
-
-                <span>
-                    DOM
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    COMUNITÀ
-                </p>
-
-                <h3>
-                    Incontro comunitario
-                </h3>
-
-                <p>
-                    Una serata dedicata
-                    alla fraternità,
-                    alla condivisione
-                    e alla vita
-                    della nostra Parrocchia.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        18:30
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Salone parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             18 OTTOBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    18
-                </strong>
-
-                <span>
-                    DOM
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    AZIONE CATTOLICA
-                </p>
-
-                <h3>
-                    Incontro associativo
-                </h3>
-
-                <p>
-                    Appuntamento dedicato
-                    al cammino associativo,
-                    alla formazione
-                    e alla programmazione
-                    delle prossime attività.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        17:30
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Locali parrocchiali
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             24 OTTOBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    24
-                </strong>
-
-                <span>
-                    SAB
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    PREGHIERA
-                </p>
-
-                <h3>
-                    Adorazione Eucaristica
-                </h3>
-
-                <p>
-                    Un tempo di silenzio,
-                    ascolto e preghiera
-                    davanti all'Eucaristia.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        21:00
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Chiesa Parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
     </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     NOVEMBRE 2026
-========================================================= -->
-
-<section class="eventi-agenda eventi-agenda-alternata">
-
-    <div class="eventi-agenda-container">
-
-
-        <div class="eventi-mese-header">
-
-            <div>
-
-                <p class="pagina-etichetta">
-                    IN PROGRAMMA
-                </p>
-
-                <h2>
-                    Novembre 2026
-                </h2>
-
-            </div>
-
-
-            <span class="eventi-mese-numero">
-                11
-            </span>
-
-        </div>
-
-
-
-        <!-- =================================================
-             01 NOVEMBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    01
-                </strong>
-
-                <span>
-                    DOM
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    CELEBRAZIONE
-                </p>
-
-                <h3>
-                    Solennità di Tutti i Santi
-                </h3>
-
-                <p>
-                    Celebrazione comunitaria
-                    nella Solennità
-                    di Tutti i Santi.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        11:00
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Chiesa Parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             02 NOVEMBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    02
-                </strong>
-
-                <span>
-                    LUN
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    CELEBRAZIONE
-                </p>
-
-                <h3>
-                    Commemorazione dei fedeli defunti
-                </h3>
-
-                <p>
-                    Santa Messa
-                    in suffragio
-                    di tutti i fedeli defunti.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        18:00
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Chiesa Parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             08 NOVEMBRE
-        ================================================== -->
-
-        <article class="evento-riga">
-
-            <div class="evento-riga-data">
-
-                <strong>
-                    08
-                </strong>
-
-                <span>
-                    DOM
-                </span>
-
-            </div>
-
-
-            <div class="evento-riga-principale">
-
-                <p class="evento-categoria">
-                    FAMIGLIE
-                </p>
-
-                <h3>
-                    Incontro delle famiglie
-                </h3>
-
-                <p>
-                    Un pomeriggio
-                    di incontro e condivisione
-                    dedicato alle famiglie
-                    della comunità.
-                </p>
-
-            </div>
-
-
-            <div class="evento-riga-info">
-
-                <div>
-
-                    <span>
-                        ORA
-                    </span>
-
-                    <strong>
-                        16:30
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>
-                        LUOGO
-                    </span>
-
-                    <strong>
-                        Salone parrocchiale
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     AVVISO
-========================================================= -->
-
-<section class="eventi-avviso">
-
-    <div class="eventi-avviso-contenuto">
-
-        <div class="eventi-avviso-icona">
-            i
-        </div>
-
-
-        <div>
-
-            <p class="pagina-etichetta">
-                INFORMAZIONI
-            </p>
-
-            <h2>
-                Gli orari possono subire variazioni
-            </h2>
-
-            <p>
-                Per celebrazioni particolari,
-                festività o modifiche
-                dell'ultimo momento,
-                consulta le comunicazioni
-                della Parrocchia
-                o contattaci direttamente.
-            </p>
-
-        </div>
-
-
-        <a
-            href="contatti.html"
-            class="pulsante-home"
-        >
-            Contattaci →
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     MESSE
-========================================================= -->
-
-<section class="eventi-messe">
-
-    <div class="eventi-messe-contenuto">
-
-        <p class="pagina-etichetta chiaro">
-            CELEBRAZIONI
-        </p>
-
-        <h2>
-            Cerchi gli orari delle Sante Messe?
-        </h2>
-
-        <p>
-            Consulta gli orari ordinari
-            delle celebrazioni
-            della nostra Parrocchia.
-        </p>
-
-        <a
-            href="parrocchia.html#messe"
-            class="pulsante-chiaro"
-        >
-            Orari delle Messe →
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FOOTER AUTOMATICO
-========================================================= -->
+</main>
 
 <div id="footer"></div>
 
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script src="script.js"></script>
 
+<script type="module">
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+    import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        orderBy
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCBP7PNuG822H7puA50sriMa80G0vluKPo",
+        authDomain: "parrocchia-vm.firebaseapp.com",
+        projectId: "parrocchia-vm",
+        storageBucket: "parrocchia-vm.firebasestorage.app",
+        messagingSenderId: "25102143490",
+        appId: "1:25102143490:web:713f02e631b4ae2311171b"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const lista = document.getElementById("eventiLista");
+
+    function dataOggiISO() {
+        const oggi = new Date();
+        const anno = oggi.getFullYear();
+        const mese = String(oggi.getMonth() + 1).padStart(2, "0");
+        const giorno = String(oggi.getDate()).padStart(2, "0");
+        return `${anno}-${mese}-${giorno}`;
+    }
+
+    function partiData(dataISO) {
+        const mesi = [
+            "GEN", "FEB", "MAR", "APR", "MAG", "GIU",
+            "LUG", "AGO", "SET", "OTT", "NOV", "DIC"
+        ];
+
+        if (!dataISO) {
+            return { giorno: "--", mese: "---" };
+        }
+
+        const parti = dataISO.split("-");
+        if (parti.length !== 3) {
+            return { giorno: "--", mese: "---" };
+        }
+
+        return {
+            giorno: String(Number(parti[2])),
+            mese: mesi[Number(parti[1]) - 1] || "---"
+        };
+    }
+
+    function creaEvento(evento) {
+        const card = document.createElement("article");
+        card.className = "evento-card";
+
+        const data = partiData(evento.data);
+
+        const boxData = document.createElement("div");
+        boxData.className = "evento-data";
+
+        const giorno = document.createElement("strong");
+        giorno.textContent = data.giorno;
+
+        const mese = document.createElement("span");
+        mese.textContent = data.mese;
+
+        boxData.appendChild(giorno);
+        boxData.appendChild(mese);
+
+        const contenuto = document.createElement("div");
+        contenuto.className = "evento-contenuto";
+
+        const categoria = document.createElement("p");
+        categoria.className = "evento-categoria";
+        categoria.textContent = evento.categoria
+            ? evento.categoria.toUpperCase()
+            : "APPUNTAMENTO";
+
+        const titolo = document.createElement("h3");
+        titolo.textContent = evento.titolo || "Appuntamento";
+
+        const dettagli = document.createElement("div");
+        dettagli.className = "evento-dettagli";
+
+        if (evento.ora) {
+            const ora = document.createElement("span");
+            ora.textContent = `◷ ${evento.ora}`;
+            dettagli.appendChild(ora);
+        }
+
+        if (evento.luogo) {
+            const luogo = document.createElement("span");
+            luogo.textContent = `⌖ ${evento.luogo}`;
+            dettagli.appendChild(luogo);
+        }
+
+        contenuto.appendChild(categoria);
+        contenuto.appendChild(titolo);
+
+        if (dettagli.children.length) {
+            contenuto.appendChild(dettagli);
+        }
+
+        if (evento.descrizione) {
+            const descrizione = document.createElement("p");
+            descrizione.className = "evento-descrizione";
+            descrizione.textContent = evento.descrizione;
+            contenuto.appendChild(descrizione);
+        }
+
+        card.appendChild(boxData);
+        card.appendChild(contenuto);
+
+        return card;
+    }
+
+    async function caricaEventi() {
+        try {
+            const eventiQuery = query(
+                collection(db, "eventi"),
+                orderBy("data", "asc")
+            );
+
+            const risultato = await getDocs(eventiQuery);
+            const oggi = dataOggiISO();
+
+            lista.innerHTML = "";
+
+            const prossimi = [];
+
+            risultato.forEach((documento) => {
+                const evento = documento.data();
+
+                if (
+                    evento.pubblicato !== false &&
+                    evento.data &&
+                    evento.data >= oggi
+                ) {
+                    prossimi.push(evento);
+                }
+            });
+
+            prossimi.sort((a, b) => {
+                const dataA = `${a.data || ""} ${a.ora || "00:00"}`;
+                const dataB = `${b.data || ""} ${b.ora || "00:00"}`;
+                return dataA.localeCompare(dataB);
+            });
+
+            if (prossimi.length === 0) {
+                lista.innerHTML = `
+                    <div class="eventi-stato">
+                        Al momento non ci sono prossimi appuntamenti pubblicati.
+                    </div>
+                `;
+                return;
+            }
+
+            prossimi.forEach((evento) => {
+                lista.appendChild(creaEvento(evento));
+            });
+
+        } catch (errore) {
+            console.error("Errore caricamento eventi:", errore);
+
+            lista.innerHTML = `
+                <div class="eventi-stato">
+                    Non è stato possibile caricare gli appuntamenti in questo momento.
+                </div>
+            `;
+        }
+    }
+
+    caricaEventi();
+</script>
 
 </body>
-
 </html>

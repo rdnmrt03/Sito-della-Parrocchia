@@ -10436,24 +10436,6 @@ section h2 {
 }
 
 
-.footer-principale::before {
-
-    content: "";
-
-    display: block;
-
-    width: 100%;
-    height: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--oro),
-            transparent
-        );
-
-}
 
 
 .footer-logo span {
@@ -12043,4 +12025,51 @@ section[id] {
         padding-right: 20px;
     }
 
+}
+/* Slideshow iniziale della home */
+.home-hero > .home-hero-slide {
+    opacity: 0;
+    transition: opacity 1.2s ease, transform 8s ease;
+}
+.home-hero > .home-hero-slide.is-active { opacity: 1; }
+.home-hero-overlay { z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+    .home-hero > .home-hero-slide,
+    .home-hero:hover > .home-hero-slide {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Testi delle tendine nel menu hamburger */
+@media (max-width: 900px) {
+    .navbar .menu a,
+    .navbar .menu .dropbtn span {
+        color: #fff;
+    }
+
+    .navbar .dropdown-content a:hover,
+    .navbar .dropdown-content a:focus-visible {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* Posizione dei pulsanti iniziali su desktop */
+@media (min-width: 901px) {
+    .home-hero-actions {
+        transform: translateY(-16px);
+    }
+}
+
+/* Immagine iniziale della pagina Parrocchia */
+.parrocchia-hero {
+    background:
+        linear-gradient(
+            rgba(0, 21, 54, 0.76),
+            rgba(0, 21, 54, 0.76)
+        ),
+        url("immagini/chiesa.jpg");
+    background-size: cover;
+    background-position: center;
 }
