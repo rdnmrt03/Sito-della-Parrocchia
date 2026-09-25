@@ -1,3 +1,10 @@
+import { inizializzaTestiParrocchia, caricaTestiParrocchiaAdmin } from "./parrocchia-admin.js";
+import { inizializzaImmaginiPagineAdmin, caricaImmaginiPagineAdmin } from "./immagini-pagine-admin.js";
+import { inizializzaFooterAdmin, caricaFooterAdmin } from "./footer-admin.js";
+import { inizializzaPrivacyAdmin, caricaPrivacyAdmin } from "./privacy-admin.js";
+import { inizializzaContattiAdmin, caricaContattiAdmin } from "./contatti-admin.js";
+import { inizializzaGruppiAdmin, caricaGruppiAdmin } from "./gruppi-admin.js";
+import { caricaIdentitaSito, applicaIdentitaSito } from "./identita-sito.js";
 /* =========================================================
    PARROCCHIA MARIA SS. DEL ROSARIO DI POMPEI
    ADMIN.JS
@@ -112,8 +119,17 @@ document.addEventListener(
         inizializzaOrariMesse();
 
         inizializzaAvvisi();
+        inizializzaImmaginiHome();
+        inizializzaImmaginiPagineAdmin({ auth, db, getDoc, setDoc, doc, serverTimestamp, upload: caricaImmagineCloudinary });
+        inizializzaTestiParrocchia({ auth, db, getDoc, setDoc, doc, serverTimestamp, upload: caricaImmagineCloudinary });
+        inizializzaIdentitaAdmin();
+        inizializzaTemaAdmin();
+        inizializzaGruppiAdmin({ auth, db, getDoc, setDoc, doc, serverTimestamp, upload: caricaImmagineCloudinary });
+        caricaIdentitaSito();
 
-        inizializzaControlloAccesso();
+        inizializzaFooterAdmin({ auth, db, getDoc, setDoc, doc, serverTimestamp });
+        inizializzaPrivacyAdmin({ auth, db, getDoc, setDoc, doc, serverTimestamp });
+        inizializzaContattiAdmin({ auth, db, getDoc, setDoc, doc, serverTimestamp }); inizializzaControlloAccesso();
 
     }
 );
@@ -134,6 +150,14 @@ function inizializzaControlloAccesso() {
                 caricaArticoli();
                 caricaEventi();
                 caricaOrariMesse();
+                caricaImmaginiHomeAdmin();
+                caricaImmaginiPagineAdmin();
+                caricaTestiParrocchiaAdmin();
+                caricaIdentitaAdmin();
+                caricaTemaAdmin();
+                caricaGruppiAdmin(); caricaContattiAdmin();
+                caricaPrivacyAdmin();
+                caricaFooterAdmin();
                 caricaAvviso();
                 caricaDashboard();
 
@@ -1210,14 +1234,14 @@ function creaSezioneGestioneArticoli() {
 
         .gestione-articoli {
             margin-top: 60px;
-            background: white;
-            border: 1px solid #e4e7eb;
+            background: var(--tema-sfondo, #ffffff);
+            border: 1px solid var(--tema-bordo, #e4e7eb);
             box-shadow: 0 15px 50px rgba(0,21,54,.05);
         }
 
         .gestione-articoli-header {
             padding: 30px;
-            border-bottom: 1px solid #e4e7eb;
+            border-bottom: 1px solid var(--tema-bordo, #e4e7eb);
         }
 
         .gestione-articoli-eyebrow {
@@ -1227,7 +1251,7 @@ function creaSezioneGestioneArticoli() {
             font-size: 9px;
             font-weight: 700;
             letter-spacing: 2px;
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
         .gestione-articoli-header h2 {
@@ -1235,7 +1259,7 @@ function creaSezioneGestioneArticoli() {
             font-family: Georgia, "Times New Roman", serif;
             font-size: 32px;
             font-weight: 400;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .gestione-articoli-descrizione {
@@ -1243,7 +1267,7 @@ function creaSezioneGestioneArticoli() {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
             line-height: 1.7;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .lista-articoli {
@@ -1254,7 +1278,7 @@ function creaSezioneGestioneArticoli() {
             padding: 35px 0 5px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .gestione-articolo {
@@ -1263,7 +1287,7 @@ function creaSezioneGestioneArticoli() {
             gap: 25px;
             align-items: center;
             padding: 25px 0;
-            border-bottom: 1px solid #e7e9ec;
+            border-bottom: 1px solid var(--tema-bordo, #e7e9ec);
         }
 
         .gestione-articolo:last-child {
@@ -1276,7 +1300,7 @@ function creaSezioneGestioneArticoli() {
             font-size: 9px;
             font-weight: 700;
             letter-spacing: 1.4px;
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
         .gestione-articolo h3 {
@@ -1284,7 +1308,7 @@ function creaSezioneGestioneArticoli() {
             font-family: Georgia, "Times New Roman", serif;
             font-size: 23px;
             font-weight: 400;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .gestione-articolo-descrizione {
@@ -1293,7 +1317,7 @@ function creaSezioneGestioneArticoli() {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
             line-height: 1.6;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .gestione-articolo-azioni {
@@ -1313,12 +1337,12 @@ function creaSezioneGestioneArticoli() {
         }
 
         .gestione-articolo-modifica {
-            background: #001536;
+            background: var(--tema-principale, #001536);
             color: white;
         }
 
         .gestione-articolo-modifica:hover {
-            background: #173c6b;
+            background: var(--tema-principale, #173c6b);
         }
 
         .gestione-articolo-elimina {
@@ -1335,11 +1359,11 @@ function creaSezioneGestioneArticoli() {
             margin-bottom: 25px;
             padding: 18px 20px;
             background: #fff9eb;
-            border-left: 4px solid #b99a5b;
+            border-left: 4px solid var(--tema-accento-testo, #b99a5b);
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
             line-height: 1.6;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .modalita-modifica strong {
@@ -1350,9 +1374,9 @@ function creaSezioneGestioneArticoli() {
         .annulla-modifica-button {
             margin-top: 12px;
             padding: 10px 14px;
-            border: 1px solid #001536;
+            border: 1px solid var(--tema-principale, #001536);
             background: transparent;
-            color: #001536;
+            color: var(--tema-principale, #001536);
             cursor: pointer;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
@@ -3161,3 +3185,314 @@ document.addEventListener(
     }
 );
 
+
+/* Foto dello slideshow Home: le tre posizioni vengono salvate insieme. */
+let immaginiHome = [
+    { url: "immagini/chiesa.jpg", alt: "Chiesa della Parrocchia Maria SS. del Rosario di Pompei" },
+    { url: "immagini/festa-madonna.jpg", alt: "Festa della Madonna" },
+    { url: "immagini/gruppo-giovani.jpg", alt: "Gruppo giovani della Parrocchia" }
+];
+let immaginiHomePronte = false;
+
+function inizializzaImmaginiHome() {
+    disegnaImmaginiHome();
+    document.getElementById("homeImagesRetry").addEventListener("click", caricaImmaginiHomeAdmin);
+    document.getElementById("homeImagesForm").addEventListener("submit", async event => {
+        event.preventDefault();
+        const messaggio = document.getElementById("homeImagesMessage");
+        const campi = document.getElementById("homeImagesFields");
+        if (!auth.currentUser || !immaginiHomePronte || campi.disabled) return;
+        campi.disabled = true;
+        messaggio.textContent = "Salvataggio delle immagini in corso...";
+        try {
+            const salvate = [];
+            for (let i = 0; i < immaginiHome.length; i++) {
+                const foto = immaginiHome[i];
+                // Conserva l'URL caricato per evitare un nuovo upload in caso di retry.
+                if (foto.file) {
+                    messaggio.textContent = `Caricamento foto ${i + 1} di 3...`;
+                    foto.url = await caricaImmagineCloudinary(foto.file);
+                    foto.file = null;
+                }
+                salvate.push({ url: foto.url, alt: document.getElementById(`homeImageAlt${i}`).value.trim() });
+            }
+            await setDoc(doc(db, "impostazioni", "immaginiHome"), {
+                immagini: salvate,
+                modificatoDa: auth.currentUser.uid,
+                modificatoIl: serverTimestamp()
+            }, { merge: true });
+            immaginiHome = salvate;
+            disegnaImmaginiHome();
+            messaggio.textContent = "Immagini salvate! Le nuove foto compariranno al prossimo caricamento della Home.";
+        } catch (errore) {
+            console.error("Errore salvataggio immagini Home:", errore);
+            messaggio.textContent = "Salvataggio non riuscito. Le modifiche non sono state pubblicate. Riprova. " + errore.message;
+        } finally {
+            campi.disabled = false;
+        }
+    });
+}
+
+async function caricaImmaginiHomeAdmin() {
+    if (!auth.currentUser) return;
+    const campi = document.getElementById("homeImagesFields");
+    const messaggio = document.getElementById("homeImagesMessage");
+    const riprova = document.getElementById("homeImagesRetry");
+    document.getElementById("homeImagesSave").disabled = true;
+    immaginiHomePronte = false;
+    riprova.hidden = true;
+    messaggio.textContent = "Caricamento immagini...";
+    try {
+        const snapshot = await getDoc(doc(db, "impostazioni", "immaginiHome"));
+        const predefinite = [
+            { url: "immagini/chiesa.jpg", alt: "Chiesa della Parrocchia Maria SS. del Rosario di Pompei" },
+            { url: "immagini/festa-madonna.jpg", alt: "Festa della Madonna" },
+            { url: "immagini/gruppo-giovani.jpg", alt: "Gruppo giovani della Parrocchia" }
+        ];
+        const salvate = snapshot.exists() ? snapshot.data().immagini : null;
+        immaginiHome = predefinite.map((foto, i) => {
+            const scelta = immaginiHome[i];
+            const descrizione = document.getElementById(`homeImageAlt${i}`);
+            if (scelta?.file) return { ...scelta, alt: descrizione?.value || scelta.alt };
+            const salvata = Array.isArray(salvate) ? salvate[i] : null;
+            return salvata && typeof salvata.url === "string" && salvata.url
+                ? { url: salvata.url, alt: typeof salvata.alt === "string" ? salvata.alt : "" } : foto;
+        });
+        disegnaImmaginiHome();
+        immaginiHomePronte = true;
+        document.getElementById("homeImagesSave").disabled = false;
+        campi.disabled = false;
+        messaggio.textContent = "Scegli le foto da sostituire, poi salva.";
+    } catch (errore) {
+        console.error("Errore caricamento immagini Home:", errore);
+        messaggio.textContent = errore.code === "permission-denied"
+            ? "Accesso alle immagini negato: le regole Firebase devono consentire la lettura e il salvataggio di impostazioni/immaginiHome per gli amministratori."
+            : "Non è stato possibile leggere le immagini salvate. Premi Riprova il caricamento. Dettaglio: " + (errore.message || errore.code || "errore sconosciuto");
+        riprova.hidden = false;
+    }
+}
+
+function disegnaImmaginiHome() {
+    const contenitore = document.getElementById("homeImagesSlots");
+    contenitore.replaceChildren();
+    immaginiHome.forEach((foto, i) => {
+        const campo = document.createElement("div");
+        campo.className = "admin-field";
+        const etichetta = document.createElement("label");
+        etichetta.htmlFor = `homeImageFile${i}`;
+        etichetta.textContent = `FOTO ${i + 1}`;
+        const anteprima = document.createElement("img");
+        anteprima.src = foto.anteprima || foto.url;
+        anteprima.alt = `Anteprima foto ${i + 1}`;
+        anteprima.style.cssText = "display:block;width:100%;max-width:600px;aspect-ratio:16/9;object-fit:cover;margin:12px 0";
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.id = etichetta.htmlFor;
+        fileInput.accept = "image/jpeg,image/png,image/webp";
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            if (!file) return;
+            const messaggio = document.getElementById("homeImagesMessage");
+            if (!["image/jpeg", "image/png", "image/webp"].includes(file.type) || file.size > 5 * 1024 * 1024) {
+                fileInput.value = "";
+                messaggio.textContent = "Scegli un file JPG, PNG o WEBP fino a 5 MB.";
+                return;
+            }
+            const lettore = new FileReader();
+            lettore.onload = () => {
+                if (fileInput.files[0] !== file) return;
+                foto.anteprima = lettore.result;
+                anteprima.src = lettore.result;
+            };
+            foto.file = file;
+            lettore.readAsDataURL(file);
+            if (immaginiHomePronte) {
+                messaggio.textContent = "Anteprima aggiornata. Premi Salva immagini per pubblicare le modifiche.";
+            }
+        });
+        const descrizioneLabel = document.createElement("label");
+        descrizioneLabel.htmlFor = `homeImageAlt${i}`;
+        descrizioneLabel.textContent = "Descrizione della foto (per chi usa un lettore di schermo)";
+        const descrizione = document.createElement("input");
+        descrizione.type = "text";
+        descrizione.id = descrizioneLabel.htmlFor;
+        descrizione.maxLength = 200;
+        descrizione.value = foto.alt;
+        campo.append(etichetta, anteprima, fileInput, descrizioneLabel, descrizione);
+        contenitore.appendChild(campo);
+    });
+}
+let identitaLogo = "immagini/logo.png";
+let identitaFile = null;
+let identitaPronta = false;
+function inizializzaIdentitaAdmin() {
+    const titolo = document.getElementById("identityTitle");
+    const fileInput = document.getElementById("identityLogo");
+    const messaggio = document.getElementById("identityMessage");
+    const anteprima = document.getElementById("identityPreviewLogo");
+    const aggiorna = () => { document.getElementById("identityPreviewTitle").textContent = titolo.value; };
+    titolo.addEventListener("input", aggiorna);
+    aggiorna();
+    document.getElementById("identityRetry").addEventListener("click", caricaIdentitaAdmin);
+    fileInput.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        identitaFile = null;
+        anteprima.src = identitaLogo;
+        if (!file) return;
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type) || file.size > 5 * 1024 * 1024) {
+            fileInput.value = "";
+            messaggio.textContent = "Scegli un PNG, JPG o WEBP fino a 5 MB.";
+            return;
+        }
+        identitaFile = file;
+        const reader = new FileReader();
+        reader.onload = () => { if (identitaFile === file) anteprima.src = reader.result; };
+        reader.readAsDataURL(file);
+        messaggio.textContent = "Logo selezionato. Premi Salva logo e titolo per pubblicare.";
+    });
+    document.getElementById("identityForm").addEventListener("submit", async event => {
+        event.preventDefault();
+        const campi = document.getElementById("identityFields");
+        if (!auth.currentUser || !identitaPronta || campi.disabled) return;
+        if (!titolo.value.trim()) { messaggio.textContent = "Inserisci il titolo della parrocchia."; return; }
+        campi.disabled = true;
+        messaggio.textContent = "Salvataggio in corso...";
+        try {
+            if (identitaFile) {
+                identitaLogo = await caricaImmagineCloudinary(identitaFile);
+                identitaFile = null;
+            }
+            const dati = { titolo: titolo.value.trim(), logo: identitaLogo };
+            await setDoc(doc(db, "impostazioni", "identitaSito"), {
+                ...dati, modificatoDa: auth.currentUser.uid, modificatoIl: serverTimestamp()
+            }, { merge: true });
+            applicaIdentitaSito(dati);
+            fileInput.value = "";
+            messaggio.textContent = "Logo e titolo salvati! Si aggiorneranno su tutte le pagine al prossimo caricamento.";
+        } catch (errore) {
+            messaggio.textContent = "Salvataggio non riuscito. Riprova. " + errore.message;
+        } finally { campi.disabled = false; }
+    });
+}
+async function caricaIdentitaAdmin() {
+    if (!auth.currentUser) return;
+    const campi = document.getElementById("identityFields");
+    const messaggio = document.getElementById("identityMessage");
+    const retry = document.getElementById("identityRetry");
+    campi.disabled = true;
+    identitaPronta = false;
+    retry.hidden = true;
+    try {
+        const snapshot = await getDoc(doc(db, "impostazioni", "identitaSito"));
+        const dati = snapshot.exists() ? snapshot.data() : {};
+        const titolo = document.getElementById("identityTitle");
+        titolo.value = typeof dati.titolo === "string" ? dati.titolo : titolo.defaultValue;
+        identitaLogo = typeof dati.logo === "string" && dati.logo ? dati.logo : "immagini/logo.png";
+        identitaFile = null;
+        document.getElementById("identityLogo").value = "";
+        document.getElementById("identityPreviewLogo").src = identitaLogo;
+        document.getElementById("identityPreviewTitle").textContent = titolo.value;
+        identitaPronta = true;
+        campi.disabled = false;
+        messaggio.textContent = "Modifica logo e titolo, poi salva.";
+    } catch (errore) {
+        messaggio.textContent = errore.code === "permission-denied"
+            ? "Pubblica le regole Firebase per impostazioni/identitaSito, poi premi Riprova il caricamento."
+            : "Impossibile leggere le impostazioni. Riprova. " + errore.message;
+        retry.hidden = false;
+    }
+}
+let temaPronto = false;
+let temaModificato = false;
+function leggiTemaAdmin() {
+    return { nome: document.getElementById("themePreset").value,
+        principale: document.getElementById("themePrimary").value,
+        accento: document.getElementById("themeAccent").value,
+        sfondo: document.getElementById("themeBackground").value };
+}
+function anteprimaTemaAdmin() {
+    const tema = leggiTemaAdmin();
+    window.TemiSito.applica(tema, document.getElementById("themePreview"));
+    ["themePrimary", "themeAccent", "themeBackground"].forEach(id => {
+        document.getElementById(id + "Value").textContent = document.getElementById(id).value.toUpperCase();
+    });
+    const errore = window.TemiSito.problema(tema);
+    const stato = document.getElementById("themeContrast");
+    stato.textContent = errore || "Contrasto dei colori principali verificato. Controlla anche l'anteprima prima di applicare.";
+    stato.dataset.invalid = String(Boolean(errore));
+    document.getElementById("themeSave").disabled = (!temaPronto && !temaModificato) || Boolean(errore);
+}
+function impostaTemaAdmin(tema) {
+    document.getElementById("themePreset").value = tema.nome;
+    document.getElementById("themePrimary").value = tema.principale;
+    document.getElementById("themeAccent").value = tema.accento;
+    document.getElementById("themeBackground").value = tema.sfondo;
+    anteprimaTemaAdmin();
+}
+function inizializzaTemaAdmin() {
+    document.getElementById("themePreset").addEventListener("change", event => {
+        temaModificato = true;
+        const tema = window.TemiSito.presets[event.target.value];
+        if (tema) impostaTemaAdmin(tema);
+        else anteprimaTemaAdmin();
+    });
+    ["themePrimary", "themeAccent", "themeBackground"].forEach(id => {
+        document.getElementById(id).addEventListener("input", () => {
+            temaModificato = true;
+            document.getElementById("themePreset").value = "personalizzato";
+            anteprimaTemaAdmin();
+        });
+    });
+    document.getElementById("themeReset").addEventListener("click", () => { temaModificato = true; impostaTemaAdmin(window.TemiSito.presets.classico); });
+    document.getElementById("themeRetry").addEventListener("click", caricaTemaAdmin);
+    impostaTemaAdmin(window.TemiSito.presets.classico);
+    document.getElementById("themeForm").addEventListener("submit", async event => {
+        event.preventDefault();
+        const campi = document.getElementById("themeFields");
+        const tema = leggiTemaAdmin();
+        if (!auth.currentUser || (!temaPronto && !temaModificato) || campi.disabled || window.TemiSito.problema(tema)) return;
+        campi.disabled = true;
+        const message = document.getElementById("themeMessage");
+        message.textContent = "Applicazione del tema in corso...";
+        try {
+            await setDoc(doc(db, "impostazioni", "temaSito"), {
+                ...tema, modificatoDa: auth.currentUser.uid, modificatoIl: serverTimestamp()
+            }, { merge: true });
+            temaPronto = true;
+            window.TemiSito.salvaCache(tema);
+            window.TemiSito.applica(tema);
+            message.textContent = "Tema applicato anche al pannello admin! Ricarica le altre pagine per vedere i nuovi colori.";
+        } catch (errore) {
+            message.textContent = errore.code === "permission-denied"
+                ? "Firebase nega il salvataggio: pubblica le regole per impostazioni/temaSito nel progetto parrocchia-vm e accedi con l'account amministratore. La scelta resta nell'anteprima."
+                : "Tema non salvato. Le scelte sono ancora nell'anteprima. " + errore.message;
+        } finally { campi.disabled = false; }
+    });
+}
+async function caricaTemaAdmin() {
+    if (!auth.currentUser) return;
+    const campi = document.getElementById("themeFields");
+    const message = document.getElementById("themeMessage");
+    const retry = document.getElementById("themeRetry");
+    campi.disabled = false;
+    temaPronto = false;
+    retry.hidden = true;
+    message.textContent = "Caricamento del tema...";
+    try {
+        const snapshot = await getDoc(doc(db, "impostazioni", "temaSito"));
+        const tema = snapshot.exists() ? window.TemiSito.normalizza(snapshot.data()) : window.TemiSito.presets.classico;
+        if (!tema || window.TemiSito.problema(tema)) throw new Error("I colori salvati non sono validi.");
+        window.TemiSito.applica(tema);
+        window.TemiSito.salvaCache(tema);
+        temaPronto = true;
+        campi.disabled = false;
+        if (!temaModificato) impostaTemaAdmin(tema);
+        else anteprimaTemaAdmin();
+        message.textContent = "Scegli i colori e controlla l'anteprima prima di applicare.";
+    } catch (errore) {
+        message.textContent = errore.code === "permission-denied"
+            ? "Firebase nega la lettura del tema. Puoi provare i colori, ma per pubblicarli verifica le regole di impostazioni/temaSito nel progetto parrocchia-vm."
+            : "Impossibile leggere il tema. Riprova. " + errore.message;
+        retry.hidden = false;
+    }
+}

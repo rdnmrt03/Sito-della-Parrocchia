@@ -2,6 +2,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -46,15 +49,15 @@
 
     <div class="contatti-hero-contenuto">
 
-        <p class="pagina-etichetta chiaro">
+        <p class="pagina-etichetta chiaro" data-contatti="testo_1">
             Parrocchia Maria SS. del Rosario di Pompei
         </p>
 
-        <h1>
+        <h1 data-contatti="testo_2">
             Contatti
         </h1>
 
-        <p>
+        <p data-contatti="testo_3">
             Siamo a disposizione
             per informazioni,
             richieste e necessità
@@ -75,15 +78,15 @@
 
     <div>
 
-        <p class="pagina-etichetta">
+        <p class="pagina-etichetta" data-contatti="testo_4">
             RESTIAMO IN CONTATTO
         </p>
 
-        <h2>
+        <h2 data-contatti="testo_5">
             Come possiamo aiutarti?
         </h2>
 
-        <p>
+        <p data-contatti="testo_6">
             Per informazioni sulle celebrazioni,
             sui sacramenti, sul catechismo,
             sulle attività parrocchiali
@@ -115,15 +118,15 @@
                 ⌖
             </div>
 
-            <span>
+            <span data-contatti="testo_7">
                 DOVE SIAMO
             </span>
 
-            <h3>
+            <h3 data-contatti="testo_8">
                 Parrocchia
             </h3>
 
-            <p>
+            <p data-contatti="testo_9">
                 Inserisci qui l'indirizzo<br>
                 Vibo Marina (VV)
             </p>
@@ -140,17 +143,17 @@
                 ☎
             </div>
 
-            <span>
+            <span data-contatti="testo_10">
                 TELEFONO
             </span>
 
-            <h3>
+            <h3 data-contatti="testo_11">
                 Chiamaci
             </h3>
 
             <p>
 
-                <a href="tel:+390000000000">
+                <a href="tel:+390000000000" data-contatti="telefono">
                     +39 000 000 0000
                 </a>
 
@@ -168,17 +171,17 @@
                 ✉
             </div>
 
-            <span>
+            <span data-contatti="testo_13">
                 EMAIL
             </span>
 
-            <h3>
+            <h3 data-contatti="testo_14">
                 Scrivici
             </h3>
 
             <p>
 
-                <a href="mailto:parrocchia@example.it">
+                <a href="mailto:parrocchia@example.it" data-contatti="email">
                     parrocchia@example.it
                 </a>
 
@@ -193,141 +196,7 @@
 
 
 
-<!-- =========================================================
-     ORARI SEGRETERIA
-========================================================= -->
 
-<section class="contatti-orari">
-
-    <div class="contatti-orari-container">
-
-
-        <!-- TESTO -->
-
-        <div class="contatti-orari-intro">
-
-            <p class="pagina-etichetta chiaro">
-                SEGRETERIA PARROCCHIALE
-            </p>
-
-            <h2>
-                Orari di apertura
-            </h2>
-
-            <p>
-                Per certificati,
-                informazioni,
-                richieste relative ai sacramenti
-                e altre necessità
-                puoi rivolgerti
-                alla segreteria parrocchiale.
-            </p>
-
-        </div>
-
-
-
-        <!-- ORARI -->
-
-        <div class="tabella-orari">
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Lunedì
-                </span>
-
-                <strong>
-                    16:00 – 18:00
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Martedì
-                </span>
-
-                <strong>
-                    16:00 – 18:00
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Mercoledì
-                </span>
-
-                <strong>
-                    Chiuso
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Giovedì
-                </span>
-
-                <strong>
-                    16:00 – 18:00
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Venerdì
-                </span>
-
-                <strong>
-                    16:00 – 18:00
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Sabato
-                </span>
-
-                <strong>
-                    Su appuntamento
-                </strong>
-
-            </div>
-
-
-            <div class="riga-orario">
-
-                <span>
-                    Domenica
-                </span>
-
-                <strong>
-                    Chiuso
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -339,15 +208,15 @@
 
     <div>
 
-        <p class="pagina-etichetta chiaro">
+        <p class="pagina-etichetta chiaro" data-contatti="testo_33">
             CELEBRAZIONI
         </p>
 
-        <h2>
+        <h2 data-contatti="testo_34">
             Vuoi conoscere gli orari delle Messe?
         </h2>
 
-        <p>
+        <p data-contatti="testo_35">
             Consulta gli orari
             delle celebrazioni
             della nostra Parrocchia.
@@ -356,7 +225,7 @@
         <a
             href="parrocchia.html#messe"
             class="pulsante-chiaro"
-        >
+         data-contatti="testo_36">
             Orari delle Messe →
         </a>
 
@@ -378,7 +247,7 @@
      JAVASCRIPT
 ========================================================= -->
 
-<script src="script.js"></script>
+<script src="script.js"></script><script type="module" src="contatti-contenuti.js"></script>
 
 
 </body>

@@ -22,8 +22,8 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    color: #001536;
-    background: white;
+    color: var(--tema-principale, #001536);
+    background: var(--tema-sfondo, #ffffff);
     overflow-x: hidden;
 }
 
@@ -50,7 +50,7 @@ a {
 .navbar {
     width: 100%;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
     color: white;
 
     padding:
@@ -258,7 +258,7 @@ a {
 
     min-width: 220px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     box-shadow:
         0 12px 30px
@@ -279,7 +279,7 @@ a {
         13px
         20px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -296,7 +296,7 @@ a {
 
 
 .dropdown-content a:hover {
-    background: #f3f3f3;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -373,7 +373,7 @@ a {
     width: 100%;
     height: 2px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     transition:
         transform 0.3s ease,
@@ -450,8 +450,8 @@ span:nth-child(3) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.12),
-            rgba(0, 21, 54, 0.30)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.12),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.30)
         );
 }
 
@@ -568,7 +568,7 @@ span:nth-child(3) {
 
 
 .leggi {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -621,7 +621,7 @@ span:nth-child(3) {
 ========================================================= */
 
 .sezione-messe {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -662,9 +662,9 @@ span:nth-child(3) {
 
 
 .card-messa {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-align: center;
 
@@ -721,7 +721,7 @@ span:nth-child(3) {
         Arial,
         sans-serif;
 
-    color: #777;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -757,7 +757,7 @@ span:nth-child(3) {
         110px
         25px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     text-align: center;
 }
@@ -788,7 +788,7 @@ p:not(.pagina-etichetta) {
         Arial,
         sans-serif;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     line-height: 1.8;
 
@@ -801,7 +801,7 @@ p:not(.pagina-etichetta) {
 .pulsante-home {
     display: inline-block;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -830,7 +830,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .home-contatti {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -871,9 +871,9 @@ p:not(.pagina-etichetta) {
 .pulsante-chiaro {
     display: inline-block;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     padding:
         15px
@@ -904,7 +904,7 @@ p:not(.pagina-etichetta) {
 .pagina-hero {
     min-height: 330px;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -943,7 +943,7 @@ p:not(.pagina-etichetta) {
 
 
 .sezione-grigia {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -995,7 +995,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #555;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -1009,10 +1009,10 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.68),
-            rgba(0, 21, 54, 0.68)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.68),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.68)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -1105,7 +1105,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -1142,7 +1142,7 @@ p:not(.pagina-etichetta) {
 
     margin-bottom: 80px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     overflow: hidden;
 }
@@ -1232,7 +1232,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     max-width: 480px;
 }
@@ -1291,7 +1291,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .pulsante-gruppo {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -1302,7 +1302,7 @@ p:not(.pagina-etichetta) {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding-bottom: 5px;
 }
@@ -1339,7 +1339,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .entra-gruppo {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -1393,7 +1393,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 footer {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -2046,10 +2046,10 @@ footer p {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.76),
-            rgba(0, 21, 54, 0.76)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -2164,7 +2164,7 @@ footer p {
 
     line-height: 1.7;
 
-    color: #777;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -2182,7 +2182,7 @@ footer p {
 
     min-height: 520px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     margin-bottom: 110px;
 
@@ -2249,7 +2249,7 @@ footer p {
 
     align-self: flex-start;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -2300,7 +2300,7 @@ footer p {
 
 
 .notizia-principale-contenuto h2 a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 }
@@ -2316,7 +2316,7 @@ footer p {
         Arial,
         sans-serif;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     font-size: 16px;
 
@@ -2332,7 +2332,7 @@ footer p {
 ========================================================= */
 
 .leggi-notizia {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -2344,7 +2344,7 @@ footer p {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding-bottom: 5px;
 }
@@ -2398,7 +2398,7 @@ footer p {
 ========================================================= */
 
 .card-notizia {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     display: flex;
 
@@ -2418,7 +2418,7 @@ footer p {
 
     box-shadow:
         0 18px 45px
-        rgba(0, 21, 54, 0.10);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.10);
 }
 
 
@@ -2489,7 +2489,7 @@ footer p {
 
 
 .card-notizia-contenuto h3 a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 }
@@ -2509,7 +2509,7 @@ footer p {
 
     line-height: 1.7;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-bottom: 25px;
 }
@@ -2527,7 +2527,7 @@ footer p {
 ========================================================= */
 
 .notizie-finale {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -2735,7 +2735,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .home-news {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         105px
@@ -2778,7 +2778,7 @@ p:not(.pagina-etichetta) {
 
 
 .home-news-all {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -2790,7 +2790,7 @@ p:not(.pagina-etichetta) {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 }
 
 
@@ -2811,7 +2811,7 @@ p:not(.pagina-etichetta) {
         1.35fr
         1fr;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     min-height: 500px;
 
@@ -2880,7 +2880,7 @@ p:not(.pagina-etichetta) {
 
 
 .home-news-featured-content h3 a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 }
@@ -2901,7 +2901,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-bottom: 27px;
 }
@@ -2929,7 +2929,7 @@ p:not(.pagina-etichetta) {
         0.85fr
         1.15fr;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     min-height: 330px;
 
@@ -2947,7 +2947,7 @@ p:not(.pagina-etichetta) {
 
     box-shadow:
         0 16px 40px
-        rgba(0, 21, 54, 0.10);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.10);
 }
 
 
@@ -3023,7 +3023,7 @@ p:not(.pagina-etichetta) {
 
 
 .home-news-small-content h3 a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 }
@@ -3044,7 +3044,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.7;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-bottom: 22px;
 }
@@ -3065,7 +3065,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .home-scopri {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         110px
@@ -3127,7 +3127,7 @@ p:not(.pagina-etichetta) {
         Arial,
         sans-serif;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     font-size: 17px;
 
@@ -3330,10 +3330,10 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.74),
-            rgba(0, 21, 54, 0.74)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.74),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.74)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -3437,7 +3437,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.9;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -3467,7 +3467,7 @@ p:not(.pagina-etichetta) {
 
     min-height: 570px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     overflow: hidden;
 }
@@ -3568,7 +3568,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.85;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-bottom: 30px;
 }
@@ -3651,7 +3651,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .comunita-frase {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -3706,7 +3706,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .comunita-collaborazione {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     text-align: center;
 
@@ -3747,7 +3747,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-bottom: 35px;
 }
@@ -3771,7 +3771,7 @@ p:not(.pagina-etichetta) {
 
 
 .comunita-link-secondario {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -3780,7 +3780,7 @@ p:not(.pagina-etichetta) {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding-bottom: 5px;
 }
@@ -3981,10 +3981,10 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.76),
-            rgba(0, 21, 54, 0.76)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -4084,7 +4084,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.85;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -4118,7 +4118,7 @@ p:not(.pagina-etichetta) {
 .contatto-card {
     min-height: 290px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     text-align: center;
 
@@ -4145,7 +4145,7 @@ p:not(.pagina-etichetta) {
 
     box-shadow:
         0 18px 40px
-        rgba(0, 21, 54, 0.10);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.10);
 }
 
 
@@ -4155,7 +4155,7 @@ p:not(.pagina-etichetta) {
 
     border:
         1px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     border-radius: 50%;
 
@@ -4209,12 +4209,12 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.7;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
 .contatto-card a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 }
@@ -4231,7 +4231,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .contatti-orari {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -4337,7 +4337,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .scrivici {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     padding:
         120px
@@ -4384,7 +4384,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.8;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -4425,7 +4425,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.7;
 
-    color: #777;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -4435,7 +4435,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .form-contatti {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         50px
@@ -4443,7 +4443,7 @@ p:not(.pagina-etichetta) {
 
     box-shadow:
         0 15px 50px
-        rgba(0, 21, 54, 0.07);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.07);
 }
 
 
@@ -4467,12 +4467,12 @@ p:not(.pagina-etichetta) {
 
     margin-bottom: 10px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
 .campo-form label span {
-    color: #999;
+    color: var(--tema-testo-secondario, #666666);
 
     font-weight: normal;
 }
@@ -4501,7 +4501,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 15px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     outline: none;
 
@@ -4521,7 +4521,7 @@ p:not(.pagina-etichetta) {
 .campo-form select:focus,
 .campo-form textarea:focus {
     border-bottom-color:
-        #001536;
+        var(--tema-principale, #001536);
 }
 
 
@@ -4547,7 +4547,7 @@ p:not(.pagina-etichetta) {
 .privacy-form input {
     margin-top: 4px;
 
-    accent-color: #001536;
+    accent-color: var(--tema-principale, #001536);
 }
 
 
@@ -4560,12 +4560,12 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.6;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
 .privacy-form a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     font-weight: bold;
 }
@@ -4577,7 +4577,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .pulsante-invia {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -4638,7 +4638,7 @@ p:not(.pagina-etichetta) {
         110px
         30px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 }
 
 
@@ -4669,8 +4669,8 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.84),
-            rgba(0, 21, 54, 0.84)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.84),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.84)
         ),
         url("immagini/chiesa.jpg");
 
@@ -4737,7 +4737,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .contatti-messe {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -4967,10 +4967,10 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.80),
-            rgba(0, 21, 54, 0.80)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.80),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.80)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -5034,7 +5034,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .privacy-intro {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     padding:
         100px
@@ -5081,7 +5081,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.85;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -5103,7 +5103,7 @@ p:not(.pagina-etichetta) {
         16px
         22px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -5173,7 +5173,7 @@ p:not(.pagina-etichetta) {
     padding:
         30px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -5227,7 +5227,7 @@ p:not(.pagina-etichetta) {
 
 
 .privacy-indice nav a:hover {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     padding-left: 5px;
 }
@@ -5326,11 +5326,11 @@ p:not(.pagina-etichetta) {
 .privacy-box {
     max-width: 700px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     border-left:
         4px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding:
         25px
@@ -5362,7 +5362,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.75;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -5392,7 +5392,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .privacy-finale {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -5624,7 +5624,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .admin-body {
-    background: #f4f5f7;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     min-height: 100vh;
 }
@@ -5638,7 +5638,7 @@ p:not(.pagina-etichetta) {
 .admin-header {
     height: 90px;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -5771,9 +5771,9 @@ p:not(.pagina-etichetta) {
 
     border-radius: 50%;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     display: flex;
 
@@ -5841,7 +5841,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .admin-sidebar {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border-right:
         1px solid
@@ -5875,7 +5875,7 @@ p:not(.pagina-etichetta) {
 
     background: transparent;
 
-    color: #5f6875;
+    color: var(--tema-testo-secondario, #666666);
 
     padding:
         14px
@@ -5913,14 +5913,14 @@ p:not(.pagina-etichetta) {
 
 
 .admin-nav-link:hover {
-    background: #f4f5f7;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
 .admin-nav-link.attivo {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 }
@@ -5984,7 +5984,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.6;
 
-    color: #999;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6059,7 +6059,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 15px;
 
-    color: #777;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6097,7 +6097,7 @@ p:not(.pagina-etichetta) {
 
 
 .admin-btn-primary {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 }
@@ -6106,7 +6106,7 @@ p:not(.pagina-etichetta) {
 .admin-btn-secondary {
     background: #e9ebee;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -6145,7 +6145,7 @@ p:not(.pagina-etichetta) {
 
 
 .admin-stat-card {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         30px;
@@ -6193,7 +6193,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 13px;
 
-    color: #888;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6203,7 +6203,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .admin-pannello {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -6243,7 +6243,7 @@ p:not(.pagina-etichetta) {
 
     background: none;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     font-family:
         Georgia,
@@ -6264,7 +6264,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .admin-lista-articoli {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -6342,7 +6342,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 11px;
 
-    color: #999;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6405,9 +6405,9 @@ p:not(.pagina-etichetta) {
         1px solid
         #d9dde2;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     padding:
         9px
@@ -6424,7 +6424,7 @@ p:not(.pagina-etichetta) {
 
 
 .admin-articolo-azioni button:hover {
-    background: #f4f5f7;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -6456,7 +6456,7 @@ p:not(.pagina-etichetta) {
 .admin-toolbar select {
     width: 100%;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -6472,7 +6472,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 14px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     outline: none;
 }
@@ -6480,7 +6480,7 @@ p:not(.pagina-etichetta) {
 
 .admin-toolbar input:focus,
 .admin-toolbar select:focus {
-    border-color: #001536;
+    border-color: var(--tema-principale, #001536);
 }
 
 
@@ -6516,7 +6516,7 @@ p:not(.pagina-etichetta) {
 
 
 .admin-indietro:hover {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -6528,7 +6528,7 @@ p:not(.pagina-etichetta) {
 .admin-editor-form {
     max-width: 900px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -6557,7 +6557,7 @@ p:not(.pagina-etichetta) {
 
     letter-spacing: 0.8px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     margin-bottom: 10px;
 }
@@ -6572,7 +6572,7 @@ p:not(.pagina-etichetta) {
         1px solid
         #d8dce1;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         14px;
@@ -6583,7 +6583,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 15px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     outline: none;
 
@@ -6594,7 +6594,7 @@ p:not(.pagina-etichetta) {
 .admin-campo input:focus,
 .admin-campo select:focus,
 .admin-campo textarea:focus {
-    border-color: #001536;
+    border-color: var(--tema-principale, #001536);
 }
 
 
@@ -6609,7 +6609,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.5;
 
-    color: #999;
+    color: var(--tema-testo-secondario, #666666);
 
     margin-top: 8px;
 }
@@ -6633,7 +6633,7 @@ p:not(.pagina-etichetta) {
 .admin-preview-immagine {
     min-height: 220px;
 
-    background: #f4f5f7;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     border:
         1px dashed
@@ -6661,7 +6661,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 12px;
 
-    color: #999;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6688,7 +6688,7 @@ p:not(.pagina-etichetta) {
 
     gap: 5px;
 
-    background: #f4f5f7;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     border:
         1px solid
@@ -6709,9 +6709,9 @@ p:not(.pagina-etichetta) {
         1px solid
         #d8dce1;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     cursor: pointer;
 
@@ -6722,7 +6722,7 @@ p:not(.pagina-etichetta) {
 
 
 .admin-editor-toolbar button:hover {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 }
@@ -6784,7 +6784,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 13px;
 
-    color: #888;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6799,7 +6799,7 @@ p:not(.pagina-etichetta) {
     inset: 0;
 
     background:
-        rgba(0, 21, 54, 0.65);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.65);
 
     z-index: 5000;
 
@@ -6823,7 +6823,7 @@ p:not(.pagina-etichetta) {
 
     max-width: 480px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     padding:
         45px;
@@ -6852,7 +6852,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.7;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -6880,7 +6880,7 @@ p:not(.pagina-etichetta) {
 
     z-index: 6000;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -7174,7 +7174,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .home-eventi {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     padding:
         110px
@@ -7218,7 +7218,7 @@ p:not(.pagina-etichetta) {
 
 
 .home-eventi-tutti {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -7227,7 +7227,7 @@ p:not(.pagina-etichetta) {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding-bottom: 5px;
 }
@@ -7257,7 +7257,7 @@ p:not(.pagina-etichetta) {
 
     gap: 35px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border-bottom:
         1px solid
@@ -7290,7 +7290,7 @@ p:not(.pagina-etichetta) {
 
     box-shadow:
         0 12px 35px
-        rgba(0, 21, 54, 0.08);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.08);
 }
 
 
@@ -7322,7 +7322,7 @@ p:not(.pagina-etichetta) {
 
     font-style: italic;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -7399,7 +7399,7 @@ p:not(.pagina-etichetta) {
 
     font-size: 12px;
 
-    color: #777;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -7425,7 +7425,7 @@ p:not(.pagina-etichetta) {
     align-items: center;
     justify-content: center;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -7440,7 +7440,7 @@ p:not(.pagina-etichetta) {
 
 .home-evento:hover
 .home-evento-freccia {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -7598,10 +7598,10 @@ p:not(.pagina-etichetta) {
 
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.76),
-            rgba(0, 21, 54, 0.76)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
 
     background-size: cover;
     background-position: center;
@@ -7705,7 +7705,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.85;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -7727,7 +7727,7 @@ p:not(.pagina-etichetta) {
 
     margin: auto;
 
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -7931,12 +7931,12 @@ p:not(.pagina-etichetta) {
         110px
         30px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
 .eventi-agenda-alternata {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 }
 
 
@@ -7968,7 +7968,7 @@ p:not(.pagina-etichetta) {
 
     border-bottom:
         2px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     overflow: hidden;
 }
@@ -8001,7 +8001,7 @@ p:not(.pagina-etichetta) {
     font-style: italic;
 
     color:
-        rgba(0, 21, 54, 0.055);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.055);
 }
 
 
@@ -8050,7 +8050,7 @@ p:not(.pagina-etichetta) {
 
 .eventi-agenda-alternata
 .evento-riga:hover {
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -8215,7 +8215,7 @@ p:not(.pagina-etichetta) {
         100px
         30px;
 
-    background: #f6f6f4;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 
@@ -8243,7 +8243,7 @@ p:not(.pagina-etichetta) {
 
     border:
         1px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     border-radius: 50%;
 
@@ -8283,7 +8283,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.75;
 
-    color: #666;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -8293,7 +8293,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .eventi-messe {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -8639,7 +8639,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .footer-principale {
-    background: #001536;
+    background: var(--tema-principale, #001536);
 
     color: white;
 
@@ -8802,9 +8802,9 @@ p:not(.pagina-etichetta) {
 
 
 .footer-social a:hover {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     transform: translateY(-3px);
 }
@@ -9146,7 +9146,7 @@ p:not(.pagina-etichetta) {
 /* HERO */
 
 .notizie-hero {
-    background-color: #001536;
+    background-color: var(--tema-principale, #001536);
     color: white;
     padding: 90px 8%;
 }
@@ -9181,7 +9181,7 @@ p:not(.pagina-etichetta) {
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 .pagina-etichetta.chiaro {
@@ -9194,7 +9194,7 @@ p:not(.pagina-etichetta) {
 ========================================================= */
 
 .notizie-evidenza {
-    background-color: #ffffff;
+    background-color: var(--tema-sfondo, #ffffff);
     padding: 100px 8%;
 }
 
@@ -9238,7 +9238,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.05;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 .notizie-evidenza-testo > p:not(.pagina-etichetta):not(.data-notizia) {
@@ -9249,7 +9249,7 @@ p:not(.pagina-etichetta) {
     font-size: 17px;
     line-height: 1.8;
 
-    color: #444;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 .data-notizia {
@@ -9272,7 +9272,7 @@ p:not(.pagina-etichetta) {
 
     padding: 15px 25px;
 
-    background-color: #001536;
+    background-color: var(--tema-principale, #001536);
     color: white;
 
     text-decoration: none;
@@ -9287,7 +9287,7 @@ p:not(.pagina-etichetta) {
 
 .pulsante:hover {
     transform: translateY(-2px);
-    background-color: #0c2d59;
+    background-color: var(--tema-principale, #001536);
 }
 
 
@@ -9297,7 +9297,7 @@ p:not(.pagina-etichetta) {
 
 .notizie-lista {
     padding: 100px 8%;
-    background-color: #f5f5f3;
+    background-color: var(--tema-sfondo-secondario, #f6f6f4);
 }
 
 .notizie-container {
@@ -9320,7 +9320,7 @@ p:not(.pagina-etichetta) {
     font-style: italic;
     font-weight: 400;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -9341,7 +9341,7 @@ p:not(.pagina-etichetta) {
 /* CARD */
 
 .notizia-card {
-    background-color: white;
+    background-color: var(--tema-sfondo, #ffffff);
     overflow: hidden;
 }
 
@@ -9399,7 +9399,7 @@ p:not(.pagina-etichetta) {
 
     line-height: 1.15;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 .notizia-card-contenuto p {
@@ -9408,11 +9408,11 @@ p:not(.pagina-etichetta) {
     font-size: 15px;
     line-height: 1.7;
 
-    color: #555;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 .notizia-card-contenuto a {
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     font-size: 13px;
     font-weight: 700;
@@ -9431,7 +9431,7 @@ p:not(.pagina-etichetta) {
 
 .home-contatti {
     padding: 70px 8%;
-    background-color: #001536;
+    background-color: var(--tema-principale, #001536);
     color: white;
 }
 
@@ -9467,8 +9467,8 @@ p:not(.pagina-etichetta) {
 
     padding: 16px 26px;
 
-    background-color: white;
-    color: #001536;
+    background-color: var(--tema-sfondo, #ffffff);
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -9567,28 +9567,28 @@ p:not(.pagina-etichetta) {
 
 :root {
 
-    --blu: #001536;
-    --blu-chiaro: #0b2a55;
-    --blu-medio: #173c6b;
+    --blu: var(--tema-principale, #001536);
+    --blu-chiaro: var(--tema-principale, #001536);
+    --blu-medio: var(--tema-principale, #001536);
 
-    --bianco: #ffffff;
-    --avorio: #faf9f6;
-    --grigio: #f3f4f5;
-    --grigio-medio: #dfe3e8;
+    --bianco: var(--tema-sfondo, #ffffff);
+    --avorio: var(--tema-sfondo-secondario, #f6f6f4);
+    --grigio: var(--tema-sfondo-secondario, #f3f4f5);
+    --grigio-medio: var(--tema-bordo, #dfe3e8);
 
-    --testo: #001536;
-    --testo-secondario: #5f6875;
+    --testo: var(--tema-principale, #001536);
+    --testo-secondario: var(--tema-testo-secondario, #5f6875);
 
-    --oro: #b99a5b;
-    --oro-chiaro: #d8c49b;
+    --oro: var(--tema-accento, #d8c49b);
+    --oro-chiaro: var(--tema-accento, #d8c49b);
 
     --ombra:
         0 18px 55px
-        rgba(0, 21, 54, 0.10);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.10);
 
     --ombra-leggera:
         0 10px 35px
-        rgba(0, 21, 54, 0.07);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.07);
 
     --larghezza: 1200px;
 
@@ -9664,7 +9664,7 @@ img {
 .navbar {
 
     background:
-        rgba(0, 21, 54, 0.98);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.98);
 
     padding:
         18px
@@ -9849,7 +9849,7 @@ img {
 
     box-shadow:
         0 20px 55px
-        rgba(0, 21, 54, 0.18);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.18);
 
 }
 
@@ -10005,9 +10005,9 @@ section h2 {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 21, 54, 0.18),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.18),
             transparent 40%,
-            rgba(0, 21, 54, 0.12)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.12)
         );
 
 }
@@ -10082,9 +10082,9 @@ section h2 {
     background:
         linear-gradient(
             180deg,
-            rgba(0, 21, 54, 0.15) 0%,
-            rgba(0, 21, 54, 0.38) 55%,
-            rgba(0, 21, 54, 0.68) 100%
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.15) 0%,
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.38) 55%,
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.68) 100%
         );
 
 }
@@ -10271,7 +10271,7 @@ section h2 {
 
     opacity: 1;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     color: var(--blu);
 
@@ -10291,7 +10291,7 @@ section h2 {
         1px solid
         rgba(255, 255, 255, 0.8);
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     color: var(--blu);
 
@@ -10427,7 +10427,7 @@ section h2 {
     position: relative;
 
     background:
-        #000f27;
+        var(--tema-principale, #001536);
 
     border-top:
         1px solid
@@ -10758,10 +10758,10 @@ section[id] {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 15, 39, 0.88) 0%,
-            rgba(0, 21, 54, 0.68) 38%,
-            rgba(0, 21, 54, 0.25) 68%,
-            rgba(0, 21, 54, 0.10) 100%
+            rgba(var(--tema-principale-rgb, 0, 15, 39), 0.88) 0%,
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.68) 38%,
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.25) 68%,
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.10) 100%
         );
 }
 
@@ -10815,7 +10815,7 @@ section[id] {
 
     flex-shrink: 0;
 
-    background: #d8c49b;
+    background: var(--tema-accento, #d8c49b);
 }
 
 
@@ -10934,13 +10934,13 @@ section[id] {
 .home-hero-primary {
     gap: 25px;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
         white;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -10953,11 +10953,11 @@ section[id] {
 
 
 .home-hero-primary:hover {
-    background: #d8c49b;
+    background: var(--tema-accento, #d8c49b);
 
-    border-color: #d8c49b;
+    border-color: var(--tema-accento, #d8c49b);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     transform:
         translateY(-2px);
@@ -10990,9 +10990,9 @@ section[id] {
 .home-hero-secondary:hover {
     border-color: white;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     transform:
         translateY(-2px);
@@ -11065,7 +11065,7 @@ section[id] {
 
     z-index: 10;
 
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border-bottom:
         1px solid
@@ -11111,7 +11111,7 @@ section[id] {
         30px
         32px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     text-decoration: none;
 
@@ -11143,7 +11143,7 @@ section[id] {
     width: 0;
     height: 3px;
 
-    background: #b99a5b;
+    background: var(--tema-accento, #d8c49b);
 
     transition:
         width 0.35s ease;
@@ -11151,9 +11151,9 @@ section[id] {
 
 
 .home-quick-item:hover {
-    background: #faf9f6;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -11178,7 +11178,7 @@ section[id] {
 
     font-style: italic;
 
-    color: #b99a5b;
+    color: var(--tema-accento-testo, #856a35);
 }
 
 
@@ -11232,7 +11232,7 @@ section[id] {
 
     font-size: 19px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     transition:
         transform 0.3s ease;
@@ -11251,7 +11251,7 @@ section[id] {
 ========================================================= */
 
 .home-welcome {
-    background: #faf9f6;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     padding:
         120px
@@ -11302,7 +11302,7 @@ section[id] {
 
     letter-spacing: -2px;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 }
 
 
@@ -11329,7 +11329,7 @@ section[id] {
 
     line-height: 1.85;
 
-    color: #5f6875;
+    color: var(--tema-testo-secondario, #666666);
 }
 
 
@@ -11346,9 +11346,9 @@ section[id] {
 
     border-bottom:
         1px solid
-        #001536;
+        var(--tema-principale, #001536);
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     font-family:
         Arial,
@@ -11417,7 +11417,7 @@ section[id] {
 .home-news-link {
     display: inline-block;
 
-    color: #001536;
+    color: var(--tema-principale, #001536);
 
     font-family:
         Arial,
@@ -11434,7 +11434,7 @@ section[id] {
 
     border-bottom:
         1px solid
-        #001536;
+        var(--tema-principale, #001536);
 
     padding-bottom: 6px;
 }
@@ -11452,11 +11452,11 @@ section[id] {
 .home-news-featured {
     margin-top: 45px;
 
-    background: #faf9f6;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     box-shadow:
         0 18px 60px
-        rgba(0, 21, 54, 0.06);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.06);
 }
 
 
@@ -11483,7 +11483,7 @@ section[id] {
 ========================================================= */
 
 .home-news-small {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     border:
         1px solid
@@ -11503,7 +11503,7 @@ section[id] {
 ========================================================= */
 
 .home-eventi {
-    background: #faf9f6;
+    background: var(--tema-sfondo-secondario, #f6f6f4);
 
     padding-top: 120px;
     padding-bottom: 120px;
@@ -11531,14 +11531,14 @@ section[id] {
 
 
 .home-evento:hover {
-    background: white;
+    background: var(--tema-sfondo, #ffffff);
 
     transform:
         translateX(5px);
 
     box-shadow:
         0 10px 35px
-        rgba(0, 21, 54, 0.06);
+        rgba(var(--tema-principale-rgb, 0, 21, 54), 0.06);
 }
 
 
@@ -11620,7 +11620,7 @@ section[id] {
 
     border-top:
         3px solid
-        #b99a5b;
+        var(--tema-accento, #d8c49b);
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -11690,7 +11690,7 @@ section[id] {
 
     border:
         1px solid
-        #d8c49b;
+        var(--tema-accento, #d8c49b);
 
     z-index: 0;
 }
@@ -11810,9 +11810,9 @@ section[id] {
         background:
             linear-gradient(
                 180deg,
-                rgba(0, 21, 54, 0.15) 0%,
-                rgba(0, 21, 54, 0.35) 35%,
-                rgba(0, 15, 39, 0.90) 100%
+                rgba(var(--tema-principale-rgb, 0, 21, 54), 0.15) 0%,
+                rgba(var(--tema-principale-rgb, 0, 21, 54), 0.35) 35%,
+                rgba(var(--tema-principale-rgb, 0, 15, 39), 0.90) 100%
             );
     }
 
@@ -12066,10 +12066,26 @@ section[id] {
 .parrocchia-hero {
     background:
         linear-gradient(
-            rgba(0, 21, 54, 0.76),
-            rgba(0, 21, 54, 0.76)
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76),
+            rgba(var(--tema-principale-rgb, 0, 21, 54), 0.76)
         ),
-        url("immagini/chiesa.jpg");
+        var(--pagina-immagine, url("immagini/chiesa.jpg"));
     background-size: cover;
     background-position: center;
 }
+
+/* Accenti su superfici scure: mantengono il colore chiaro del tema. */
+.pagina-etichetta.chiaro, .home-hero-eyebrow, .evento-data span,
+.footer-link-speciale, .home-hero-scroll, .home-hero-scroll > span:first-child {
+    color: var(--tema-accento, #d8c49b);
+}
+.footer-social { flex-wrap: wrap; }
+.footer-social[hidden] { display: none; }
+.footer-social a { flex-shrink: 0; }
+.footer-social svg { display: block; width: 22px; height: 22px; }
+
+/* Sezioni modificabili della pagina La Parrocchia. */
+#parishSections > section[hidden] { display: none; }
+.parrocchia-section-photo { display: block; max-width: 100%; max-height: 600px; object-fit: contain; margin: 24px 0; }
+.parrocchia-section-photo[hidden] { display: none; }
+.parrocchia-section-text + .parrocchia-section-text { margin-top: 24px; }

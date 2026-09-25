@@ -2,6 +2,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -46,11 +49,11 @@
 
     <div>
 
-        <p class="pagina-etichetta chiaro">
+        <p class="pagina-etichetta chiaro" data-parrocchia="hero_etichetta">
             CONOSCI LA NOSTRA COMUNITÀ
         </p>
 
-        <h1>
+        <h1 data-parrocchia="hero_titolo">
             La Parrocchia
         </h1>
 
@@ -60,6 +63,7 @@
 
 
 
+<main id="parishSections">
 <!-- =========================================================
      01 - LA NOSTRA STORIA
 ========================================================= -->
@@ -79,15 +83,15 @@
 
         <div>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-parrocchia="storia_etichetta">
                 LE NOSTRE RADICI
             </p>
 
-            <h2>
+            <h2 data-parrocchia="storia_titolo">
                 La nostra storia
             </h2>
 
-            <p>
+            <p data-parrocchia="storia_testo1">
 
                 La Parrocchia di Vibo Marina
                 è una comunità cristiana
@@ -105,7 +109,7 @@
 
             <br>
 
-            <p>
+            <p data-parrocchia="storia_testo2">
 
                 Questo spazio potrà essere
                 arricchito con la storia reale
@@ -145,15 +149,15 @@
 
         <div>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-parrocchia="chiesa_etichetta">
                 LA NOSTRA CASA
             </p>
 
-            <h2>
+            <h2 data-parrocchia="chiesa_titolo">
                 La chiesa
             </h2>
 
-            <p>
+            <p data-parrocchia="chiesa_testo1">
 
                 La chiesa parrocchiale
                 è il cuore della vita liturgica
@@ -171,7 +175,7 @@
 
             <br>
 
-            <p>
+            <p data-parrocchia="chiesa_testo2">
 
                 Qui potremo inserire
                 la storia dell'edificio,
@@ -210,15 +214,15 @@
 
         <div>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-parrocchia="parroco_etichetta">
                 AL SERVIZIO DELLA COMUNITÀ
             </p>
 
-            <h2>
+            <h2 data-parrocchia="parroco_titolo">
                 Il parroco
             </h2>
 
-            <p>
+            <p data-parrocchia="parroco_testo1">
 
                 Il parroco accompagna
                 la comunità nel cammino
@@ -232,7 +236,7 @@
 
             <br>
 
-            <p>
+            <p data-parrocchia="parroco_testo2">
 
                 In questa sezione
                 potremo inserire il nome
@@ -348,7 +352,7 @@
      CONTATTI
 ========================================================= -->
 
-<section class="home-contatti">
+<section class="home-contatti" id="parrocchia-contatti">
 
     <div class="home-contatti-contenuto">
 
@@ -382,6 +386,7 @@
      FOOTER AUTOMATICO
 ========================================================= -->
 
+</main>
 <div id="footer"></div>
 
 
@@ -391,6 +396,7 @@
 ========================================================= -->
 
 <script src="script.js"></script>
+<script type="module" src="parrocchia-contenuti.js"></script>
 
 
 </body>

@@ -2,6 +2,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -46,15 +49,15 @@
 
     <div>
 
-        <p class="pagina-etichetta chiaro">
+        <p class="pagina-etichetta chiaro" data-gruppi="hero_1">
             VIVI LA COMUNITÀ
         </p>
 
-        <h1>
+        <h1 data-gruppi="hero_2">
             Gruppi Parrocchiali
         </h1>
 
-        <p class="gruppi-hero-testo">
+        <p class="gruppi-hero-testo" data-gruppi="hero_3">
             Persone, esperienze e cammini diversi
             che insieme costruiscono
             la nostra comunità.
@@ -74,15 +77,15 @@
 
     <div class="introduzione-contenuto">
 
-        <p class="pagina-etichetta">
+        <p class="pagina-etichetta" data-gruppi="intro_1">
             LA NOSTRA COMUNITÀ
         </p>
 
-        <h2>
+        <h2 data-gruppi="intro_2">
             C'è un posto anche per te
         </h2>
 
-        <p>
+        <p data-gruppi="intro_3">
             La vita della parrocchia cresce
             attraverso l'impegno,
             la partecipazione e il servizio
@@ -121,7 +124,7 @@
 
         <div class="gruppo-immagine">
 
-            <img
+            <img data-gruppo-foto="giovani"
                 src="immagini/gruppo-giovani.jpg"
                 alt="Gruppo Giovani della Parrocchia Maria SS. del Rosario di Pompei"
             >
@@ -135,15 +138,15 @@
                 01
             </span>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-gruppi="giovani_1">
                 GIOVANI
             </p>
 
-            <h2>
+            <h2 data-gruppi="giovani_2">
                 Gruppo Giovani
             </h2>
 
-            <p>
+            <p data-gruppi="giovani_3">
                 Uno spazio dedicato ai giovani
                 che desiderano incontrarsi,
                 confrontarsi e vivere insieme
@@ -156,11 +159,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="giovani_4">
                         PER CHI
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="giovani_5">
                         Giovani
                     </strong>
 
@@ -169,11 +172,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="giovani_6">
                         INCONTRI
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="giovani_7">
                         Settimanali
                     </strong>
 
@@ -185,7 +188,7 @@
             <a
                 href="contatti.html"
                 class="pulsante-gruppo"
-            >
+             data-gruppi="giovani_8">
                 Chiedi informazioni →
             </a>
 
@@ -206,7 +209,7 @@
 
         <div class="gruppo-immagine">
 
-            <img
+            <img data-gruppo-foto="ac"
                 src="immagini/azione-cattolica.jpg"
                 alt="Azione Cattolica della Parrocchia Maria SS. del Rosario di Pompei"
             >
@@ -220,15 +223,15 @@
                 02
             </span>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-gruppi="ac_1">
                 ASSOCIAZIONE
             </p>
 
-            <h2>
+            <h2 data-gruppi="ac_2">
                 Azione Cattolica
             </h2>
 
-            <p>
+            <p data-gruppi="ac_3">
                 Un'esperienza associativa
                 al servizio della Chiesa
                 e della comunità,
@@ -244,11 +247,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="ac_4">
                         PERCORSI
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="ac_5">
                         Ragazzi, giovani e adulti
                     </strong>
 
@@ -257,11 +260,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="ac_6">
                         ATTIVITÀ
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="ac_7">
                         Formazione e servizio
                     </strong>
 
@@ -273,7 +276,7 @@
             <a
                 href="contatti.html"
                 class="pulsante-gruppo"
-            >
+             data-gruppi="ac_8">
                 Chiedi informazioni →
             </a>
 
@@ -294,7 +297,7 @@
 
         <div class="gruppo-immagine">
 
-            <img
+            <img data-gruppo-foto="catechismo"
                 src="immagini/catechismo.jpg"
                 alt="Catechismo della Parrocchia Maria SS. del Rosario di Pompei"
             >
@@ -308,15 +311,15 @@
                 03
             </span>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-gruppi="catechismo_1">
                 CATECHESI
             </p>
 
-            <h2>
+            <h2 data-gruppi="catechismo_2">
                 Catechismo
             </h2>
 
-            <p>
+            <p data-gruppi="catechismo_3">
                 Il percorso di catechesi
                 accompagna bambini e ragazzi
                 nella scoperta della fede
@@ -329,11 +332,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="catechismo_4">
                         PER CHI
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="catechismo_5">
                         Bambini e ragazzi
                     </strong>
 
@@ -342,11 +345,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="catechismo_6">
                         PERCORSO
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="catechismo_7">
                         Iniziazione cristiana
                     </strong>
 
@@ -358,7 +361,7 @@
             <a
                 href="contatti.html"
                 class="pulsante-gruppo"
-            >
+             data-gruppi="catechismo_8">
                 Informazioni e iscrizioni →
             </a>
 
@@ -379,7 +382,7 @@
 
         <div class="gruppo-immagine">
 
-            <img
+            <img data-gruppo-foto="coro"
                 src="immagini/coro.jpg"
                 alt="Coro Parrocchiale della Parrocchia Maria SS. del Rosario di Pompei"
             >
@@ -393,15 +396,15 @@
                 04
             </span>
 
-            <p class="pagina-etichetta">
+            <p class="pagina-etichetta" data-gruppi="coro_1">
                 MUSICA E LITURGIA
             </p>
 
-            <h2>
+            <h2 data-gruppi="coro_2">
                 Coro Parrocchiale
             </h2>
 
-            <p>
+            <p data-gruppi="coro_3">
                 Il coro accompagna
                 con il canto
                 le celebrazioni liturgiche
@@ -418,11 +421,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="coro_4">
                         ATTIVITÀ
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="coro_5">
                         Canto e liturgia
                     </strong>
 
@@ -431,11 +434,11 @@
 
                 <div>
 
-                    <span>
+                    <span data-gruppi="coro_6">
                         PARTECIPAZIONE
                     </span>
 
-                    <strong>
+                    <strong data-gruppi="coro_7">
                         Aperta a nuovi membri
                     </strong>
 
@@ -447,7 +450,7 @@
             <a
                 href="contatti.html"
                 class="pulsante-gruppo"
-            >
+             data-gruppi="coro_8">
                 Unisciti al coro →
             </a>
 
@@ -468,16 +471,16 @@
 
     <div>
 
-        <p class="pagina-etichetta chiaro">
+        <p class="pagina-etichetta chiaro" data-gruppi="finale_1">
             PARTECIPA
         </p>
 
-        <h2>
+        <h2 data-gruppi="finale_2">
             Vuoi entrare a far parte
             di un gruppo?
         </h2>
 
-        <p>
+        <p data-gruppi="finale_3">
             Se desideri conoscere meglio
             una delle realtà della parrocchia,
             partecipare a un incontro
@@ -490,7 +493,7 @@
         <a
             href="contatti.html"
             class="pulsante-chiaro"
-        >
+         data-gruppi="finale_4">
             Contatta la Parrocchia →
         </a>
 
@@ -513,6 +516,7 @@
 ========================================================= -->
 
 <script src="script.js"></script>
+<script type="module" src="gruppi-contenuti.js"></script>
 
 
 </body>

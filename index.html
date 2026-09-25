@@ -2,6 +2,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -33,7 +36,7 @@
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 14px;
-        color: #737b85;
+        color: var(--tema-testo-secondario, #666666);
     }
 
     .home-news-small-image img {
@@ -51,7 +54,7 @@
         align-items: center;
         justify-content: center;
         padding: 30px;
-        background: #001536;
+        background: var(--tema-principale, #001536);
         color: #ffffff;
         text-align: center;
         font-family: Georgia, "Times New Roman", serif;
@@ -71,7 +74,7 @@
     .home-eventi-empty {
         padding: 28px 0;
         font-family: Arial, Helvetica, sans-serif;
-        color: #737b85;
+        color: var(--tema-testo-secondario, #666666);
     }
 
 
@@ -103,7 +106,7 @@
         height: 42px;
         display: grid;
         place-items: center;
-        background: #001536;
+        background: var(--tema-principale, #001536);
         color: #ffffff;
         font-family: Georgia, "Times New Roman", serif;
         font-size: 22px;
@@ -127,7 +130,7 @@
         font-family: Georgia, "Times New Roman", serif;
         font-size: 22px;
         font-weight: 400;
-        color: #001536;
+        color: var(--tema-principale, #001536);
     }
 
     .home-avviso-testo {
@@ -227,15 +230,7 @@
         </div>
 
 
-        <div class="home-hero-scroll">
 
-            <span>
-                SCOPRI
-            </span>
-
-            <span class="home-hero-scroll-line"></span>
-
-        </div>
 
     </div>
 
@@ -1166,76 +1161,6 @@
     }
 
 
-    async function caricaOrariMesseHome() {
-
-        try {
-            const snapshot = await getDoc(
-                doc(db, "impostazioni", "orariMesse")
-            );
-
-            if (!snapshot.exists()) {
-                return;
-            }
-
-            const dati = snapshot.data();
-            const cards = document.querySelectorAll(".griglia-messe .card-messa");
-
-            if (cards.length < 3) {
-                return;
-            }
-
-            aggiornaCardMessa(cards[0], dati.feriali, dati.ferialiNota);
-            aggiornaCardMessa(cards[1], dati.sabato, dati.sabatoNota);
-            aggiornaCardMessa(cards[2], dati.domenica, dati.domenicaNota);
-
-        } catch (errore) {
-            console.error("Errore caricamento orari Messe nella Home:", errore);
-            // In caso di errore restano visibili gli orari già presenti nell'HTML.
-        }
-    }
-
-
-    function aggiornaCardMessa(card, orari, nota) {
-
-        if (!card) {
-            return;
-        }
-
-        const elementoOrari = card.querySelector("strong");
-        const elementoNota = card.querySelector("p");
-
-        if (elementoOrari && typeof orari === "string" && orari.trim()) {
-            elementoOrari.innerHTML = "";
-
-            const righe = orari
-                .split(/\r?\n/)
-                .map(riga => riga.trim())
-                .filter(Boolean);
-
-            righe.forEach((riga, indice) => {
-                if (indice > 0) {
-                    elementoOrari.appendChild(document.createElement("br"));
-                }
-                elementoOrari.appendChild(document.createTextNode(riga));
-            });
-        }
-
-        if (elementoNota && typeof nota === "string") {
-            elementoNota.innerHTML = "";
-
-            const righeNota = nota.split(/\r?\n/);
-
-            righeNota.forEach((riga, indice) => {
-                if (indice > 0) {
-                    elementoNota.appendChild(document.createElement("br"));
-                }
-                elementoNota.appendChild(document.createTextNode(riga));
-            });
-        }
-    }
-
-
-
     async function caricaAvvisoHome() {
 
         const sezione = document.getElementById("homeAvviso");
@@ -1300,9 +1225,36 @@
     }
 
 
+    async function caricaImmaginiHome() {
+        try {
+            const snapshot = await getDoc(doc(db, "impostazioni", "immaginiHome"));
+            if (!snapshot.exists()) return;
+            const immagini = snapshot.data().immagini;
+            if (!Array.isArray(immagini)) return;
+            const slides = document.querySelectorAll(".home-hero-slide");
+            await Promise.all(Array.from(slides, async (slide, i) => {
+                const foto = immagini[i];
+                if (!foto || typeof foto.url !== "string" || !foto.url) return;
+                const url = new URL(foto.url, document.baseURI);
+                if (!["https:", "http:"].includes(url.protocol)) return;
+                // Sostituisce la foto soltanto dopo il caricamento riuscito.
+                const anteprima = new Image();
+                anteprima.src = url.href;
+                try {
+                    await anteprima.decode();
+                    slide.src = url.href;
+                    slide.alt = typeof foto.alt === "string" ? foto.alt : "";
+                } catch (errore) {
+                    console.warn("Immagine Home non disponibile:", errore);
+                }
+            }));
+        } catch (errore) {
+            console.error("Errore caricamento immagini Home:", errore);
+        }
+    }
+    caricaImmaginiHome();
     caricaUltimeNotizieHome();
     caricaProssimiEventiHome();
-    caricaOrariMesseHome();
     caricaAvvisoHome();
 
 </script>

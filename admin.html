@@ -2,6 +2,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -37,7 +40,7 @@
 
         body {
             margin: 0;
-            background: #f5f6f8;
+            background: var(--tema-sfondo-secondario, #f5f6f8);
         }
 
 
@@ -57,8 +60,8 @@
             background:
                 linear-gradient(
                     135deg,
-                    #001536 0%,
-                    #08254d 100%
+                    var(--tema-principale, #001536) 0%,
+                    var(--tema-principale, #08254d) 100%
                 );
         }
 
@@ -69,7 +72,7 @@
 
             padding: 50px 45px;
 
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
 
             box-shadow:
                 0 30px 80px rgba(0,0,0,.25);
@@ -103,7 +106,7 @@
 
             letter-spacing: 2.5px;
 
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
 
@@ -120,7 +123,7 @@
             font-size: 38px;
             font-weight: 400;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -137,7 +140,7 @@
             font-size: 14px;
             line-height: 1.7;
 
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
 
@@ -161,7 +164,7 @@
 
             letter-spacing: .7px;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -170,7 +173,7 @@
 
             padding: 15px;
 
-            border: 1px solid #d9dde2;
+            border: 1px solid var(--tema-bordo, #d9dde2);
 
             outline: none;
 
@@ -181,7 +184,7 @@
 
             font-size: 15px;
 
-            color: #27303b;
+            color: var(--tema-principale, #27303b);
 
             transition:
                 border .2s ease,
@@ -190,11 +193,11 @@
 
 
         .login-field input:focus {
-            border-color: #001536;
+            border-color: var(--tema-principale, #001536);
 
             box-shadow:
                 0 0 0 3px
-                rgba(0,21,54,.06);
+                rgba(var(--tema-principale-rgb, 0, 21, 54), .06);
         }
 
 
@@ -206,7 +209,7 @@
 
             border: 0;
 
-            background: #001536;
+            background: var(--tema-principale, #001536);
             color: white;
 
             cursor: pointer;
@@ -228,7 +231,7 @@
 
 
         .login-button:hover {
-            background: #173c6b;
+            background: var(--tema-principale, #173c6b);
 
             transform:
                 translateY(-2px);
@@ -281,7 +284,7 @@
             font-size: 11px;
             font-weight: 700;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
 
             text-decoration: none;
         }
@@ -301,7 +304,7 @@
         ====================================================== */
 
         .admin-header {
-            background: #001536;
+            background: var(--tema-principale, #001536);
             color: white;
 
             padding: 22px 35px;
@@ -353,7 +356,7 @@
 
             letter-spacing: 2px;
 
-            color: #d8c49b;
+            color: var(--tema-accento, #d8c49b);
         }
 
 
@@ -425,8 +428,8 @@
 
 
         .logout-button:hover {
-            background: white;
-            color: #001536;
+            background: var(--tema-sfondo, #ffffff);
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -480,7 +483,7 @@
             letter-spacing:
                 2.5px;
 
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
 
@@ -504,7 +507,7 @@
             letter-spacing:
                 -2px;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -521,7 +524,7 @@
             font-size: 15px;
             line-height: 1.7;
 
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
 
@@ -548,15 +551,15 @@
         ====================================================== */
 
         .admin-panel {
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
 
             border:
                 1px solid
-                #e4e7eb;
+                var(--tema-bordo, #e4e7eb);
 
             box-shadow:
                 0 15px 50px
-                rgba(0,21,54,.05);
+                rgba(var(--tema-principale-rgb, 0, 21, 54), .05);
         }
 
 
@@ -565,7 +568,7 @@
 
             border-bottom:
                 1px solid
-                #e4e7eb;
+                var(--tema-bordo, #e4e7eb);
         }
 
 
@@ -584,7 +587,7 @@
 
             letter-spacing: 2px;
 
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
 
@@ -599,7 +602,7 @@
             font-size: 27px;
             font-weight: 400;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -632,7 +635,7 @@
 
             letter-spacing: .6px;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -645,9 +648,9 @@
 
             border:
                 1px solid
-                #d9dde2;
+                var(--tema-bordo, #d9dde2);
 
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
 
             font-family:
                 Arial,
@@ -656,7 +659,7 @@
 
             font-size: 15px;
 
-            color: #27303b;
+            color: var(--tema-principale, #27303b);
 
             outline: none;
         }
@@ -666,11 +669,11 @@
         .admin-field select:focus,
         .admin-field textarea:focus {
             border-color:
-                #001536;
+                var(--tema-principale, #001536);
 
             box-shadow:
                 0 0 0 3px
-                rgba(0,21,54,.06);
+                rgba(var(--tema-principale-rgb, 0, 21, 54), .06);
         }
 
 
@@ -700,10 +703,10 @@
         .admin-file-box {
             border:
                 1px dashed
-                #b9c0c9;
+                var(--tema-bordo, #b9c0c9);
 
             background:
-                #fafafa;
+                var(--tema-sfondo-secondario, #fafafa);
 
             padding: 30px;
 
@@ -731,7 +734,7 @@
 
             font-size: 12px;
 
-            color: #7b838d;
+            color: var(--tema-testo-secondario, #7b838d);
         }
 
 
@@ -769,7 +772,7 @@
 
             border-top:
                 1px solid
-                #e4e7eb;
+                var(--tema-bordo, #e4e7eb);
         }
 
 
@@ -796,19 +799,19 @@
 
 
         .admin-button-secondary {
-            background: #eef0f3;
-            color: #001536;
+            background: var(--tema-sfondo-secondario, #eef0f3);
+            color: var(--tema-principale, #001536);
         }
 
 
         .admin-button-primary {
-            background: #001536;
+            background: var(--tema-principale, #001536);
             color: white;
         }
 
 
         .admin-button-primary:hover {
-            background: #173c6b;
+            background: var(--tema-principale, #173c6b);
         }
 
 
@@ -826,11 +829,11 @@
         .admin-sidebar-box {
             padding: 27px;
 
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
 
             border:
                 1px solid
-                #e4e7eb;
+                var(--tema-bordo, #e4e7eb);
         }
 
 
@@ -846,7 +849,7 @@
             font-size: 22px;
             font-weight: 400;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -861,7 +864,7 @@
             font-size: 13px;
             line-height: 1.7;
 
-            color: #6a727d;
+            color: var(--tema-testo-secondario, #6a727d);
         }
 
 
@@ -882,7 +885,7 @@
 
             border-radius: 50%;
 
-            background: #b99a5b;
+            background: var(--tema-accento-testo, #b99a5b);
         }
 
 
@@ -894,7 +897,7 @@
 
             font-size: 12px;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -914,7 +917,7 @@
 
             border-top:
                 1px solid
-                #e7e9ec;
+                var(--tema-bordo, #e7e9ec);
 
             font-family:
                 Arial,
@@ -923,7 +926,7 @@
 
             font-size: 11px;
 
-            color: #858c95;
+            color: var(--tema-testo-secondario, #858c95);
         }
 
 
@@ -940,11 +943,11 @@
                 15px 18px;
 
             background:
-                #f5f2e9;
+                var(--tema-sfondo-secondario, #f5f2e9);
 
             border-left:
                 3px solid
-                #b99a5b;
+                var(--tema-accento-testo, #b99a5b);
 
             font-family:
                 Arial,
@@ -954,7 +957,7 @@
             font-size: 13px;
             line-height: 1.6;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -967,11 +970,11 @@
 
             margin-top: 30px;
 
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
 
             border:
                 1px solid
-                #e4e7eb;
+                var(--tema-bordo, #e4e7eb);
         }
 
 
@@ -1009,7 +1012,7 @@
 
             letter-spacing: 2px;
 
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
 
@@ -1033,7 +1036,7 @@
 
             line-height: 1.05;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -1047,7 +1050,7 @@
 
             font-size: 12px;
 
-            color: #89909a;
+            color: var(--tema-testo-secondario, #89909a);
         }
 
 
@@ -1063,7 +1066,7 @@
             font-size: 17px;
             line-height: 1.9;
 
-            color: #4f5864;
+            color: var(--tema-testo-secondario, #4f5864);
         }
 
 
@@ -1073,8 +1076,8 @@
         ====================================================== */
 
         .admin-nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e4e7eb;
+            background: var(--tema-sfondo, #ffffff);
+            border-bottom: 1px solid var(--tema-bordo, #e4e7eb);
         }
 
         .admin-nav-container {
@@ -1098,13 +1101,13 @@
             font-size: 10px;
             font-weight: 700;
             letter-spacing: .8px;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .admin-nav-button:hover,
         .admin-nav-button.active {
-            color: #001536;
-            border-bottom-color: #b99a5b;
+            color: var(--tema-principale, #001536);
+            border-bottom-color: var(--tema-accento-testo, #b99a5b);
         }
 
         .admin-view {
@@ -1136,7 +1139,7 @@
             font-size: clamp(42px, 5vw, 65px);
             font-weight: 400;
             letter-spacing: -2px;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .dashboard-description {
@@ -1145,7 +1148,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 15px;
             line-height: 1.7;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .dashboard-grid {
@@ -1157,9 +1160,9 @@
         .dashboard-card {
             min-height: 285px;
             padding: 38px;
-            background: #ffffff;
-            border: 1px solid #e4e7eb;
-            box-shadow: 0 15px 50px rgba(0,21,54,.05);
+            background: var(--tema-sfondo, #ffffff);
+            border: 1px solid var(--tema-bordo, #e4e7eb);
+            box-shadow: 0 15px 50px rgba(var(--tema-principale-rgb, 0, 21, 54), .05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -1170,8 +1173,8 @@
             height: 56px;
             display: grid;
             place-items: center;
-            background: #001536;
-            color: #ffffff;
+            background: var(--tema-principale, #001536);
+            color: var(--tema-sfondo, #ffffff);
             font-family: Georgia, "Times New Roman", serif;
             font-size: 30px;
         }
@@ -1181,7 +1184,7 @@
             font-family: Georgia, "Times New Roman", serif;
             font-size: 31px;
             font-weight: 400;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .dashboard-card p {
@@ -1189,21 +1192,21 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
             line-height: 1.75;
-            color: #69717d;
+            color: var(--tema-testo-secondario, #69717d);
         }
 
         .dashboard-action {
             align-self: flex-start;
             padding: 0 0 5px;
             border: 0;
-            border-bottom: 1px solid #001536;
+            border-bottom: 1px solid var(--tema-principale, #001536);
             background: transparent;
             cursor: pointer;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: .7px;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         /* DASHBOARD RINNOVATA */
@@ -1216,9 +1219,9 @@
 
         .dashboard-stat {
             padding: 25px;
-            background: #ffffff;
-            border: 1px solid #e4e7eb;
-            box-shadow: 0 12px 35px rgba(0,21,54,.04);
+            background: var(--tema-sfondo, #ffffff);
+            border: 1px solid var(--tema-bordo, #e4e7eb);
+            box-shadow: 0 12px 35px rgba(var(--tema-principale-rgb, 0, 21, 54), .04);
         }
 
         .dashboard-stat-label {
@@ -1229,7 +1232,7 @@
             font-weight: 700;
             letter-spacing: 1.15px;
             white-space: nowrap;
-            color: #8a9098;
+            color: var(--tema-testo-secondario, #8a9098);
         }
 
         .dashboard-stat strong {
@@ -1240,7 +1243,7 @@
             font-size: clamp(20px, 2vw, 30px);
             line-height: 1.08;
             font-weight: 400;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         #dashboardNoticeStatus,
@@ -1258,7 +1261,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
             line-height: 1.5;
-            color: #8a9098;
+            color: var(--tema-testo-secondario, #8a9098);
         }
 
         .dashboard-section-title {
@@ -1274,7 +1277,7 @@
             font-family: Georgia, "Times New Roman", serif;
             font-size: 28px;
             font-weight: 400;
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
         .dashboard-section-title span {
@@ -1282,7 +1285,7 @@
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 1px;
-            color: #b99a5b;
+            color: var(--tema-accento-testo, #b99a5b);
         }
 
         .dashboard-grid {
@@ -1313,8 +1316,8 @@
         .dashboard-footer-card {
             margin-top: 28px;
             padding: 24px 28px;
-            background: #001536;
-            color: #ffffff;
+            background: var(--tema-principale, #001536);
+            color: var(--tema-sfondo, #ffffff);
             display: flex;
             justify-content: space-between;
             gap: 25px;
@@ -1473,12 +1476,134 @@
 
         }
 
-    </style>
+        /* Riquadri dei contenuti della pagina La Parrocchia */
+        #parishForm > p { line-height: 1.6; margin-bottom: 24px; }
+        .parish-editor-section {
+            min-width: 0;
+            margin-bottom: 28px;
+            padding: clamp(18px, 3vw, 32px);
+            border: 1px solid var(--tema-bordo, #d9dde2);
+            border-top: 3px solid var(--tema-principale, #001536);
+            border-radius: 8px;
+            background: var(--tema-sfondo-secondario, #f7f8fa);
+        }
+        .parish-editor-section h3 {
+            margin: 0 0 8px;
+            color: var(--tema-principale, #001536);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(24px, 3vw, 30px);
+            font-weight: 400;
+        }
+        .parish-editor-description {
+            margin: 0 0 24px;
+            color: var(--tema-testo-secondario, #5f6874);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .parish-editor-section .admin-field:last-child { margin-bottom: 0; }
+        .theme-colors { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .theme-colors input[type="color"] { height: 52px; padding: 4px; cursor: pointer; }
+        .theme-colors output { display: block; margin-top: 8px; font: 13px monospace; }
+        .theme-preview { border: 1px solid var(--tema-bordo, #d9dde2); border-radius: 6px; overflow: hidden; margin: 20px 0; }
+        .theme-preview-header, .theme-preview-footer { padding: 24px; background: var(--tema-principale); color: white; }
+        .theme-preview-header { font: 24px Georgia, serif; }
+        .theme-preview-header span { display: block; margin-top: 12px; font: 12px Arial, sans-serif; color: var(--tema-accento); }
+        .theme-preview-body { padding: 28px; background: var(--tema-sfondo); color: var(--tema-principale); }
+        .theme-preview-eyebrow { font: 11px Arial, sans-serif; letter-spacing: 1px; color: var(--tema-accento-testo); }
+        .theme-preview-body h4 { margin: 14px 0; font: 30px Georgia, serif; }
+        .theme-preview-copy { color: var(--tema-testo-secondario); line-height: 1.6; }
+        .theme-preview-button { display: inline-block; margin-top: 22px; padding: 14px 20px; background: var(--tema-accento); color: var(--tema-principale); font: bold 12px Arial, sans-serif; }
+        #themeContrast { line-height: 1.6; font-size: 14px; }
+        #themeContrast[data-invalid="true"] { color: #9c2020; }
+            /* Accessi a tutte le funzioni dalla dashboard */
+        .dashboard-tools + .dashboard-tools { margin-top: 40px; }
+        .dashboard-tools .dashboard-grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+        }
+        .dashboard-tools .dashboard-card { min-height: 210px; gap: 20px; }
+        .dashboard-tools .dashboard-card h3 {
+            margin: 0 0 12px;
+            font: 400 25px Georgia, "Times New Roman", serif;
+            color: var(--tema-principale, #001536);
+        }
+        .dashboard-tools .dashboard-card p { margin-bottom: 0; }
+        .dashboard-tools .dashboard-action {
+            min-height: 44px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+        .dashboard-tools .dashboard-action:hover { color: var(--tema-accento-testo, #675128); border-color: var(--tema-accento-testo, #675128); }
+        .dashboard-tools .dashboard-action:focus-visible {
+            outline: 3px solid var(--tema-accento-testo, #b99a5b);
+            outline-offset: 5px;
+        }
+        .auth-loading {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 30px;
+            text-align: center;
+            color: var(--tema-principale, #001536);
+            font: 16px/1.6 Arial, Helvetica, sans-serif;
+        }
+        .auth-loading[hidden] { display: none; }
+        .auth-loading a { color: inherit; text-decoration: underline; }
+        .footer-social-editor-row {
+            display: grid;
+            grid-template-columns: 32px minmax(140px, 1fr) minmax(180px, 2fr) minmax(140px, 1fr) auto;
+            gap: 16px;
+            align-items: end;
+            border-bottom: 1px solid var(--tema-bordo, #d9dde2);
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .footer-social-editor-row .admin-field { margin: 0; min-width: 0; }
+        .footer-social-editor-icon { color: var(--tema-principale, #001536); align-self: center; }
+        @media (max-width: 1000px) {
+            .footer-social-editor-row { grid-template-columns: 1fr; align-items: stretch; }
+            .footer-social-editor-row button { justify-self: start; }
+        }
+        .page-image-preview {
+            min-height: 220px;
+            max-width: 720px;
+            display: grid;
+            place-items: center;
+            margin: 20px 0;
+            padding: 35px 20px;
+            text-align: center;
+            color: white;
+            background-color: var(--tema-principale, #001536);
+            background-image: linear-gradient(rgba(var(--tema-principale-rgb, 0, 21, 54), var(--pagina-sfumatura, .76)), rgba(var(--tema-principale-rgb, 0, 21, 54), var(--pagina-sfumatura, .76))), var(--pagina-immagine);
+            background-size: cover;
+            background-position: center;
+            font: 32px Georgia, serif;
+        }
+        .parish-section-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
+        .parish-section-actions label { display: flex; gap: 8px; align-items: center; color: var(--tema-principale, #001536); }
+        .parish-section-actions select { max-width: 100%; padding: 12px; background: var(--tema-sfondo, #fff); color: var(--tema-principale, #001536); }
+        .parish-section-photo-preview { width: 100%; max-width: 500px; max-height: 300px; object-fit: contain; margin: 16px 0; }
+        .parish-section-photo-preview[hidden], #parishUndo[hidden], #parishEmpty[hidden] { display: none; }
+        .parish-section-actions button:disabled { opacity: .45; cursor: default; }
+</style>
 
 </head>
 
 
 <body>
+<section id="authLoading" class="auth-loading" aria-label="Accesso area riservata">
+    <div>
+        <p role="status" aria-live="polite">Verifica accesso in corso...</p>
+        <p id="authLoadingHelp" hidden>La verifica sta richiedendo più tempo del previsto. <a href="admin.html">Riprova</a></p>
+        <noscript><p>Attiva JavaScript per accedere all’area riservata.</p></noscript>
+    </div>
+</section>
+<script>
+    window.adminAuthWaitTimer = setTimeout(function () {
+        if (!document.getElementById("authLoading").hidden) {
+            document.getElementById("authLoadingHelp").hidden = false;
+        }
+    }, 12000);
+</script>
 
 
 <!-- =========================================================
@@ -1487,7 +1612,7 @@
 
 <section
     class="login-screen"
-    id="loginScreen"
+    id="loginScreen" style="display:none"
 >
 
     <div class="login-card">
@@ -1670,6 +1795,14 @@
                 ORARI MESSE
             </button>
 
+<button type="button" class="admin-nav-button" data-view="theme">TEMI E COLORI</button>
+<button type="button" class="admin-nav-button" data-view="footer">FOOTER</button>
+<button type="button" class="admin-nav-button" data-view="privacy">PRIVACY POLICY</button>
+<button type="button" class="admin-nav-button" data-view="contacts">CONTATTI</button><button type="button" class="admin-nav-button" data-view="groups">GRUPPI PARROCCHIALI</button>
+<button type="button" class="admin-nav-button" data-view="identity">LOGO E TITOLO</button>
+            <button type="button" class="admin-nav-button" data-view="parish">LA PARROCCHIA</button>
+            <button type="button" class="admin-nav-button" data-view="pageImages">IMMAGINI DELLE PAGINE</button>
+<button type="button" class="admin-nav-button" data-view="homeImages">IMMAGINI HOME</button>
             <button type="button" class="admin-nav-button" data-view="notice">
                 AVVISI
             </button>
@@ -1692,7 +1825,7 @@
 
                 <p class="dashboard-description">
                     Tutto ciò che serve per aggiornare il sito della Parrocchia
-                    da un unico spazio: notizie, appuntamenti, celebrazioni e comunicazioni.
+                    da un unico spazio: crea contenuti o scegli la sezione da modificare.
                 </p>
             </div>
 
@@ -1722,56 +1855,81 @@
                 </article>
             </div>
 
-            <div class="dashboard-section-title">
-                <div>
-                    <span>ACCESSI RAPIDI</span>
-                    <h2>Cosa vuoi fare?</h2>
+            <section class="dashboard-tools" aria-labelledby="dashboardContent">
+                <div class="dashboard-section-title"><div><span>PUBBLICAZIONI</span><h2 id="dashboardContent">Notizie e appuntamenti</h2></div></div>
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <div><h3>Nuovo articolo</h3><p>Scrivi e pubblica una nuova notizia della Parrocchia.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="editor">Crea articolo &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Gestisci articoli</h3><p>Apri le notizie pubblicate per modificarle o eliminarle.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="manage">Modifica articoli &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Nuovo evento</h3><p>Aggiungi un appuntamento al calendario parrocchiale.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="eventEditor">Crea evento &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Gestisci eventi</h3><p>Aggiorna o elimina gli appuntamenti del calendario.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="eventManage">Modifica eventi &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Orari Messe</h3><p>Aggiorna gli orari condivisi tra Home, Parrocchia e footer.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="massTimes">Modifica orari &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Avviso in evidenza</h3><p>Scrivi, modifica, mostra o nascondi la comunicazione in Home.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="notice">Gestisci avviso &#8594;</button>
+                    </article>
                 </div>
-            </div>
-
-            <div class="dashboard-grid">
-
-                <article class="dashboard-card">
-                    <div>
-                        <h2>Nuovo articolo</h2>
-                        <p>Scrivi e pubblica una nuova notizia della Parrocchia.</p>
-                    </div>
-                    <button type="button" class="dashboard-action" data-open-view="editor">
-                        CREA ARTICOLO →
-                    </button>
-                </article>
-
-                <article class="dashboard-card">
-                    <div>
-                        <h2>Nuovo evento</h2>
-                        <p>Aggiungi un nuovo appuntamento al calendario parrocchiale.</p>
-                    </div>
-                    <button type="button" class="dashboard-action" data-open-view="eventEditor">
-                        CREA EVENTO →
-                    </button>
-                </article>
-
-                <article class="dashboard-card">
-                    <div>
-                        <h2>Orari Messe</h2>
-                        <p>Aggiorna gli orari delle celebrazioni mostrati nella Home.</p>
-                    </div>
-                    <button type="button" class="dashboard-action" data-open-view="massTimes">
-                        MODIFICA ORARI →
-                    </button>
-                </article>
-
-                <article class="dashboard-card">
-                    <div>
-                        <h2>Avviso</h2>
-                        <p>Scrivi, modifica, mostra o nascondi l'avviso in evidenza.</p>
-                    </div>
-                    <button type="button" class="dashboard-action" data-open-view="notice">
-                        GESTISCI AVVISO →
-                    </button>
-                </article>
-
-            </div>
+            </section>
+            <section class="dashboard-tools" aria-labelledby="dashboardPages">
+                <div class="dashboard-section-title"><div><span>CONTENUTI</span><h2 id="dashboardPages">Pagine del sito</h2></div></div>
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <div><h3>La Parrocchia</h3><p>Modifica i testi di presentazione e le informazioni della parrocchia.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="parish">Modifica parrocchia &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Gruppi parrocchiali</h3><p>Aggiorna descrizioni, informazioni e foto dei gruppi.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="groups">Modifica gruppi &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Contatti</h3><p>Modifica i testi della pagina, indirizzo, telefono ed email.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="contacts">Modifica contatti &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Privacy Policy</h3><p>Aggiorna i testi della policy, le voci dell&#39;indice e la data.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="privacy">Modifica privacy &#8594;</button>
+                    </article>
+                </div>
+            </section>
+            <section class="dashboard-tools" aria-labelledby="dashboardAppearance">
+                <div class="dashboard-section-title"><div><span>PERSONALIZZAZIONE</span><h2 id="dashboardAppearance">Aspetto del sito</h2></div></div>
+                <div class="dashboard-grid">
+                                        <article class="dashboard-card">
+                        <div><h3>Immagini delle pagine</h3><p>Cambia le foto di sfondo dietro i titoli delle pagine interne.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="pageImages">Modifica sfondi &#8594;</button>
+                    </article>
+<article class="dashboard-card">
+                        <div><h3>Immagini Home</h3><p>Scegli le immagini da mostrare nella pagina iniziale.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="homeImages">Modifica immagini &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Logo e titolo</h3><p>Aggiorna il logo e il nome della parrocchia.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="identity">Modifica logo e titolo &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Temi e colori</h3><p>Personalizza il tema e i colori del sito.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="theme">Modifica tema &#8594;</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <div><h3>Footer</h3><p>Modifica testi, recapiti, social e collegamenti in fondo alle pagine.</p></div>
+                        <button type="button" class="dashboard-action" data-open-view="footer">Modifica footer &#8594;</button>
+                    </article>
+                </div>
+            </section>
 
             <div class="dashboard-footer-card">
                 <strong>Parrocchia Maria SS. del Rosario di Pompei</strong>
@@ -2419,6 +2577,858 @@
     </section>
 
 
+    <section class="admin-view" id="pageImagesView">
+    <main class="admin-main">
+        <div class="admin-intro">
+            <div><p class="admin-eyebrow">IMMAGINI DEL SITO</p><h1>Immagini delle pagine</h1></div>
+            <p class="admin-intro-descrizione">Scegli la foto di sfondo dietro il titolo di ogni pagina interna.</p>
+        </div>
+        <section class="admin-panel">
+            <p>Usa foto orizzontali JPG, PNG o WEBP fino a 5 MB. La sfumatura segue il tema del sito e mantiene leggibili i titoli. Le immagini della Home si modificano in Immagini Home.</p>
+            <form class="admin-form" id="pageImagesForm">
+                <fieldset id="pageImagesFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+                    <div id="pageImagesSlots"></div>
+                    <button type="submit" class="admin-button admin-button-primary">Salva immagini delle pagine</button>
+                </fieldset>
+                <p id="pageImagesMessage" role="status" aria-live="polite">Caricamento delle immagini...</p>
+                <button type="button" id="pageImagesRetry" hidden>Riprova il caricamento</button>
+            </form>
+        </section>
+    </main>
+</section>
+<section class="admin-view" id="homeImagesView">
+        <main class="admin-main">
+            <div class="admin-intro">
+                <div>
+                    <p class="admin-eyebrow">HOME</p>
+                    <h1>IMMAGINI HOME</h1>
+                </div>
+                <p class="admin-intro-descrizione">Scegli le tre foto che scorrono nella parte iniziale della Home. Le modifiche saranno pubblicate quando premi Salva immagini.</p>
+            </div>
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <span>SLIDESHOW</span>
+                    <h2>Le foto, in ordine di scorrimento</h2>
+                </div>
+                <form class="admin-form" id="homeImagesForm">
+                    <p>Usa foto orizzontali in formato JPG, PNG o WEBP, fino a 5 MB ciascuna. Puoi sostituire anche una sola foto.</p>
+                    <fieldset id="homeImagesFields" style="border:0;padding:0;margin:0;min-width:0">
+                        <div id="homeImagesSlots"></div>
+                        <div class="admin-actions">
+                            <button type="submit" id="homeImagesSave" class="admin-button admin-button-primary" disabled>Salva immagini</button>
+                        </div>
+                    </fieldset>
+                    <p id="homeImagesMessage" role="status" aria-live="polite">Caricamento immagini...</p>
+                    <button type="button" id="homeImagesRetry" hidden>Riprova il caricamento</button>
+                </form>
+            </section>
+        </main>
+    </section>
+    <section class="admin-view" id="parishView">
+        <main class="admin-main">
+            <div class="admin-intro">
+                <div><p class="admin-eyebrow">CONTENUTI DEL SITO</p><h1>La Parrocchia</h1></div>
+                <p class="admin-intro-descrizione">Aggiungi, nascondi e riordina le sezioni della pagina. Gli orari si gestiscono dalla sezione Orari Messe.</p>
+            </div>
+            <section class="admin-panel">
+                <div class="admin-panel-header"><span>CONTENUTI E SEZIONI</span><h2>Organizza la pagina</h2></div>
+                <form class="admin-form" id="parishForm">
+                    <p>Le modifiche saranno pubblicate quando premi Salva pagina. Togli la spunta a Mostra sul sito per nascondere una sezione senza perderne i contenuti.</p>
+                    <fieldset id="parishFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+<section class="parish-editor-section" aria-labelledby="parish-heading-hero">
+<h3 id="parish-heading-hero">Intestazione della pagina</h3>
+<p class="parish-editor-description">Il titolo e la breve frase nella parte iniziale della pagina.</p>
+<div class="admin-field"><label for="par_hero_etichetta">Frase sopra il titolo</label><input type="text" id="par_hero_etichetta" data-parrocchia-field="hero_etichetta" maxlength="200" value="CONOSCI LA NOSTRA COMUNIT&#192;"></div>
+<div class="admin-field"><label for="par_hero_titolo">Titolo</label><input type="text" id="par_hero_titolo" data-parrocchia-field="hero_titolo" maxlength="200" value="La Parrocchia"></div>
+</section>
+<div id="parishSectionsEditor"></div>
+<p id="parishEmpty" hidden>Nessuna sezione. Aggiungine una per completare la pagina.</p>
+<div class="parish-section-actions">
+    <label for="parishSectionType">Sezione da aggiungere</label>
+    <select id="parishSectionType"><option value="nuova">Nuova sezione di testo</option></select>
+    <button type="button" id="parishAdd" class="admin-button admin-button-secondary">Aggiungi sezione</button>
+    <button type="button" id="parishUndo" class="admin-button admin-button-secondary" hidden>Annulla ultima eliminazione</button>
+</div>
+<div class="admin-actions"><button type="submit" class="admin-button admin-button-primary">Salva pagina</button></div>
+                    </fieldset>
+                    <p id="parishMessage" role="status" aria-live="polite">Caricamento dei testi salvati...</p>
+                    <button type="button" id="parishRetry" hidden>Riprova il caricamento</button>
+                </form>
+            </section>
+        </main>
+    </section>
+<section class="admin-view" id="themeView">
+    <main class="admin-main">
+        <div class="admin-intro"><div><p class="admin-eyebrow">ASPETTO DEL SITO</p><h1>Temi e colori</h1></div><p class="admin-intro-descrizione">Scegli una combinazione, controlla l'anteprima e applicala a tutte le pagine.</p></div>
+        <section class="admin-panel">
+            <form class="admin-form" id="themeForm">
+                <fieldset id="themeFields" style="border:0;padding:0;margin:0;min-width:0">
+                    <section class="parish-editor-section">
+                        <h3>Scegli il tema</h3>
+                        <div class="admin-field"><label for="themePreset">TEMA</label><select id="themePreset"><option value="classico">Classico — blu e oro</option><option value="bordeaux">Bordeaux — rosso scuro e crema</option><option value="verde">Verde — verde scuro e avorio</option><option value="personalizzato">Personalizzato</option></select></div>
+                        <div class="theme-colors">
+                            <div class="admin-field"><label for="themePrimary">COLORE PRINCIPALE</label><input type="color" id="themePrimary" value="#001536"><output id="themePrimaryValue" for="themePrimary"></output></div>
+                            <div class="admin-field"><label for="themeAccent">ACCENTO</label><input type="color" id="themeAccent" value="#d8c49b"><output id="themeAccentValue" for="themeAccent"></output></div>
+                            <div class="admin-field"><label for="themeBackground">SFONDO</label><input type="color" id="themeBackground" value="#ffffff"><output id="themeBackgroundValue" for="themeBackground"></output></div>
+                        </div>
+                        <button type="button" id="themeReset" class="admin-button">Ripristina tema classico</button>
+                        <p class="parish-editor-description">Il ripristino cambia l'anteprima. Premi Applica tema per pubblicarlo.</p>
+                    </section>
+                    <section class="parish-editor-section">
+                        <h3>Anteprima dei colori</h3>
+                        <div id="themePreview" class="theme-preview">
+                            <div class="theme-preview-header">La nostra parrocchia <span>Home · La Parrocchia · Contatti</span></div>
+                            <div class="theme-preview-body"><p class="theme-preview-eyebrow">VITA DELLA COMUNITÀ</p><h4>Insieme, ogni giorno</h4><p class="theme-preview-copy">Storie, incontri e appuntamenti della nostra comunità.</p><span class="theme-preview-button">Scopri gli appuntamenti</span></div>
+                            <div class="theme-preview-footer">Ti aspettiamo in parrocchia</div>
+                        </div>
+                        <p id="themeContrast" role="status" aria-live="polite"></p>
+                    </section>
+                    <button type="submit" id="themeSave" class="admin-button admin-button-primary">Applica tema</button>
+                </fieldset>
+                <p id="themeMessage" role="status" aria-live="polite">Caricamento del tema...</p>
+                <button type="button" id="themeRetry" hidden>Riprova il caricamento</button>
+            </form>
+        </section>
+    </main>
+</section>
+<section class="admin-view" id="groupsView">
+    <main class="admin-main">
+        <div class="admin-intro">
+            <div>
+                <p class="admin-eyebrow">CONTENUTI DEL SITO</p>
+                <h1>Gruppi parrocchiali</h1>
+            </div>
+            <p class="admin-intro-descrizione">Aggiungi, modifica, nascondi, elimina e riordina liberamente i gruppi della Parrocchia.</p>
+        </div>
+        <section class="admin-panel">
+            <form class="admin-form" id="groupsForm">
+                <p>Le modifiche vengono pubblicate con <strong>Salva gruppi</strong>. Puoi nascondere un gruppo senza eliminarlo.</p>
+                <p id="groupsMessage" role="status" aria-live="polite">Caricamento dei contenuti...</p>
+                <button type="button" id="groupsRetry" hidden>Riprova il caricamento</button>
+                <fieldset id="groupsFields" disabled style="border:0;padding:0;margin:24px 0;min-width:0">
+                    <section class="parish-editor-section">
+                        <h3>Intestazione</h3>
+                        <div class="admin-field"><label for="group_hero_1">Frase sopra il titolo</label><input id="group_hero_1" data-group-field="hero_1" type="text" maxlength="200" value="VIVI LA COMUNITÀ"></div>
+                        <div class="admin-field"><label for="group_hero_2">Titolo</label><input id="group_hero_2" data-group-field="hero_2" type="text" maxlength="200" value="Gruppi Parrocchiali"></div>
+                        <div class="admin-field"><label for="group_hero_3">Descrizione</label><textarea id="group_hero_3" data-group-field="hero_3" maxlength="12000" style="min-height:140px">Persone, esperienze e cammini diversi che insieme costruiscono la nostra comunità.</textarea></div>
+                    </section>
+                    <section class="parish-editor-section">
+                        <h3>Introduzione</h3>
+                        <div class="admin-field"><label for="group_intro_1">Frase sopra il titolo</label><input id="group_intro_1" data-group-field="intro_1" type="text" maxlength="200" value="LA NOSTRA COMUNITÀ"></div>
+                        <div class="admin-field"><label for="group_intro_2">Titolo</label><input id="group_intro_2" data-group-field="intro_2" type="text" maxlength="200" value="C'è un posto anche per te"></div>
+                        <div class="admin-field"><label for="group_intro_3">Descrizione</label><textarea id="group_intro_3" data-group-field="intro_3" maxlength="12000" style="min-height:140px">La vita della parrocchia cresce attraverso l'impegno, la partecipazione e il servizio di tante persone. Dai più piccoli ai giovani, dagli adulti alle famiglie, ciascuno può trovare un'occasione per incontrarsi, crescere nella fede e mettersi al servizio della comunità.</textarea></div>
+                    </section>
+                    <section class="parish-editor-section">
+                        <h3>Gruppi della Parrocchia</h3>
+                        <p class="parish-editor-description">Qui puoi gestire liberamente i gruppi: aggiungerli, riordinarli, nasconderli oppure eliminarli.</p>
+                        <div id="groupsEditor"></div>
+                        <p id="groupsEmpty" hidden>Non ci sono ancora gruppi. Premi “Aggiungi gruppo” per crearne uno.</p>
+                        <div class="parish-section-actions">
+                            <button type="button" id="groupAdd" class="admin-button admin-button-secondary">+ Aggiungi gruppo</button>
+                            <button type="button" id="groupUndo" class="admin-button admin-button-secondary" hidden>Annulla ultima eliminazione</button>
+                        </div>
+                    </section>
+                    <section class="parish-editor-section">
+                        <h3>Invito a partecipare</h3>
+                        <div class="admin-field"><label for="group_finale_1">Frase sopra il titolo</label><input id="group_finale_1" data-group-field="finale_1" type="text" maxlength="200" value="PARTECIPA"></div>
+                        <div class="admin-field"><label for="group_finale_2">Titolo</label><input id="group_finale_2" data-group-field="finale_2" type="text" maxlength="200" value="Vuoi entrare a far parte di un gruppo?"></div>
+                        <div class="admin-field"><label for="group_finale_3">Descrizione</label><textarea id="group_finale_3" data-group-field="finale_3" maxlength="12000" style="min-height:140px">Se desideri conoscere meglio una delle realtà della parrocchia, partecipare a un incontro o mettere a disposizione il tuo tempo, contattaci.</textarea></div>
+                        <div class="admin-field"><label for="group_finale_4">Testo del pulsante</label><input id="group_finale_4" data-group-field="finale_4" type="text" maxlength="200" value="Contatta la Parrocchia →"></div>
+                    </section>
+                    <div class="admin-actions"><button type="submit" id="groupsSaveButton" class="admin-button admin-button-primary">Salva gruppi</button></div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</section>
+
+<section class="admin-view" id="footerView">
+<main class="admin-main">
+<div class="admin-intro">
+<div>
+<p class="admin-eyebrow">ELEMENTI CONDIVISI</p>
+<h1>Footer</h1>
+</div>
+<p class="admin-intro-descrizione">Modifica i testi, i recapiti e i collegamenti in fondo a tutte le pagine.</p>
+</div>
+<section class="admin-panel">
+<p>Il logo si modifica in Logo e titolo. Gli orari si aggiornano da Orari Messe. I recapiti qui inseriti si applicano al footer.</p>
+<p>Per i collegamenti puoi inserire una pagina del sito (es. contatti.html) oppure un indirizzo completo https://. Lascia vuota la destinazione per disattivare un link.</p>
+<form class="admin-form" id="footerForm">
+<fieldset id="footerFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+<section class="parish-editor-section" aria-labelledby="footer-heading-identity">
+<h3 id="footer-heading-identity">Identità e presentazione</h3>
+<p class="parish-editor-description">Il nome e la descrizione accanto al logo. Vai a capo per suddividere il nome su più righe. Il logo si aggiorna da Logo e titolo.</p>
+<div class="admin-field">
+<label for="footer_testo_1">Nome della parrocchia</label>
+<textarea id="footer_testo_1" data-footer-field="testo_1" maxlength="4000" style="min-height:80px">Parrocchia
+ Maria SS.
+ del Rosario
+ di Pompei</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_2">Descrizione della comunit&#224;</label>
+<textarea id="footer_testo_2" data-footer-field="testo_2" maxlength="4000" style="min-height:80px">Una comunit&#224; che cammina insieme, nella fede, nella fraternit&#224; e nel servizio.</textarea>
+</div>
+</section>
+<section class="parish-editor-section" aria-labelledby="footer-heading-social">
+<h3 id="footer-heading-social">Social</h3>
+<p class="parish-editor-description">Aggiungi i profili da mostrare nel footer, scegli la loro icona e inserisci il collegamento. Puoi eliminare anche tutte le icone. Premi Salva footer per pubblicare le modifiche.</p>
+<div id="footerSocialList"></div>
+<p id="footerSocialEmpty" role="status" hidden>Nessun social nel footer.</p>
+<button type="button" id="footerSocialAdd" class="admin-button admin-button-secondary">Aggiungi social</button>
+</section>
+<section class="parish-editor-section" aria-labelledby="footer-heading-navigation">
+<h3 id="footer-heading-navigation">Collegamenti Esplora</h3>
+<p class="parish-editor-description">Il titolo della colonna e i link alle pagine principali del sito.</p>
+<div class="admin-field">
+<label for="footer_testo_5">Titolo della colonna Esplora</label>
+<textarea id="footer_testo_5" data-footer-field="testo_5" maxlength="4000" style="min-height:80px">ESPLORA</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_6">Testo del link La Parrocchia</label>
+<textarea id="footer_testo_6" data-footer-field="testo_6" maxlength="4000" style="min-height:80px">La parrocchia</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_6">Destinazione del link La Parrocchia</label>
+<input id="footer_link_testo_6" data-footer-field="link_testo_6" data-footer-url type="text" maxlength="2000" value="parrocchia.html">
+</div>
+<div class="admin-field">
+<label for="footer_testo_7">Testo del link Notizie</label>
+<textarea id="footer_testo_7" data-footer-field="testo_7" maxlength="4000" style="min-height:80px">Notizie</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_7">Destinazione del link Notizie</label>
+<input id="footer_link_testo_7" data-footer-field="link_testo_7" data-footer-url type="text" maxlength="2000" value="notizie.html">
+</div>
+<div class="admin-field">
+<label for="footer_testo_8">Testo del link Eventi</label>
+<textarea id="footer_testo_8" data-footer-field="testo_8" maxlength="4000" style="min-height:80px">Eventi</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_8">Destinazione del link Eventi</label>
+<input id="footer_link_testo_8" data-footer-field="link_testo_8" data-footer-url type="text" maxlength="2000" value="eventi.html">
+</div>
+<div class="admin-field">
+<label for="footer_testo_9">Testo del link Gruppi</label>
+<textarea id="footer_testo_9" data-footer-field="testo_9" maxlength="4000" style="min-height:80px">Gruppi parrocchiali</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_9">Destinazione del link Gruppi</label>
+<input id="footer_link_testo_9" data-footer-field="link_testo_9" data-footer-url type="text" maxlength="2000" value="gruppi.html">
+</div>
+</section>
+<section class="parish-editor-section" aria-labelledby="footer-heading-masses">
+<h3 id="footer-heading-masses">Orari Messe</h3>
+<p class="parish-editor-description">Titolo, etichette dei giorni e collegamento agli orari. Gli orari delle celebrazioni si modificano nella sezione Orari Messe.</p>
+<div class="admin-field">
+<label for="footer_testo_10">Titolo della colonna Orari Messe</label>
+<textarea id="footer_testo_10" data-footer-field="testo_10" maxlength="4000" style="min-height:80px">ORARI MESSE</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_11">Etichetta giorni feriali</label>
+<textarea id="footer_testo_11" data-footer-field="testo_11" maxlength="4000" style="min-height:80px">Feriali</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_12">Etichetta sabato</label>
+<textarea id="footer_testo_12" data-footer-field="testo_12" maxlength="4000" style="min-height:80px">Sabato</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_13">Etichetta domenica</label>
+<textarea id="footer_testo_13" data-footer-field="testo_13" maxlength="4000" style="min-height:80px">Domenica</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_14">Testo del link Tutti gli orari</label>
+<textarea id="footer_testo_14" data-footer-field="testo_14" maxlength="4000" style="min-height:80px">Tutti gli orari →</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_14">Destinazione del link Tutti gli orari</label>
+<input id="footer_link_testo_14" data-footer-field="link_testo_14" data-footer-url type="text" maxlength="2000" value="parrocchia.html#messe">
+</div>
+</section>
+<section class="parish-editor-section" aria-labelledby="footer-heading-contacts">
+<h3 id="footer-heading-contacts">Contatti</h3>
+<p class="parish-editor-description">Indirizzo, telefono, email e collegamento alla pagina Contatti. Questi recapiti si applicano al footer.</p>
+<div class="admin-field">
+<label for="footer_testo_15">Titolo della colonna Contatti</label>
+<textarea id="footer_testo_15" data-footer-field="testo_15" maxlength="4000" style="min-height:80px">CONTATTI</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_16">Etichetta indirizzo</label>
+<textarea id="footer_testo_16" data-footer-field="testo_16" maxlength="4000" style="min-height:80px">INDIRIZZO</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_17">Indirizzo completo</label>
+<textarea id="footer_testo_17" data-footer-field="testo_17" maxlength="4000" style="min-height:80px">Inserisci qui l&#39;indirizzo
+ Vibo Marina (VV)</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_18">Etichetta telefono</label>
+<textarea id="footer_testo_18" data-footer-field="testo_18" maxlength="4000" style="min-height:80px">TELEFONO</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_19">Numero di telefono</label>
+<textarea id="footer_testo_19" data-footer-field="testo_19" maxlength="4000" style="min-height:80px">+39 000 000 0000</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_20">Etichetta email</label>
+<textarea id="footer_testo_20" data-footer-field="testo_20" maxlength="4000" style="min-height:80px">EMAIL</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_21">Indirizzo email</label>
+<textarea id="footer_testo_21" data-footer-field="testo_21" maxlength="4000" style="min-height:80px">parrocchia@example.it</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_22">Testo del link Contattaci</label>
+<textarea id="footer_testo_22" data-footer-field="testo_22" maxlength="4000" style="min-height:80px">Contattaci →</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_22">Destinazione del link Contattaci</label>
+<input id="footer_link_testo_22" data-footer-field="link_testo_22" data-footer-url type="text" maxlength="2000" value="contatti.html">
+</div>
+</section>
+<section class="parish-editor-section" aria-labelledby="footer-heading-bottom">
+<h3 id="footer-heading-bottom">Fascia inferiore</h3>
+<p class="parish-editor-description">La riga del copyright e i collegamenti finali a Privacy Policy e Contatti.</p>
+<div class="admin-field">
+<label for="footer_testo_23">Testo copyright</label>
+<textarea id="footer_testo_23" data-footer-field="testo_23" maxlength="4000" style="min-height:80px">&#169; 2026 Parrocchia Maria SS. del Rosario di Pompei</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_testo_24">Testo del link Privacy Policy</label>
+<textarea id="footer_testo_24" data-footer-field="testo_24" maxlength="4000" style="min-height:80px">Privacy Policy</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_24">Destinazione del link Privacy Policy</label>
+<input id="footer_link_testo_24" data-footer-field="link_testo_24" data-footer-url type="text" maxlength="2000" value="privacy.html">
+</div>
+<div class="admin-field">
+<label for="footer_testo_25">Testo del link Contatti</label>
+<textarea id="footer_testo_25" data-footer-field="testo_25" maxlength="4000" style="min-height:80px">Contatti</textarea>
+</div>
+<div class="admin-field">
+<label for="footer_link_testo_25">Destinazione del link Contatti</label>
+<input id="footer_link_testo_25" data-footer-field="link_testo_25" data-footer-url type="text" maxlength="2000" value="contatti.html">
+</div>
+</section>
+<button type="submit" class="admin-button admin-button-primary">Salva footer</button>
+</fieldset>
+<p id="footerMessage" role="status" aria-live="polite">Caricamento del footer...</p>
+<button type="button" id="footerRetry" hidden>Riprova il caricamento</button>
+</form>
+</section>
+</main>
+</section>
+<section class="admin-view" id="privacyView">
+<main class="admin-main">
+<div class="admin-intro">
+<div>
+<p class="admin-eyebrow">INFORMAZIONI DEL SITO</p>
+<h1>Privacy Policy</h1>
+</div>
+<p class="admin-intro-descrizione">Modifica i testi della pagina Privacy Policy e la data di aggiornamento. Se cambi il titolo di una sezione, aggiorna anche la relativa voce nell&#39;indice.</p>
+</div>
+<section class="admin-panel">
+<form class="admin-form" id="privacyForm">
+<fieldset id="privacyFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+<section class="parish-editor-section">
+<h3>Privacy Policy</h3>
+<div class="admin-field">
+<label for="privacy_testo_1">Etichetta</label>
+<input id="privacy_testo_1" data-privacy-field="testo_1" type="text" maxlength="300" value="INFORMAZIONI E TRASPARENZA">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_2">Titolo</label>
+<input id="privacy_testo_2" data-privacy-field="testo_2" type="text" maxlength="300" value="Privacy Policy">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_3">Paragrafo 1</label>
+<textarea id="privacy_testo_3" data-privacy-field="testo_3" maxlength="12000" style="min-height:150px">Informazioni sul trattamento dei dati personali degli utenti che visitano il sito della Parrocchia Maria SS. del Rosario di Pompei.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Informazioni sul trattamento dei dati</h3>
+<div class="admin-field">
+<label for="privacy_testo_4">Etichetta</label>
+<input id="privacy_testo_4" data-privacy-field="testo_4" type="text" maxlength="300" value="LA TUA PRIVACY">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_5">Titolo</label>
+<input id="privacy_testo_5" data-privacy-field="testo_5" type="text" maxlength="300" value="Informazioni sul trattamento dei dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_6">Paragrafo 1</label>
+<textarea id="privacy_testo_6" data-privacy-field="testo_6" maxlength="12000" style="min-height:150px">Questa pagina descrive in modo generale come possono essere trattati i dati personali degli utenti durante la navigazione e l&#39;utilizzo dei servizi disponibili sul sito della Parrocchia Maria SS. del Rosario di Pompei.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_7">Etichetta aggiornamento</label>
+<input id="privacy_testo_7" data-privacy-field="testo_7" type="text" maxlength="300" value="ULTIMO AGGIORNAMENTO">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_8">Data ultimo aggiornamento</label>
+<input id="privacy_testo_8" data-privacy-field="testo_8" type="text" maxlength="300" value="23 settembre 2026">
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Indice</h3>
+<div class="admin-field">
+<label for="privacy_testo_9">Etichetta</label>
+<input id="privacy_testo_9" data-privacy-field="testo_9" type="text" maxlength="300" value="IN QUESTA PAGINA">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_10">Titolo</label>
+<input id="privacy_testo_10" data-privacy-field="testo_10" type="text" maxlength="300" value="Indice">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_11">Voce indice: 01. Titolare del trattamento</label>
+<input id="privacy_testo_11" data-privacy-field="testo_11" type="text" maxlength="300" value="01. Titolare del trattamento">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_12">Voce indice: 02. Dati trattati</label>
+<input id="privacy_testo_12" data-privacy-field="testo_12" type="text" maxlength="300" value="02. Dati trattati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_13">Voce indice: 03. Finalit&#224; del trattamento</label>
+<input id="privacy_testo_13" data-privacy-field="testo_13" type="text" maxlength="300" value="03. Finalit&#224; del trattamento">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_14">Voce indice: 04. Modulo di contatto</label>
+<input id="privacy_testo_14" data-privacy-field="testo_14" type="text" maxlength="300" value="04. Modulo di contatto">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_15">Voce indice: 05. Conservazione dei dati</label>
+<input id="privacy_testo_15" data-privacy-field="testo_15" type="text" maxlength="300" value="05. Conservazione dei dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_16">Voce indice: 06. Comunicazione dei dati</label>
+<input id="privacy_testo_16" data-privacy-field="testo_16" type="text" maxlength="300" value="06. Comunicazione dei dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_17">Voce indice: 07. Cookie</label>
+<input id="privacy_testo_17" data-privacy-field="testo_17" type="text" maxlength="300" value="07. Cookie">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_18">Voce indice: 08. Servizi esterni</label>
+<input id="privacy_testo_18" data-privacy-field="testo_18" type="text" maxlength="300" value="08. Servizi esterni">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_19">Voce indice: 09. Diritti dell&#39;interessato</label>
+<input id="privacy_testo_19" data-privacy-field="testo_19" type="text" maxlength="300" value="09. Diritti dell&#39;interessato">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_20">Voce indice: 10. Sicurezza</label>
+<input id="privacy_testo_20" data-privacy-field="testo_20" type="text" maxlength="300" value="10. Sicurezza">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_21">Voce indice: 11. Modifiche alla policy</label>
+<input id="privacy_testo_21" data-privacy-field="testo_21" type="text" maxlength="300" value="11. Modifiche alla policy">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_22">Voce indice: 12. Contatti</label>
+<input id="privacy_testo_22" data-privacy-field="testo_22" type="text" maxlength="300" value="12. Contatti">
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Titolare del trattamento</h3>
+<div class="admin-field">
+<label for="privacy_testo_23">Etichetta</label>
+<input id="privacy_testo_23" data-privacy-field="testo_23" type="text" maxlength="300" value="TITOLARE">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_24">Titolo</label>
+<input id="privacy_testo_24" data-privacy-field="testo_24" type="text" maxlength="300" value="Titolare del trattamento">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_25">Paragrafo 1</label>
+<textarea id="privacy_testo_25" data-privacy-field="testo_25" maxlength="12000" style="min-height:150px">Il titolare del trattamento dei dati personali raccolti attraverso questo sito &#232; la Parrocchia Maria SS. del Rosario di Pompei.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_26">Paragrafo 2</label>
+<textarea id="privacy_testo_26" data-privacy-field="testo_26" maxlength="12000" style="min-height:150px">Prima della pubblicazione definitiva del sito, in questa sezione saranno indicati la denominazione completa della Parrocchia, l&#39;indirizzo della sede e i recapiti da utilizzare per le richieste relative alla protezione dei dati personali.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Quali dati possono essere trattati</h3>
+<div class="admin-field">
+<label for="privacy_testo_27">Etichetta</label>
+<input id="privacy_testo_27" data-privacy-field="testo_27" type="text" maxlength="300" value="DATI PERSONALI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_28">Titolo</label>
+<input id="privacy_testo_28" data-privacy-field="testo_28" type="text" maxlength="300" value="Quali dati possono essere trattati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_29">Paragrafo 1</label>
+<textarea id="privacy_testo_29" data-privacy-field="testo_29" maxlength="12000" style="min-height:150px">Durante l&#39;utilizzo del sito possono essere trattate alcune informazioni tecniche necessarie al funzionamento e alla sicurezza del servizio.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_30">Paragrafo 2</label>
+<textarea id="privacy_testo_30" data-privacy-field="testo_30" maxlength="12000" style="min-height:150px">Quando l&#39;utente decide di contattare volontariamente la Parrocchia possono inoltre essere forniti dati quali nome e cognome, indirizzo email, numero di telefono e contenuto del messaggio.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Perché vengono utilizzati i dati</h3>
+<div class="admin-field">
+<label for="privacy_testo_31">Etichetta</label>
+<input id="privacy_testo_31" data-privacy-field="testo_31" type="text" maxlength="300" value="FINALIT&#192;">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_32">Titolo</label>
+<input id="privacy_testo_32" data-privacy-field="testo_32" type="text" maxlength="300" value="Perch&#233; vengono utilizzati i dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_33">Paragrafo 1</label>
+<textarea id="privacy_testo_33" data-privacy-field="testo_33" maxlength="12000" style="min-height:150px">I dati eventualmente forniti attraverso il sito possono essere utilizzati per rispondere alle richieste inviate dagli utenti, fornire informazioni sulle attivit&#224; parrocchiali e gestire le comunicazioni richieste dall&#39;interessato.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_34">Paragrafo 2</label>
+<textarea id="privacy_testo_34" data-privacy-field="testo_34" maxlength="12000" style="min-height:150px">Le informazioni tecniche connesse alla navigazione possono inoltre essere trattate per garantire il corretto funzionamento e la sicurezza del sito.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Modulo di contatto</h3>
+<div class="admin-field">
+<label for="privacy_testo_35">Etichetta</label>
+<input id="privacy_testo_35" data-privacy-field="testo_35" type="text" maxlength="300" value="CONTATTI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_36">Titolo</label>
+<input id="privacy_testo_36" data-privacy-field="testo_36" type="text" maxlength="300" value="Modulo di contatto">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_37">Paragrafo 1</label>
+<textarea id="privacy_testo_37" data-privacy-field="testo_37" maxlength="12000" style="min-height:150px">Nella pagina Contatti &#232; presente un modulo attraverso il quale l&#39;utente pu&#242; inserire alcune informazioni e scrivere un messaggio alla Parrocchia.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_38">Titolo del riquadro</label>
+<input id="privacy_testo_38" data-privacy-field="testo_38" type="text" maxlength="300" value="Attenzione">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_39">Paragrafo 2</label>
+<textarea id="privacy_testo_39" data-privacy-field="testo_39" maxlength="12000" style="min-height:150px">Durante la fase di sviluppo il modulo presente sul sito &#232; solamente dimostrativo e non invia ancora i dati a un server o a una casella email.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_40">Paragrafo 3</label>
+<textarea id="privacy_testo_40" data-privacy-field="testo_40" maxlength="12000" style="min-height:150px">Quando verr&#224; configurato l&#39;invio reale dei messaggi, questa informativa dovr&#224; essere aggiornata indicando il funzionamento effettivo del servizio e gli eventuali fornitori utilizzati.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Per quanto tempo vengono conservati i dati</h3>
+<div class="admin-field">
+<label for="privacy_testo_41">Etichetta</label>
+<input id="privacy_testo_41" data-privacy-field="testo_41" type="text" maxlength="300" value="CONSERVAZIONE">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_42">Titolo</label>
+<input id="privacy_testo_42" data-privacy-field="testo_42" type="text" maxlength="300" value="Per quanto tempo vengono conservati i dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_43">Paragrafo 1</label>
+<textarea id="privacy_testo_43" data-privacy-field="testo_43" maxlength="12000" style="min-height:150px">I dati personali dovrebbero essere conservati soltanto per il periodo necessario a gestire la richiesta per la quale sono stati raccolti, salvo eventuali ulteriori obblighi applicabili.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_44">Paragrafo 2</label>
+<textarea id="privacy_testo_44" data-privacy-field="testo_44" maxlength="12000" style="min-height:150px">I tempi effettivi di conservazione saranno specificati sulla base dei servizi realmente utilizzati nella versione pubblicata del sito.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Comunicazione dei dati</h3>
+<div class="admin-field">
+<label for="privacy_testo_45">Etichetta</label>
+<input id="privacy_testo_45" data-privacy-field="testo_45" type="text" maxlength="300" value="COMUNICAZIONE">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_46">Titolo</label>
+<input id="privacy_testo_46" data-privacy-field="testo_46" type="text" maxlength="300" value="Comunicazione dei dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_47">Paragrafo 1</label>
+<textarea id="privacy_testo_47" data-privacy-field="testo_47" maxlength="12000" style="min-height:150px">I dati personali non dovrebbero essere diffusi pubblicamente attraverso il sito.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_48">Paragrafo 2</label>
+<textarea id="privacy_testo_48" data-privacy-field="testo_48" maxlength="12000" style="min-height:150px">Potrebbero tuttavia essere trattati da soggetti che forniscono servizi tecnici necessari al funzionamento del sito, secondo le modalit&#224; previste dalla normativa applicabile e dagli accordi con tali fornitori.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Cookie e tecnologie simili</h3>
+<div class="admin-field">
+<label for="privacy_testo_49">Etichetta</label>
+<input id="privacy_testo_49" data-privacy-field="testo_49" type="text" maxlength="300" value="COOKIE">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_50">Titolo</label>
+<input id="privacy_testo_50" data-privacy-field="testo_50" type="text" maxlength="300" value="Cookie e tecnologie simili">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_51">Paragrafo 1</label>
+<textarea id="privacy_testo_51" data-privacy-field="testo_51" maxlength="12000" style="min-height:150px">L&#39;utilizzo effettivo di cookie dipender&#224; dai servizi che saranno presenti nella versione definitiva del sito.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_52">Paragrafo 2</label>
+<textarea id="privacy_testo_52" data-privacy-field="testo_52" maxlength="12000" style="min-height:150px">Se verranno utilizzati cookie o strumenti che richiedono specifiche informazioni o scelte da parte dell&#39;utente, verranno predisposte le relative informazioni e, quando necessario, gli strumenti per gestire le preferenze.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Contenuti e servizi di terze parti</h3>
+<div class="admin-field">
+<label for="privacy_testo_53">Etichetta</label>
+<input id="privacy_testo_53" data-privacy-field="testo_53" type="text" maxlength="300" value="SERVIZI ESTERNI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_54">Titolo</label>
+<input id="privacy_testo_54" data-privacy-field="testo_54" type="text" maxlength="300" value="Contenuti e servizi di terze parti">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_55">Paragrafo 1</label>
+<textarea id="privacy_testo_55" data-privacy-field="testo_55" maxlength="12000" style="min-height:150px">Il sito potrebbe in futuro integrare servizi esterni, ad esempio una mappa, contenuti multimediali, sistemi per l&#39;invio del modulo di contatto o altri strumenti utili alla comunit&#224;.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_56">Paragrafo 2</label>
+<textarea id="privacy_testo_56" data-privacy-field="testo_56" maxlength="12000" style="min-height:150px">Prima dell&#39;attivazione di questi servizi sar&#224; necessario verificare quali dati vengono trattati e aggiornare questa informativa di conseguenza.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Diritti dell'interessato</h3>
+<div class="admin-field">
+<label for="privacy_testo_57">Etichetta</label>
+<input id="privacy_testo_57" data-privacy-field="testo_57" type="text" maxlength="300" value="I TUOI DIRITTI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_58">Titolo</label>
+<input id="privacy_testo_58" data-privacy-field="testo_58" type="text" maxlength="300" value="Diritti dell&#39;interessato">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_59">Paragrafo 1</label>
+<textarea id="privacy_testo_59" data-privacy-field="testo_59" maxlength="12000" style="min-height:150px">Nei casi previsti dalla normativa applicabile, l&#39;interessato pu&#242; esercitare i diritti relativi ai propri dati personali, tra cui l&#39;accesso, la rettifica, la cancellazione, la limitazione del trattamento e gli altri diritti riconosciuti dalla disciplina sulla protezione dei dati.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_60">Paragrafo 2</label>
+<textarea id="privacy_testo_60" data-privacy-field="testo_60" maxlength="12000" style="min-height:150px">Le richieste potranno essere indirizzate al titolare del trattamento utilizzando i recapiti che saranno indicati nella versione definitiva della presente informativa.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Sicurezza dei dati</h3>
+<div class="admin-field">
+<label for="privacy_testo_61">Etichetta</label>
+<input id="privacy_testo_61" data-privacy-field="testo_61" type="text" maxlength="300" value="PROTEZIONE">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_62">Titolo</label>
+<input id="privacy_testo_62" data-privacy-field="testo_62" type="text" maxlength="300" value="Sicurezza dei dati">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_63">Paragrafo 1</label>
+<textarea id="privacy_testo_63" data-privacy-field="testo_63" maxlength="12000" style="min-height:150px">Il sito e i servizi ad esso collegati dovranno essere configurati adottando misure adeguate per proteggere i dati personali da accessi non autorizzati, perdita, modifica o utilizzo improprio.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Modifiche alla Privacy Policy</h3>
+<div class="admin-field">
+<label for="privacy_testo_64">Etichetta</label>
+<input id="privacy_testo_64" data-privacy-field="testo_64" type="text" maxlength="300" value="AGGIORNAMENTI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_65">Titolo</label>
+<input id="privacy_testo_65" data-privacy-field="testo_65" type="text" maxlength="300" value="Modifiche alla Privacy Policy">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_66">Paragrafo 1</label>
+<textarea id="privacy_testo_66" data-privacy-field="testo_66" maxlength="12000" style="min-height:150px">Questa informativa potr&#224; essere modificata nel tempo per riflettere cambiamenti del sito, l&#39;introduzione di nuovi servizi o eventuali aggiornamenti necessari.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_67">Paragrafo 2</label>
+<textarea id="privacy_testo_67" data-privacy-field="testo_67" maxlength="12000" style="min-height:150px">La data dell&#39;ultimo aggiornamento sar&#224; indicata nella parte iniziale della pagina.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Hai una domanda sulla privacy?</h3>
+<div class="admin-field">
+<label for="privacy_testo_68">Etichetta</label>
+<input id="privacy_testo_68" data-privacy-field="testo_68" type="text" maxlength="300" value="CONTATTI">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_69">Titolo</label>
+<input id="privacy_testo_69" data-privacy-field="testo_69" type="text" maxlength="300" value="Hai una domanda sulla privacy?">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_70">Paragrafo 1</label>
+<textarea id="privacy_testo_70" data-privacy-field="testo_70" maxlength="12000" style="min-height:150px">Per richieste relative alla presente informativa o al trattamento dei dati personali puoi contattare la Parrocchia.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_71">Testo del pulsante</label>
+<input id="privacy_testo_71" data-privacy-field="testo_71" type="text" maxlength="300" value="Vai ai contatti →">
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Trasparenza e attenzione</h3>
+<div class="admin-field">
+<label for="privacy_testo_72">Etichetta</label>
+<input id="privacy_testo_72" data-privacy-field="testo_72" type="text" maxlength="300" value="Parrocchia Maria SS. del Rosario di Pompei">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_73">Titolo</label>
+<input id="privacy_testo_73" data-privacy-field="testo_73" type="text" maxlength="300" value="Trasparenza e attenzione">
+</div>
+<div class="admin-field">
+<label for="privacy_testo_74">Paragrafo 1</label>
+<textarea id="privacy_testo_74" data-privacy-field="testo_74" maxlength="12000" style="min-height:150px">Vogliamo che le informazioni sul nostro sito siano comprensibili e facilmente accessibili.</textarea>
+</div>
+<div class="admin-field">
+<label for="privacy_testo_75">Testo del pulsante</label>
+<input id="privacy_testo_75" data-privacy-field="testo_75" type="text" maxlength="300" value="Torna alla Home →">
+</div>
+</section>
+<button type="submit" class="admin-button admin-button-primary">Salva privacy</button>
+</fieldset>
+<p id="privacyMessage" role="status" aria-live="polite">Caricamento della privacy...</p>
+<button type="button" id="privacyRetry" hidden>Riprova il caricamento</button>
+</form>
+</section>
+</main>
+</section>
+<section class="admin-view" id="contactsView">
+<main class="admin-main">
+<div class="admin-intro">
+<div>
+<p class="admin-eyebrow">INFORMAZIONI PARROCCHIALI</p>
+<h1>Contatti</h1>
+</div>
+<p class="admin-intro-descrizione">Modifica i testi e i recapiti mostrati nella pagina Contatti.</p>
+</div>
+<section class="admin-panel">
+<form class="admin-form" id="contactsForm">
+<fieldset id="contactsFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+<section class="parish-editor-section">
+<h3>Intestazione</h3>
+<div class="admin-field">
+<label for="contact_testo_1">Testo</label>
+<textarea id="contact_testo_1" data-contact-field="testo_1" maxlength="4000" style="min-height:100px">Parrocchia Maria SS. del Rosario di Pompei</textarea>
+</div>
+<div class="admin-field">
+<label for="contact_testo_2">Titolo</label>
+<input id="contact_testo_2" data-contact-field="testo_2" type="text" maxlength="200" value="Contatti">
+</div>
+<div class="admin-field">
+<label for="contact_testo_3">Testo</label>
+<textarea id="contact_testo_3" data-contact-field="testo_3" maxlength="4000" style="min-height:100px">Siamo a disposizione per informazioni, richieste e necessit&#224; della nostra comunit&#224;.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Introduzione</h3>
+<div class="admin-field">
+<label for="contact_testo_4">Testo</label>
+<textarea id="contact_testo_4" data-contact-field="testo_4" maxlength="4000" style="min-height:100px">RESTIAMO IN CONTATTO</textarea>
+</div>
+<div class="admin-field">
+<label for="contact_testo_5">Titolo</label>
+<input id="contact_testo_5" data-contact-field="testo_5" type="text" maxlength="200" value="Come possiamo aiutarti?">
+</div>
+<div class="admin-field">
+<label for="contact_testo_6">Testo</label>
+<textarea id="contact_testo_6" data-contact-field="testo_6" maxlength="4000" style="min-height:100px">Per informazioni sulle celebrazioni, sui sacramenti, sul catechismo, sulle attivit&#224; parrocchiali o per parlare con la Parrocchia, puoi utilizzare uno dei recapiti riportati qui sotto.</textarea>
+</div>
+</section>
+<section class="parish-editor-section">
+<h3>Recapiti</h3>
+<div class="admin-field">
+<label for="contact_testo_7">Etichetta / giorno</label>
+<input id="contact_testo_7" data-contact-field="testo_7" type="text" maxlength="200" value="DOVE SIAMO">
+</div>
+<div class="admin-field">
+<label for="contact_testo_8">Titolo</label>
+<input id="contact_testo_8" data-contact-field="testo_8" type="text" maxlength="200" value="Parrocchia">
+</div>
+<div class="admin-field">
+<label for="contact_testo_9">Indirizzo (una riga per ogni parte)</label>
+<textarea id="contact_testo_9" data-contact-field="testo_9" maxlength="4000" style="min-height:100px">Inserisci qui l&#39;indirizzo
+ Vibo Marina (VV)</textarea>
+</div>
+<div class="admin-field">
+<label for="contact_testo_10">Etichetta / giorno</label>
+<input id="contact_testo_10" data-contact-field="testo_10" type="text" maxlength="200" value="TELEFONO">
+</div>
+<div class="admin-field">
+<label for="contact_testo_11">Titolo</label>
+<input id="contact_testo_11" data-contact-field="testo_11" type="text" maxlength="200" value="Chiamaci">
+</div>
+<div class="admin-field">
+<label for="contact_telefono">Telefono</label>
+<input id="contact_telefono" data-contact-field="telefono" type="tel" maxlength="200" pattern="[+0-9\(\) .\-]{3,40}" value="+39 000 000 0000">
+</div>
+<div class="admin-field">
+<label for="contact_testo_13">Etichetta / giorno</label>
+<input id="contact_testo_13" data-contact-field="testo_13" type="text" maxlength="200" value="EMAIL">
+</div>
+<div class="admin-field">
+<label for="contact_testo_14">Titolo</label>
+<input id="contact_testo_14" data-contact-field="testo_14" type="text" maxlength="200" value="Scrivici">
+</div>
+<div class="admin-field">
+<label for="contact_email">Email</label>
+<input id="contact_email" data-contact-field="email" type="email" maxlength="200" value="parrocchia@example.it">
+</div>
+</section>
+
+<section class="parish-editor-section">
+<h3>Collegamento alle Messe</h3>
+<div class="admin-field">
+<label for="contact_testo_33">Testo</label>
+<textarea id="contact_testo_33" data-contact-field="testo_33" maxlength="4000" style="min-height:100px">CELEBRAZIONI</textarea>
+</div>
+<div class="admin-field">
+<label for="contact_testo_34">Titolo</label>
+<input id="contact_testo_34" data-contact-field="testo_34" type="text" maxlength="200" value="Vuoi conoscere gli orari delle Messe?">
+</div>
+<div class="admin-field">
+<label for="contact_testo_35">Testo</label>
+<textarea id="contact_testo_35" data-contact-field="testo_35" maxlength="4000" style="min-height:100px">Consulta gli orari delle celebrazioni della nostra Parrocchia.</textarea>
+</div>
+<div class="admin-field">
+<label for="contact_testo_36">Testo del pulsante</label>
+<input id="contact_testo_36" data-contact-field="testo_36" type="text" maxlength="200" value="Orari delle Messe →">
+</div>
+</section>
+<button type="submit" class="admin-button admin-button-primary">Salva contatti</button>
+</fieldset>
+<p id="contactsMessage" role="status" aria-live="polite">Caricamento dei contatti...</p>
+<button type="button" id="contactsRetry" hidden>Riprova il caricamento</button>
+</form>
+</section>
+</main>
+</section>
+<section class="admin-view" id="identityView">
+    <main class="admin-main">
+        <div class="admin-intro"><div><p class="admin-eyebrow">IMPOSTAZIONI DEL SITO</p><h1>Logo e titolo</h1></div><p class="admin-intro-descrizione">Aggiorna il logo e il nome in alto su tutte le pagine con un unico salvataggio.</p></div>
+        <section class="admin-panel">
+            <form class="admin-form" id="identityForm">
+                <fieldset id="identityFields" disabled style="border:0;padding:0;margin:0;min-width:0">
+                    <section class="parish-editor-section">
+                        <h3>Nome della parrocchia</h3>
+                        <p class="parish-editor-description">Vai a capo per dividere il titolo su due righe.</p>
+                        <div class="admin-field"><label for="identityTitle">TITOLO IN ALTO</label><textarea id="identityTitle" required maxlength="160" style="min-height:100px">Parrocchia Maria SS.
+del Rosario di Pompei</textarea></div>
+                    </section>
+                    <section class="parish-editor-section">
+                        <h3>Logo</h3>
+                        <p class="parish-editor-description">Scegli un file PNG, JPG o WEBP fino a 5 MB. Il PNG trasparente è adatto a un logo.</p>
+                        <div class="admin-field"><label for="identityLogo">SCEGLI IL LOGO</label><input id="identityLogo" type="file" accept="image/png,image/jpeg,image/webp"></div>
+                    </section>
+                    <section class="parish-editor-section" aria-label="Anteprima intestazione">
+                        <h3>Anteprima</h3>
+                        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:20px">
+                            <img id="identityPreviewLogo" src="immagini/logo.png" alt="Anteprima del logo" style="width:90px;height:90px;object-fit:contain">
+                            <p id="identityPreviewTitle" style="white-space:pre-line;font:24px Georgia,serif;color:var(--tema-principale, #001536);overflow-wrap:anywhere;max-width:100%"></p>
+                        </div>
+                    </section>
+                    <button type="submit" class="admin-button admin-button-primary">Salva logo e titolo</button>
+                </fieldset>
+                <p id="identityMessage" role="status" aria-live="polite">Caricamento delle impostazioni...</p>
+                <button type="button" id="identityRetry" hidden>Riprova il caricamento</button>
+            </form>
+        </section>
+    </main>
+</section>
     <section class="admin-view" id="noticeView">
         <main class="admin-main">
 
@@ -2631,6 +3641,14 @@
             eventEditor: document.getElementById("eventEditorView"),
             eventManage: document.getElementById("eventManageView"),
             massTimes: document.getElementById("massTimesView"),
+            homeImages: document.getElementById("homeImagesView"),
+            pageImages: document.getElementById("pageImagesView"),
+            theme: document.getElementById("themeView"),
+            identity: document.getElementById("identityView"),
+            groups: document.getElementById("groupsView"), contacts: document.getElementById("contactsView"),
+            privacy: document.getElementById("privacyView"),
+            footer: document.getElementById("footerView"),
+            parish: document.getElementById("parishView"),
             notice: document.getElementById("noticeView")
         };
 
@@ -2731,6 +3749,8 @@
     onAuthStateChanged(
         auth,
         function (user) {
+            clearTimeout(window.adminAuthWaitTimer);
+            document.getElementById("authLoading").hidden = true;
 
             if (user) {
 

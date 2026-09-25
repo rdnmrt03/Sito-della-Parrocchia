@@ -3,6 +3,9 @@
 <html lang="it">
 
 <head>
+    <script src="tema-base.js"></script>
+    <script type="module" src="tema-sito.js"></script>
+    <script src="identita-avvio.js"></script>
 
     <meta charset="UTF-8">
 
@@ -47,7 +50,7 @@
             justify-content: center;
             padding: 90px 20px;
             overflow: hidden;
-            background-color: #001536;
+            background-color: var(--tema-principale, #001536);
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -56,7 +59,7 @@
 
 
         .articolo-hero.con-immagine {
-            background-color: #001536;
+            background-color: var(--tema-principale, #001536);
         }
 
 
@@ -141,7 +144,7 @@
         .articolo-corpo {
             padding: 80px 20px 100px;
 
-            background: white;
+            background: var(--tema-sfondo, #ffffff);
         }
 
 
@@ -246,7 +249,7 @@
 
             text-decoration: none;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
 
             transition:
                 opacity 0.2s ease;
@@ -306,7 +309,7 @@
                 "Times New Roman",
                 serif;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
@@ -336,7 +339,7 @@
 
             text-decoration: none;
 
-            color: #001536;
+            color: var(--tema-principale, #001536);
         }
 
 
